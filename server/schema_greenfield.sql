@@ -53,7 +53,7 @@ CREATE TABLE `Majors` (
 
 DROP TABLE IF EXISTS `majors_universities`;
 		
-CREATE TABLE `Join` (
+CREATE TABLE `majors_universities` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `major_id` INTEGER NOT NULL,
   `university_id` INTEGER NOT NULL,
