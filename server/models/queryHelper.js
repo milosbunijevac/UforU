@@ -1,13 +1,21 @@
 var connection = require('./dbConnection').connection;
 
-
-var asyncMap = function(arrayOfFunctions, cb) {
-
-};
-
+var asyncMap = function(tasks, callback) {
+  let results = [];
+  let remaining = tasks.length;
+  tasks.forEach((task, i) => {
+    task((result) => {
+      results[i] = result;
+      remaining -= 1;
+      if (remaining === 0) {
+        callback(results);
+      }
+    });
+  });
+};  
 
 var querySchoolTable = function(column, value, cb) {
-  db.query('SELECT * FROM schools WHERE ? = ?', [column, value], function (err, data, fields) {
+  db.query('SELECT * FROM schools WHERE ? = ?', [column, value], function(err, data, fields) {
     if (err) {
       cb(err, null);
     } else {
@@ -20,7 +28,7 @@ var mySearchFunction = function(prefs, cb) {
   let queries = [];
   for (let key in prefs) {
     queries.push(function (cb) {
-      querySchoolTable(key, prefs[key], function (err, data) {
+      querySchoolTable(key, prefs[key], function(err, data) {
         if (err) {
           // throw it or just handle your error some other way
           throw err;
@@ -30,7 +38,7 @@ var mySearchFunction = function(prefs, cb) {
       });
     });
   }
-  asyncMap(queries, function (arrOfData) {
+  asyncMap(queries, function(arrOfData) {
     // and here arrOfData is an array of arrays, the inner arrays represent the result of querying the table for a given column/value pair (like STATE='CA' or MAJOR='Computer Science' or whatever);
     // now you can just sort it using whatever method you want
   });

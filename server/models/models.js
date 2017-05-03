@@ -11,7 +11,7 @@ module.exports = {
         }
       });
     },
-    getSuggestions: function(parameters, cb) {
+    getSuggestions: function(params, cb) {
       
     }
   }
