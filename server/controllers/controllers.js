@@ -13,22 +13,25 @@ module.exports = {
           data = JSON.parse(data);
           res
             .status(200)
-            .res(data);
+            .send(data);
         }
       });
     },
     getSuggestions: function(req, res) {
-      models.colleges.getSuggestions(survey, function(err, data) {
+      var body = req.body;
+      console.log(body);
+      models.colleges.getSuggestions(body, function(err, data) {
         if (err) {
           res
             .status(500)
             .send(err);
         } else {
+          console.log('DATA WE GOT BACK', data);
           data = JSON.stringify(data);
           data = JSON.parse(data);
           res
             .status(200)
-            .res(data);
+            .send(data);
         }
       });
     }

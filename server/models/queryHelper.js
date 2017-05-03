@@ -40,7 +40,7 @@ var mySearchFunction = function(prefs, cb) {
   asyncMap(queries, function(arrOfData) {
     // and here arrOfData is an array of arrays, the inner arrays represent the result of querying the table for a given column/value pair (like STATE='CA' or MAJOR='Computer Science' or whatever);
     // now you can just sort it using whatever method you want
-    console.log(arrOfData);
+    console.log('THE RESULT', arrOfData);
   });
 };
 
