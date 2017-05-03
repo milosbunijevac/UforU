@@ -1,4 +1,7 @@
 var connection = require('./dbConnection').connection;
+var mySearchFunction = require('./queryHelper.js').mySearchFunction;
+var asyncMap = require('./queryHelper.js').asyncMap;
+var querySchoolTable = require('./queryHelper.js').querySchoolTable;
 
 module.exports = {
   colleges: {
@@ -12,7 +15,13 @@ module.exports = {
       });
     },
     getSuggestions: function(params, cb) {
-      
+      mySearchFunction(params, function(err, data) {
+        if (err) {
+          cb(err, null);
+        } else {
+          cb(null, data);
+        }
+      });
     }
   }
 };
