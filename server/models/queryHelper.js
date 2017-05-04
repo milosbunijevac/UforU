@@ -5,7 +5,7 @@ var asyncMap = function(tasks, cb) {
   let remaining = tasks.length;
   tasks.forEach((task, i) => {
     task((result) => {
-      results.push(result);
+      results[i] = result;
       remaining -= 1;
       if (remaining === 0) {
         cb(results);
