@@ -1,6 +1,6 @@
 var connection = require('./dbConnection').connection;
 
-var asyncMap = function (tasks, cb) {
+var asyncMap = function(tasks, cb) {
   let results = [];
   let remaining = tasks.length;
   tasks.forEach((task, i) => {
