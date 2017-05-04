@@ -1,10 +1,10 @@
 var connection = require('./dbConnection').connection;
 
-var asyncMap = function(tasks, cb) {
+var asyncMap = function (tasks, cb) {
   let results = [];
   let remaining = tasks.length;
   tasks.forEach((task, i) => {
-    task((result) => {
+    task((err, result) => {
       results[i] = result;
       remaining -= 1;
       if (remaining === 0) {
@@ -12,14 +12,10 @@ var asyncMap = function(tasks, cb) {
       }
     });
   });
-};  
+};
 
 var querySchoolTable = function(column, value, cb) {
-  console.log('column', column);
-  console.log('value', value);
-  var options = [column, value];
-  connection.query('SELECT * FROM Universities WHERE ? = ?', options, function(err, results, fields) {
-    console.log('MY RESULTS', results);
+  connection.query('SELECT * FROM Universities WHERE ' + connection.escapeId(column) + ' = ?', [value], function (err, results, fields) {
     if (err) {
       cb(err, null);
     } else {
@@ -49,6 +45,7 @@ var mySearchFunction = function(prefs, cb) {
     // now you can just sort it using whatever method you want
     console.log('THE QUERIES INSIDE ASYNCMAP', queries);
     console.log('THE RESULT', arrOfData);
+    cb(null, arrOfData);
   });
 };
 
