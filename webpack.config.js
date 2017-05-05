@@ -9,11 +9,14 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    rules: [
+    loaders: [
       {
-        use: 'babel-loader',
-        exclude: '/node_modules/',
-        test: /\.js$/
+        test: /\.jsx?/,
+        include: SRC_DIR,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
       }
     ]
   }
