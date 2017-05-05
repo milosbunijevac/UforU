@@ -1,8 +1,9 @@
 const path = require('path');
+const SRC_DIR = path.join(__dirname, '/client/src');
 
 module.exports = {
   devtool: 'source-map',
-  entry: './client/src/index.js',
+  entry: `${SRC_DIR}/index.jsx`,
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'

@@ -5,7 +5,8 @@
   "author": "Marvelous Moving Minds",
   "license": "",
   "scripts": {
-    "start": "nodemon server/app.js"
+    "start": "nodemon server/app.js",
+    "react-dev": "webpack --watch"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
