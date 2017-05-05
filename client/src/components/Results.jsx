@@ -1,4 +1,5 @@
 import React from 'react';
+import ResultsList from './ResultsList.jsx';
 
 class Results extends React.Component {
   constructor(props) {
@@ -7,7 +8,10 @@ class Results extends React.Component {
 
   render() {
     return (
-      <h5>Results</h5>
+       <div>
+        <h5>Results</h5>
+        <ResultsList />
+      </div>
     );
   }
 
