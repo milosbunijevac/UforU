@@ -4,7 +4,9 @@
   "description": "Application to aid prospective college students in finding a suitable university",
   "author": "Marvelous Moving Minds",
   "license": "",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon server/app.js"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.5.0",
