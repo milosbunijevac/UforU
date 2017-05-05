@@ -49,6 +49,9 @@ var mySearchFunction = function(prefs, cb) {
   });
 };
 
+// [ [{school object one}, {school object 2}],  [],[] ]
+// flatten the arrays into one
+
 module.exports.asyncMap = asyncMap;
 module.exports.querySchoolTable = querySchoolTable;
 module.exports.mySearchFunction = mySearchFunction;
