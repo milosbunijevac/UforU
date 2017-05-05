@@ -18,14 +18,18 @@ DROP TABLE IF EXISTS `Universities`;
 		
 CREATE TABLE `Universities` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `Names` MEDIUMTEXT NOT NULL,
-  `Address` MEDIUMTEXT NOT NULL,
-  `Admissions_Rate` DECIMAL NOT NULL,
-  `Tuition` INTEGER NOT NULL,
-  `Size` INTEGER NOT NULL,
-  `Average_GPA` DECIMAL NOT NULL,
-  `Average_SAT_Score` INTEGER NOT NULL,
-  `Sports_Division` INTEGER NOT NULL,
+  `name` MEDIUMTEXT NOT NULL,
+  `address` MEDIUMTEXT NOT NULL,
+  `state` MEDIUMTEXT NOT NULL,
+  `description` varchar(12000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `admission_rate` DECIMAL NOT NULL,
+  `tuition` INTEGER NOT NULL,
+  `size` INTEGER NOT NULL,
+  `average_gpa` DECIMAL NOT NULL,
+  `average_sat_score` INTEGER NOT NULL,
+  `sports_division` INTEGER NOT NULL,
+  `website_url` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image_url` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -38,7 +42,7 @@ DROP TABLE IF EXISTS `Majors`;
 		
 CREATE TABLE `Majors` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `Major` MEDIUMTEXT NOT NULL,
+  `major` MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -47,12 +51,12 @@ CREATE TABLE `Majors` (
 -- 
 -- ---
 
-DROP TABLE IF EXISTS `Join`;
+DROP TABLE IF EXISTS `majors_universities`;
 		
-CREATE TABLE `Join` (
+CREATE TABLE `majors_universities` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `Major_ID` INTEGER NOT NULL,
-  `University_ID` INTEGER NOT NULL,
+  `major_id` INTEGER NOT NULL,
+  `university_id` INTEGER NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -60,8 +64,8 @@ CREATE TABLE `Join` (
 -- Foreign Keys 
 -- ---
 
-ALTER TABLE `Join` ADD FOREIGN KEY (Major_ID) REFERENCES `Majors` (`id`);
-ALTER TABLE `Join` ADD FOREIGN KEY (University_ID) REFERENCES `Universities` (`id`);
+ALTER TABLE `majors_universities` ADD FOREIGN KEY (major_id) REFERENCES `Majors` (`id`);
+ALTER TABLE `majors_universities` ADD FOREIGN KEY (university_id) REFERENCES `Universities` (`id`);
 
 -- ---
 -- Table Properties
