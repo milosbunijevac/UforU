@@ -26,7 +26,7 @@ module.exports = {
             .status(500)
             .send(err);
         } else {
-          console.log('DATA WE GOT BACK', data);
+          // console.log('DATA WE GOT BACK', data);
           data = JSON.stringify(data);
           data = JSON.parse(data);
           res
