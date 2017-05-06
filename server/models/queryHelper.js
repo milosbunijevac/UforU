@@ -1,4 +1,5 @@
 var connection = require('./dbConnection').connection;
+var _ = require('underscore');
 
 var asyncMap = function(tasks, cb) {
   let results = [];
@@ -77,7 +78,14 @@ var mySearchFunction = function(prefs, cb) {
     // and here arrOfData is an array of arrays, the inner arrays represent the result of querying the table for a given column/value pair (like STATE='CA' or MAJOR='Computer Science' or whatever);
     // now you can just sort it using whatever method you want
     // console.log('THE QUERIES INSIDE ASYNCMAP', queries);
-    console.log('THE RESULT', arrOfData);
+    arrOfData = _.flatten(arrOfData);
+    console.log('THE RESULT', arrOfData.length);
+    for (let key in prefs) {
+      if (key !== 'majors') {
+        console.log('IM SORTING BY', key);
+        arrOfData = _.sortBy(arrOfData, key);
+      }
+    }
     cb(null, arrOfData);
   });
 };
