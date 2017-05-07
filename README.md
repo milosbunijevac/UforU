@@ -31,15 +31,8 @@
 From within the root directory:
 
 ```sh
-npm install -g bower
 npm install
-bower install
 ```
-
-### Roadmap
-
-View the project roadmap [here](LINK_TO_DOC)
-
 
 ## Contributing
 
