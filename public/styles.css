@@ -1,36 +1,63 @@
+body {
+  padding-bottom: 80px;
+  font-family: Arial;
+}
+form {
+  border: 3px solid #ccc;
+  padding: 0 20px 25px 20px;
+  border-radius: 10px;
+}
+input[type=checkbox],
+input[type=radio] {
+  margin-right: 8px;
+}
+.form-label.capitalize {
+  text-transform: capitalize;
+}
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.checkbox-group .form-label {
+  width: 50%;
+}
+input[type=submit],
+.btn-link {
+  margin-top: 20px;
+}
+
 h1 {
   font-family: Arial;
 }
-body {
-  font-family: Arial;
-}
+
 input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 button, input[type=submit] {
-    width: 100%;
-    background-color: gray;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  width: 100%;
+  background-color: gray;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:hover, input[type=submit]:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 button:focus, input[type=text]:focus {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 select {
@@ -61,4 +88,4 @@ select {
 }
 .input-range {
   margin-bottom: 160px;
-}*/
+}*/*/
