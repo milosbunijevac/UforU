@@ -8,6 +8,7 @@ import Results from './components/Results.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   render() {
@@ -15,7 +16,7 @@ class App extends React.Component {
       <div>
         <h1>UForU</h1>
         <Survey />
-        <Results />
+        <Results/>
       </div>
     );
   }
