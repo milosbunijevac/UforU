@@ -17,6 +17,8 @@ var asyncMap = function(tasks, cb) {
 
 var querySchoolTable = function(column, value, cb) {
   if (column === 'tuition') {
+    column = column.replace(/\$/g, '');
+    column = column.replace(/,/g, '');
     let max = value;
     connection.query('SELECT * FROM Universities WHERE ' + connection.escapeId(column) + ' < ?', [value], function(err, results, fields) {
       if (err) {
@@ -73,25 +75,61 @@ var mySearchFunction = function(prefs, cb) {
       });
     });
   }
-  // console.log('THE QUERIES', queries);
   asyncMap(queries, function(arrOfData) {
-    // and here arrOfData is an array of arrays, the inner arrays represent the result of querying the table for a given column/value pair (like STATE='CA' or MAJOR='Computer Science' or whatever);
-    // now you can just sort it using whatever method you want
-    // console.log('THE QUERIES INSIDE ASYNCMAP', queries);
-    arrOfData = _.flatten(arrOfData);
-    console.log('THE RESULT', arrOfData.length);
-    for (let key in prefs) {
-      if (key !== 'majors') {
-        console.log('IM SORTING BY', key);
-        arrOfData = _.sortBy(arrOfData, key);
-      }
-    }
-    cb(null, arrOfData);
-  });
-};
+    var inputTuition = prefs.tuition || null;
 
-// [ [{school object one}, {school object 2}],  [],[] ]
-// flatten the arrays into one
+    if (prefs.size !== undefined) {
+      var schoolMin = prefs.size[0]; 
+      var schoolMax = prefs.size[1]; 
+    } else {
+      var schoolMin = null;
+      var schoolMax = null;
+    }
+    
+
+
+    arrOfData = _.flatten(arrOfData);
+    arrOfData = JSON.parse(JSON.stringify(arrOfData));
+
+    if (inputTuition && (schoolMax && schoolMin)) {
+
+      inputTuition = inputTuition.replace(/\$/g, '');
+      inputTuition = inputTuition.replace(/,/g, '');
+
+      var results = _.filter(arrOfData, function(school) {
+        return school.tuition <= inputTuition && (schoolMin <= school.size && school.size <= schoolMax);
+      });
+
+      cb(null, results);
+
+    } else if (inputTuition && !(schoolMax && schoolMin)) {
+
+      inputTuition = inputTuition.replace(/\$/g, '');
+      inputTuition = inputTuition.replace(/,/g, '');
+
+      var results = _.filter(arrOfData, function (school) {
+        return school.tuition <= inputTuition;
+      });
+
+      cb(null, results);
+
+    } else if (!inputTuition && (schoolMax && schoolMin)) {
+
+      var results = _.filter(arrOfData, function (school) {
+        return (schoolMin <= school.size) && (school.size <= schoolMax);
+      });
+
+      cb(null, results);
+      
+    } else {
+
+      console.log('THE RESULT', results);
+      cb(null, arrOfData);
+
+    }
+  });
+
+};
 
 module.exports.asyncMap = asyncMap;
 module.exports.querySchoolTable = querySchoolTable;
