@@ -1,0 +1,91 @@
+body {
+  padding-bottom: 80px;
+  font-family: Arial;
+}
+form {
+  border: 3px solid #ccc;
+  padding: 0 20px 25px 20px;
+  border-radius: 10px;
+}
+input[type=checkbox],
+input[type=radio] {
+  margin-right: 8px;
+}
+.form-label.capitalize {
+  text-transform: capitalize;
+}
+.checkbox-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.checkbox-group .form-label {
+  width: 50%;
+}
+input[type=submit],
+.btn-link {
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: Arial;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button, input[type=submit] {
+  width: 100%;
+  background-color: gray;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover, input[type=submit]:hover {
+  background-color: gray;
+}
+
+button:focus, input[type=text]:focus {
+  background-color: lightgray;
+}
+
+select {
+  background: white;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+}
+
+.survey {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/*.form {
+  margin: 0 auto;
+  padding: 100px 30px 0;
+}
+@media (min-width: 800px) {
+  .form {
+    max-width: 60%;
+  }
+}
+.input-range {
+  margin-bottom: 160px;
+}*/*/
