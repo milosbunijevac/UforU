@@ -64,7 +64,6 @@ var mySearchFunction = function(prefs, cb) {
     queries.push(function(cb) {
       querySchoolTable(key, prefs[key], function(err, data) {
         if (err) {
-          console.log('IM ERRORING', err);
           cb(err, null);
         } else {
           cb(null, data);
@@ -110,15 +109,14 @@ var mySearchFunction = function(prefs, cb) {
 
     } else if (!inputTuition && (schoolMax && schoolMin)) {
 
-      var results = _.filter(arrOfData, function (school) {
+      var results = _.filter(arrOfData, function(school) {
         return (schoolMin <= school.size) && (school.size <= schoolMax);
       });
 
       cb(null, results);
       
     } else {
-
-      console.log('THE RESULT', results);
+      
       cb(null, arrOfData);
 
     }
