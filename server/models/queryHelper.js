@@ -56,8 +56,6 @@ var querySchoolTable = function(column, value, cb) {
       }
     });
   }
-  
-
 };
 
 var mySearchFunction = function(prefs, cb) {
@@ -69,7 +67,6 @@ var mySearchFunction = function(prefs, cb) {
           console.log('IM ERRORING', err);
           cb(err, null);
         } else {
-          // console.log('MY RESULTS', data);
           cb(null, data);
         }
       });
@@ -86,8 +83,6 @@ var mySearchFunction = function(prefs, cb) {
       var schoolMax = null;
     }
     
-
-
     arrOfData = _.flatten(arrOfData);
     arrOfData = JSON.parse(JSON.stringify(arrOfData));
 
