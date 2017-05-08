@@ -101,9 +101,6 @@ class Survey extends React.Component {
     };
 
     console.log('Send this in a POST request:', userInfo);
-    console.log('props are: ', this.props.callbackParent)
-    this.props.callbackParent(userInfo)
-    this.handleClearForm(e);
   }
   render() {
     return (

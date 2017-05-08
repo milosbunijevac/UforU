@@ -7,18 +7,18 @@ import Results from './components/Results.jsx';
 class App extends React.Component {
   constructor(props) {
   
-    super(props);
-    this.state = {prefs: null}
-    this.onChildChanged = this.onChildChanged.bind(this)
+    // super(props);
+    // this.state = {prefs: null}
+    // this.onChildChanged = this.onChildChanged.bind(this)
   }
 
-  onChildChanged(newState){
-    console.log('inside onChildChanged, state passed:',newState)
-    console.log('inside onChildChanged, this is:', this)
-    console.log('inside onChildChanged before update state: ',this.state)
-    this.setState({prefs: newState})
-    // setInterval(x => console.log(this.state),5000)
-    console.log('inside onChildChanged after update state: ',this.state)
+  // onChildChanged(newState){
+  //   console.log('inside onChildChanged, state passed:',newState)
+  //   console.log('inside onChildChanged, this is:', this)
+  //   console.log('inside onChildChanged before update state: ',this.state)
+  //   this.setState({prefs: newState})
+  //   // setInterval(x => console.log(this.state),5000)
+  //   console.log('inside onChildChanged after update state: ',this.state)
   }
 
 
