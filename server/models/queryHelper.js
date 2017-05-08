@@ -97,12 +97,12 @@ var mySearchFunction = function(prefs, cb) {
       cb(null, results);
 
     } else if (inputTuition && !(schoolMax && schoolMin)) {
-      console.log(arrOfData);
+      // console.log(arrOfData);
       inputTuition = inputTuition.replace(/\$/g, '');
       inputTuition = inputTuition.replace(/,/g, '');
 
       var results = _.filter(arrOfData, function (school) {
-        console.log(school);
+        // console.log(school);
         return school.tuition <= inputTuition;
       });
 

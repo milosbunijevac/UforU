@@ -19,7 +19,15 @@ module.exports = {
     },
     getSuggestions: function(req, res) {
       var body = req.body;
+      // console.log(body);
+      for (let key in body) {
+        if (body[key] === undefined || body[key] === '' || body[key].length === 0) {
+          delete body[key];
+        }
+      }
+
       console.log(body);
+
       models.colleges.getSuggestions(body, function(err, data) {
         if (err) {
           res
