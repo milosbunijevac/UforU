@@ -9,24 +9,24 @@ class Survey extends React.Component {
     super(props);
     this.state = {
       maxTuitionOptions: [],
-      selectedMaxTuition: '',
-      gpa: '',
-      satScore: '',
+      tuition: '',
+      average_gpa: '',
+      average_sat_score: '',
       majorOptions: [],
-      selectedMajors: [],
+      majors: [],
       sizeRangeOptions: [],
-      selectedSizeRange: [],
+      size: [],
       sportsDivisionOptions: [],
-      selectedSportsDivision: []
+      sports_division: []
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
-    this.handleSelectedMaxTuition = this.handleSelectedMaxTuition.bind(this);
-    this.handleGpaChange = this.handleGpaChange.bind(this);
-    this.handleSatScoreChange = this.handleSatScoreChange.bind(this);
+    this.handletuition = this.handletuition.bind(this);
+    this.handleaverage_gpaChange = this.handleaverage_gpaChange.bind(this);
+    this.handleaverage_sat_scoreChange = this.handleaverage_sat_scoreChange.bind(this);
     this.handleMajorSelection = this.handleMajorSelection.bind(this);
-    this.handleSelectedSizeRange = this.handleSelectedSizeRange.bind(this);
-    this.handleSelectedSportsDivision = this.handleSelectedSportsDivision.bind(this);
+    this.handlesize = this.handlesize.bind(this);
+    this.handlesports_division = this.handlesports_division.bind(this);
   }
   componentDidMount() {
     fetch('./startingData.json')
@@ -35,73 +35,73 @@ class Survey extends React.Component {
   console.log(data);
   this.setState({
     maxTuitionOptions: data.maxTuitionOptions,
-    selectedMaxTuition: data.selectedMaxTuition,
-    gpa: data.gpa,
-    satScore: data.satScore,
+    tuition: data.tuition,
+    average_gpa: data.average_gpa,
+    average_sat_score: data.average_sat_score,
     majorOptions: data.majorOptions,
-    selectedMajors: data.selectedMajors,
+    majors: data.major,
     sizeRangeOptions: data.sizeRangeOptions,
-    selectedSizeRange: data.selectedSizeRange,
+    size: data.size,
     sportsDivisionOptions: data.sportsDivisionOptions,
-    selectedSportsDivision: data.selectedSportsDivision
+    sports_division: data.sports_division
   });
 });
   }
   
-  handleSelectedMaxTuition(e) {
-    this.setState({ selectedMaxTuition: e.target.value }, () => console.log('Max Tuition:', this.state.selectedMaxTuition));
+  handletuition(e) {
+    this.setState({ tuition: e.target.value }, () => console.log('Max Tuition:', this.state.tuition));
   }
 
-  handleGpaChange(e) {
-    this.setState({ gpa: e.target.value }, () => console.log('GPA:', this.state.gpa));
+  handleaverage_gpaChange(e) {
+    this.setState({ average_gpa: e.target.value }, () => console.log('average_gpa:', this.state.average_gpa));
   }
 
-  handleSatScoreChange(e) {
-    this.setState({ satScore: e.target.value }, () => console.log('satScore:', this.state.satScore));
+  handleaverage_sat_scoreChange(e) {
+    this.setState({ average_sat_score: e.target.value }, () => console.log('average_sat_score:', this.state.average_sat_score));
   }
 
   handleMajorSelection(e) {
     const newSelection = e.target.value;
     let newSelectionArray;
-    if (this.state.selectedMajors.indexOf(newSelection) > -1) {
-      newSelectionArray = this.state.selectedMajors.filter(s => s !== newSelection);
+    if (this.state.majors.indexOf(newSelection) > -1) {
+      newSelectionArray = this.state.majors.filter(s => s !== newSelection);
     } else {
-      newSelectionArray = [...this.state.selectedMajors, newSelection];
+      newSelectionArray = [...this.state.majors, newSelection];
     }
-    this.setState({ selectedMajors: newSelectionArray }, () => console.log('major selection', this.state.selectedMajors));
+    this.setState({ majors: newSelectionArray }, () => console.log('major selection', this.state.majors));
   }
-  handleSelectedSizeRange(e) {
-    this.setState({ selectedSizeRange: e.target.value }, () => console.log('age range', this.state.selectedSizeRange));
+  handlesize(e) {
+    this.setState({ size: e.target.value.split('-') }, () => console.log('size range', this.state.size));
   }
-  handleSelectedSportsDivision(e) {
-    this.setState({ selectedSportsDivision: e.target.value }, () => console.log('Sports Division', this.state.selectedSportsDivision));
+  handlesports_division(e) {
+    this.setState({ sports_division: e.target.value }, () => console.log('Sports Division', this.state.sports_division));
   }
   
   handleClearForm(e) {
     e.preventDefault();
     this.setState({
-      selectedMaxTuition: '',
-      gpa: '',
-      satScore: '',
-      selectedMajors: [],
-      selectedSizeRange: [],
-      selectedSportsDivision: []
+      tuition: '',
+      average_gpa: '',
+      average_sat_score: '',
+      majors: [],
+      size: [],
+      sports_division: []
     });
   }
   handleFormSubmit(e) {
     e.preventDefault();
 
     const userInfo = {
-      selectedMaxTuition: this.state.selectedMaxTuition,
-      gpa: this.state.gpa,
-      satScore: this.state.satScore,
-      selectedMajors: this.state.selectedMajors,
-      selectedSizeRange: this.state.selectedSizeRange,
-      selectedSportsDivision: this.state.selectedSportsDivision
+      tuition: this.state.tuition,
+      average_gpa: this.state.average_gpa,
+      average_sat_score: this.state.average_sat_score,
+      majors: this.state.majors,
+      size: this.state.size,
+      sports_division: this.state.sports_division
     };
 
     console.log('Send this in a POST request:', userInfo);
-    console.log(this.props);
+    
     this.props.sendSurveyInfo(userInfo);
 
     this.handleClearForm(e);
@@ -113,22 +113,22 @@ class Survey extends React.Component {
 				<Select
 					name={'maxTuition'}
           placeholder={'Max tuition per year'}
-					controlFunc={this.handleSelectedMaxTuition}
+					controlFunc={this.handletuition}
 					options={this.state.maxTuitionOptions}
-					selectedOption={this.state.selectedMaxTuition} />
+					selectedOption={this.state.tuition} />
         <SingleInput
 					inputType={'text'}
-					title={'Estimated GPA'}
-					name={'gpa'}
-					controlFunc={this.handleGpaChange}
-					content={this.state.gpa}
-					placeholder={'Type estimated GPA here'} />
+					title={'Estimated Average GPA'}
+					name={'average_gpa'}
+					controlFunc={this.handleaverage_gpaChange}
+					content={this.state.average_gpa}
+					placeholder={'Type estimated average_gpa here'} />
         <SingleInput
 					inputType={'text'}
 					title={'SAT Score'}
-					name={'satScore'}
-					controlFunc={this.handleSatScoreChange}
-					content={this.state.satScore}
+					name={'average_sat_score'}
+					controlFunc={this.handleaverage_sat_scoreChange}
+					content={this.state.average_sat_score}
 					placeholder={'Type your SAT Score here'} />
 				<CheckboxOrRadioGroup
 					title={'Which majors are you interested in?'}
@@ -136,20 +136,20 @@ class Survey extends React.Component {
 					type={'checkbox'}
 					controlFunc={this.handleMajorSelection}
 					options={this.state.majorOptions}
-					selectedOptions={this.state.selectedMajors} />
+					selectedOptions={this.state.majors} />
         <Select
 					name={'sizeRange'}
 					placeholder={'Preferred student body size'}
-					controlFunc={this.handleSelectedSizeRange}
+					controlFunc={this.handlesize}
 					options={this.state.sizeRangeOptions}
-					selectedOption={this.state.selectedSizeRange} />
+					selectedOption={this.state.size} />
 				<CheckboxOrRadioGroup
 					title={'Which Sports Division are you looking for?'}
 					setName={'sportsDivision'}
 					type={'checkbox'}
-					controlFunc={this.handleSelectedSportsDivision}
+					controlFunc={this.handlesports_division}
 					options={this.state.sportsDivisionOptions}
-					selectedOptions={this.state.selectedSportsDivision} />
+					selectedOptions={this.state.sports_division} />
 				<input
 					type="submit"
 					className="btn btn-primary float-right"

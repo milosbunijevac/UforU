@@ -14,6 +14,7 @@ class App extends React.Component {
   }
 
   sendSurveyInfo(userData) {
+    console.log('axios data:', userData);
     axios({
       url: '/api/colleges/suggestions',
       method: 'POST',
