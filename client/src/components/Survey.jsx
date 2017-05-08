@@ -101,6 +101,9 @@ class Survey extends React.Component {
     };
 
     console.log('Send this in a POST request:', userInfo);
+    console.log(this.props);
+    this.props.sendSurveyInfo(userInfo);
+
     this.handleClearForm(e);
   }
   render() {
