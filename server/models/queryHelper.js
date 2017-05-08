@@ -17,8 +17,8 @@ var asyncMap = function(tasks, cb) {
 
 var querySchoolTable = function(column, value, cb) {
   if (column === 'tuition') {
-    column = column.replace(/\$/g, '');
-    column = column.replace(/,/g, '');
+    value = value.replace(/\$/g, '');
+    value = value.replace(/,/g, '');
     let max = value;
     connection.query('SELECT * FROM Universities WHERE ' + connection.escapeId(column) + ' < ?', [value], function(err, results, fields) {
       if (err) {
@@ -97,11 +97,12 @@ var mySearchFunction = function(prefs, cb) {
       cb(null, results);
 
     } else if (inputTuition && !(schoolMax && schoolMin)) {
-
+      console.log(arrOfData);
       inputTuition = inputTuition.replace(/\$/g, '');
       inputTuition = inputTuition.replace(/,/g, '');
 
       var results = _.filter(arrOfData, function (school) {
+        console.log(school);
         return school.tuition <= inputTuition;
       });
 
