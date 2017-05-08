@@ -6,11 +6,11 @@ class ResultsList extends React.Component {
   }
 
   render () {
-    return (
-      <h5>ResultsList</h5>
-    );
+
   }
 
 }
 
 export default ResultsList;
+
+
