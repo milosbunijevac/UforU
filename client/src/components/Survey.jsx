@@ -1,8 +1,8 @@
 import React from 'react';
-import CheckboxOrRadioGroup from './CheckboxOrRadioGroup.js';
-import SingleInput from './SingleInput.js';
-import TextArea from './TextArea.js';
-import Select from './Select.js';
+import CheckboxOrRadioGroup from './SurveyHelpers/CheckboxOrRadioGroup.js';
+import SingleInput from './SurveyHelpers/SingleInput.js';
+import TextArea from './SurveyHelpers/TextArea.js';
+import Select from './SurveyHelpers/Select.js';
 
 class Survey extends React.Component {
   constructor(props) {
