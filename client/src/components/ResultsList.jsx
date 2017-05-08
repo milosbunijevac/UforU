@@ -6,7 +6,7 @@ class ResultsList extends React.Component {
   }
 
   render () {
-  	const college = this.props.college;
+    const college = this.props.college;
     return (
     <div>
       <h3>{college.name} </h3>
