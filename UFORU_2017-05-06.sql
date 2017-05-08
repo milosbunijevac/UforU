@@ -22,6 +22,7 @@
 
 # Dump of table Majors
 # ------------------------------------------------------------
+USE UFORU;
 
 DROP TABLE IF EXISTS `Majors`;
 
