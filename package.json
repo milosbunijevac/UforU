@@ -6,7 +6,8 @@
   "license": "",
   "scripts": {
     "start": "nodemon server/app.js",
-    "react-dev": "webpack --watch"
+    "react-dev": "webpack --watch",
+    "postinstall": "npm run react-dev"
   },
   "dependencies": {
     "axios": "^0.16.1",
