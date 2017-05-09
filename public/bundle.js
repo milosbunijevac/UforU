@@ -10482,7 +10482,7 @@ var Survey = function (_React$Component) {
           name: 'average_gpa',
           controlFunc: this.handleaverage_gpaChange,
           content: this.state.average_gpa,
-          placeholder: 'Type estimated average_gpa here' }),
+          placeholder: 'Type estimated average GPA here' }),
         _react2.default.createElement(_SingleInput2.default, {
           inputType: 'text',
           title: 'SAT Score',

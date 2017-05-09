@@ -122,7 +122,7 @@ class Survey extends React.Component {
 					name={'average_gpa'}
 					controlFunc={this.handleaverage_gpaChange}
 					content={this.state.average_gpa}
-					placeholder={'Type estimated average_gpa here'} />
+					placeholder={'Type estimated average GPA here'} />
         <SingleInput
 					inputType={'text'}
 					title={'SAT Score'}
