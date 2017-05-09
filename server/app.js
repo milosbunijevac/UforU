@@ -15,7 +15,9 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(router);
 
-app.listen(PORT, IP);
+app.listen(PORT, function () {
+  console.log('listening right now on port', PORT);
+});
 console.log('listening on', IP, PORT);
 
 module.exports.app = app;
