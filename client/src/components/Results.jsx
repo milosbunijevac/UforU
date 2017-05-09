@@ -1,44 +1,22 @@
 import React from 'react';
-import ResultsList from './ResultsList.jsx';
+import ResultListEntry from './ResultListEntry.jsx';
 import $ from 'jquery';
+import _ from 'lodash';
+
 
 class Results extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      colleges: []
-    }
   }
 
-
-componentDidMount() {
-   $.ajax({
-      url: '/api/colleges/',
-      method: 'GET',
-      success: (data) => {
-        this.setState({
-          colleges: data
-          
-        });
-      },
-      error: (err) => {
-        console.log('Some Error:', err);
-      }
-    });
-
-}
-
-
-
-
-   
-
-
   render() {
+
     return (
       <div>
-      <ResultsList colleges={this.state.colleges}/>
+        {this.props.colleges.map((college, i) => {
+          return <ResultListEntry key={i} college={college} />
+        })}
       </div>
     );
   }

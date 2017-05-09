@@ -5,11 +5,18 @@ import Survey from './components/Survey.jsx';
 import Results from './components/Results.jsx';
 import axios from 'axios';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      colleges: []
+    }
+
     this.sendSurveyInfo = this.sendSurveyInfo.bind(this);
+    
+    
   }
 
   sendSurveyInfo(userData) {
@@ -20,12 +27,18 @@ class App extends React.Component {
       data: userData,
     })
       .then ((results) => {
+        this.setState({
+          colleges: results.data
+        })
         console.log('axios results: ', results);
       })
       .catch ((error) => {
         console.log(error);
       });
   }
+
+ 
+
 
   // sendSurveyInfo(userData) {
   //   $.ajax({
@@ -44,11 +57,12 @@ class App extends React.Component {
 
 
   render() {
+
     return (
       <div>
         <h1>UForU</h1>
         <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
-        <Results />
+        <Results colleges = {this.state.colleges}/>
       </div>
     );
   }
