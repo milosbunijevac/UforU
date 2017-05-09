@@ -1,6 +1,8 @@
 import React from 'react';
+import ResultListEntry from './ResultListEntry.jsx';
 import $ from 'jquery';
 import _ from 'lodash';
+
 
 class Results extends React.Component {
   constructor(props) {
@@ -9,11 +11,12 @@ class Results extends React.Component {
   }
 
   render() {
-    var colleges = this.props.colleges
 
     return (
       <div>
-      {JSON.stringify(colleges)}
+        {this.props.colleges.map((college, i) => {
+          return <ResultListEntry key={i} college={college} />
+        })}
       </div>
     );
   }
