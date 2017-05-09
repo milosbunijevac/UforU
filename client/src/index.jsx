@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      colleges: null
+      colleges: []
     }
 
     this.sendSurveyInfo = this.sendSurveyInfo.bind(this);
