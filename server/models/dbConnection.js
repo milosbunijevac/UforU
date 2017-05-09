@@ -1,11 +1,6 @@
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '',
-  database: 'UFORU'
-});
+var connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL || {});
 
 connection.connect();
 
