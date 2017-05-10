@@ -22001,17 +22001,97 @@ var App = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'container' },
         _react2.default.createElement(
-          'h1',
-          null,
-          'UForU'
+          'nav',
+          { className: 'navbar navbar-default' },
+          _react2.default.createElement(
+            'div',
+            { className: 'container-fluid' },
+            _react2.default.createElement(
+              'div',
+              { className: 'navbar-header' },
+              _react2.default.createElement(
+                'a',
+                { href: '#', className: 'navbar-brand' },
+                'UforU'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'collapse navbar-collapse' },
+              _react2.default.createElement(
+                'ul',
+                { className: 'nav navbar-nav' },
+                _react2.default.createElement(
+                  'li',
+                  null,
+                  _react2.default.createElement(
+                    'a',
+                    { href: '#' },
+                    'Schools'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'ul',
+                { className: 'nav navbar-nav navbar-right' },
+                _react2.default.createElement(
+                  'li',
+                  { className: 'dropdown' },
+                  _react2.default.createElement(
+                    'a',
+                    { href: '#', 'class': 'dropdown-toggle', role: 'button' },
+                    'Settings ',
+                    _react2.default.createElement('span', { className: 'caret' })
+                  )
+                )
+              )
+            )
+          )
         ),
-        _react2.default.createElement(_Survey2.default, { sendSurveyInfo: this.sendSurveyInfo }),
-        _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
+        _react2.default.createElement(
+          'div',
+          { className: 'container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-12' },
+              _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'uforu_option1.png', alt: 'UFORUHERE' })
+            )
+          )
+        ),
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(
+          'div',
+          { className: 'container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-12' },
+              _react2.default.createElement(_Survey2.default, { sendSurveyInfo: this.sendSurveyInfo })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-12' },
+              _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
+            )
+          )
+        )
       );
     }
   }]);
