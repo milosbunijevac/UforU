@@ -84,18 +84,10 @@ class App extends React.Component {
         </div>
         <hr></hr>
         <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
-            </div>
-          </div>
+          <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
         </div>
         <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <Results colleges = {this.state.colleges}/>
-            </div>
-          </div>
+          <Results colleges = {this.state.colleges}/>
         </div>
       </div>
     );
