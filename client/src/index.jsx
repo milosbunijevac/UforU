@@ -69,7 +69,7 @@ class App extends React.Component {
               </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li className="dropdown">
-                  <a href="#" class="dropdown-toggle" role="button">Settings <span className="caret"></span></a>
+                  <a href="#" className="dropdown-toggle" role="button">Settings <span className="caret"></span></a>
                 </li>
               </ul>
             </div>
@@ -88,6 +88,31 @@ class App extends React.Component {
         </div>
         <div className="container">
           <Results colleges = {this.state.colleges}/>
+        </div>
+        <hr></hr>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <img src="farrah_bousetta.png" className="img-responsive rounded" alt="FARRAH PHOTO HERE"/>
+            </div>
+            <div className="col-md-4">
+              <img src="LinkedInPhoto.png" className="img-responsive rounded" alt="ARSENIY PHOTO HERE"/>
+            </div>
+            <div className="col-md-4">
+              <img src="helen_tang.png" className="img-responsive rounded" alt="HELEN PHOTO HERE"/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <p>Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah</p>
+            </div>
+            <div className="col-md-4">
+              <p>Arseniy Kotov is an all start programmer specilizing in full stack developement</p>
+            </div>
+            <div className="col-md-4">
+              <p>Helen is an all around rockstar. She specilizes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive</p>
+            </div>
+          </div>
         </div>
       </div>
     );

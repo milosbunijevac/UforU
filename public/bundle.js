@@ -22043,7 +22043,7 @@ var App = function (_React$Component) {
                   { className: 'dropdown' },
                   _react2.default.createElement(
                     'a',
-                    { href: '#', 'class': 'dropdown-toggle', role: 'button' },
+                    { href: '#', className: 'dropdown-toggle', role: 'button' },
                     'Settings ',
                     _react2.default.createElement('span', { className: 'caret' })
                   )
@@ -22069,16 +22069,14 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'container' },
-          _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-12' },
-              _react2.default.createElement(_Survey2.default, { sendSurveyInfo: this.sendSurveyInfo })
-            )
-          )
+          _react2.default.createElement(_Survey2.default, { sendSurveyInfo: this.sendSurveyInfo })
         ),
+        _react2.default.createElement(
+          'div',
+          { className: 'container' },
+          _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
+        ),
+        _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
           { className: 'container' },
@@ -22087,8 +22085,49 @@ var App = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-12' },
-              _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive rounded', alt: 'FARRAH PHOTO HERE' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive rounded', alt: 'ARSENIY PHOTO HERE' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive rounded', alt: 'HELEN PHOTO HERE' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-4' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-4' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Arseniy Kotov is an all start programmer specilizing in full stack developement'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-4' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Helen is an all around rockstar. She specilizes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive'
+              )
             )
           )
         )
