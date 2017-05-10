@@ -5,7 +5,6 @@ import Survey from './components/Survey.jsx';
 import Results from './components/Results.jsx';
 import axios from 'axios';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -57,12 +56,47 @@ class App extends React.Component {
 
 
   render() {
-
     return (
-      <div>
-        <h1>UForU</h1>
-        <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
-        <Results colleges = {this.state.colleges}/>
+      <div className="container">
+        <nav className="navbar navbar-default">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <a href="#" className="navbar-brand">UforU</a>
+            </div>
+            <div className="collapse navbar-collapse">
+              <ul className="nav navbar-nav">
+                <li><a href="#">Schools</a></li>
+              </ul>
+              <ul className="nav navbar-nav navbar-right">
+                <li className="dropdown">
+                  <a href="#" class="dropdown-toggle" role="button">Settings <span className="caret"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <img className="img-responsive center-block" src="uforu_option1.png" alt="UFORUHERE"/>
+            </div>
+          </div>
+        </div>
+        <hr></hr>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <Results colleges = {this.state.colleges}/>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
