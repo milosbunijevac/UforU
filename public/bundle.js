@@ -22744,15 +22744,6 @@ module.exports = (
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(
-          'div',
-          { id: 'banner' },
-          _react2.default.createElement(
-            'h1',
-            null,
-            'UForU'
-          )
-        ),
         _react2.default.createElement(_Survey2.default, { sendSurveyInfo: this.sendSurveyInfo }),
         _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
       );
