@@ -123,8 +123,7 @@ select {
   margin-bottom: 160px;
 }*/*/
 
-
-.bio {
-  height: 190px;
-  width:100px;
+img { 
+  width: 100%;
+  height: auto;
 }

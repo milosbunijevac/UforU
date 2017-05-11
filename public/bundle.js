@@ -21704,23 +21704,39 @@ var ResultListEntry = function (_React$Component) {
   }
 
   _createClass(ResultListEntry, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       var college = this.props.college;
       return _react2.default.createElement(
-        'div',
-        null,
+        "div",
+        { className: "card" },
         _react2.default.createElement(
-          'h3',
-          null,
-          college.name
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          college.description
-        ),
-        _react2.default.createElement('img', { src: college.image_url })
+          "div",
+          { className: "container" },
+          _react2.default.createElement(
+            "div",
+            { className: "college-name" },
+            _react2.default.createElement(
+              "h2",
+              null,
+              college.name
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "description" },
+            _react2.default.createElement(
+              "p",
+              null,
+              college.description
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "image" },
+            _react2.default.createElement("img", { className: "img-circle", src: college.image_url })
+          )
+        )
       );
     }
   }]);
@@ -22086,17 +22102,17 @@ var App = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive rounded', alt: 'FARRAH PHOTO HERE' })
+              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'FARRAH PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive rounded', alt: 'ARSENIY PHOTO HERE' })
+              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'ARSENIY PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive rounded', alt: 'HELEN PHOTO HERE' })
+              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'HELEN PHOTO HERE' })
             )
           ),
           _react2.default.createElement(
@@ -22117,7 +22133,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Arseniy Kotov is an all start programmer specilizing in full stack developement'
+                'Arseniy Kotov is an all start programmer specializing in full stack developement'
               )
             ),
             _react2.default.createElement(
@@ -22126,7 +22142,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Helen is an all around rockstar. She specilizes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive'
+                'Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive'
               )
             )
           )
