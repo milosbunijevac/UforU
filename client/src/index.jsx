@@ -92,14 +92,14 @@ class App extends React.Component {
         <hr></hr>
         <div className="container">
           <div className="row">
-            <div className="col-md-4 rounded bio">
-              <img src="farrah_bousetta.png" className="img-responsive" alt="FARRAH PHOTO HERE"/>
+            <div className="col-md-4">
+              <img src="farrah_bousetta.png" className="img-responsive img-circle" style={{ height : 200 , width: 350 }} alt="FARRAH PHOTO HERE"/>
             </div>
-            <div className="col-md-4 rounded bio">
-              <img src="LinkedInPhoto.png" className="img-responsive" alt="ARSENIY PHOTO HERE"/>
+            <div className="col-md-4">
+              <img src="LinkedInPhoto.png" className="img-responsive img-circle" style={{ height: 200, width: 350}} alt="ARSENIY PHOTO HERE"/>
             </div>
-            <div className="col-md-4 bio">
-              <img src="helen_tang.png" className="img-responsive rounded" alt="HELEN PHOTO HERE"/>
+            <div className="col-md-4">
+              <img src="helen_tang.png" className="img-responsive img-circle" style={{ height: 200, width: 350 }} alt="HELEN PHOTO HERE"/>
             </div>
           </div>
           <div className="row">
@@ -107,10 +107,10 @@ class App extends React.Component {
               <p>Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah</p>
             </div>
             <div className="col-md-4">
-              <p>Arseniy Kotov is an all start programmer specilizing in full stack developement</p>
+              <p>Arseniy Kotov is an all start programmer specializing in full stack developement</p>
             </div>
             <div className="col-md-4">
-              <p>Helen is an all around rockstar. She specilizes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive</p>
+              <p>Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive</p>
             </div>
           </div>
         </div>
