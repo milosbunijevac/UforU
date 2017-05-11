@@ -77,6 +77,39 @@ select {
     padding: 20px;
 }
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px; /* 5px rounded corners */
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px 0 lightBlue;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.img-circle {
+  border-radius: 30%;
+  margin-bottom: 15px;
+  box-shadow: 8px 8px 10px #aaa;
+  width: 30%;
+}
+
+.description {
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.college-name {
+    color: black;
+    font-size: 23px;    
+    font-weight: 300;
+    margin-bottom: 15px;
+}
 /*.form {
   margin: 0 auto;
   padding: 100px 30px 0;
