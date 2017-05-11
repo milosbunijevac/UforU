@@ -12,7 +12,7 @@ class ResultListEntry extends React.Component {
       <div className = "card">
          <div className="container">
            <div className="college-name">
-                <h2>{college.name}</h2>
+                <a href={"http://" + college.website_url}> {college.name}</a>
             </div>
             <div className="description">
                 <p>{college.description}</p>
