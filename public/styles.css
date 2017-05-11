@@ -1,9 +1,23 @@
+#logo {
+  opacity: 1;
+  width: 500px;
+}
+
+#banner {
+  height: 800px;
+  background-image: url('./backgroundPhotos/students.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 body {
-  padding-bottom: 80px;
   font-family: Arial;
+  background-color: white;
 }
 form {
-  border: 3px solid #ccc;
+  border: 3px solid #FFECB3;
   padding: 0 20px 25px 20px;
   border-radius: 10px;
 }
@@ -138,11 +152,18 @@ a:active {
 /*.form {
   margin: 0 auto;
   padding: 100px 30px 0;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
 }
-@media (min-width: 800px) {
-  .form {
-    max-width: 60%;
-  }
+
+.description {
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 15px;
 }
 .input-range {
   margin-bottom: 160px;
@@ -150,5 +171,4 @@ a:active {
 
 img { 
   width: 100%;
-  height: auto;
 }
