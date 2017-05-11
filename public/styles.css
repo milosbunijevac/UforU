@@ -99,12 +99,14 @@ select {
 }
 
 .description {
+  font-family: Arial
   font-size: 16px;
   padding: 5px;
   margin-bottom: 15px;
 }
 
 .college-name {
+    font-family: Arial
     color: black;
     font-size: 23px;    
     font-weight: 300;
