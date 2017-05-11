@@ -22085,17 +22085,17 @@ var App = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive rounded', alt: 'FARRAH PHOTO HERE' })
+              { className: 'col-md-4 rounded bio' },
+              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive', alt: 'FARRAH PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive rounded', alt: 'ARSENIY PHOTO HERE' })
+              { className: 'col-md-4 rounded bio' },
+              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive', alt: 'ARSENIY PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
+              { className: 'col-md-4 bio' },
               _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive rounded', alt: 'HELEN PHOTO HERE' })
             )
           ),

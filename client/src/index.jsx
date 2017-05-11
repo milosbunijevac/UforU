@@ -92,13 +92,13 @@ class App extends React.Component {
         <hr></hr>
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
-              <img src="farrah_bousetta.png" className="img-responsive rounded" alt="FARRAH PHOTO HERE"/>
+            <div className="col-md-4 rounded bio">
+              <img src="farrah_bousetta.png" className="img-responsive" alt="FARRAH PHOTO HERE"/>
             </div>
-            <div className="col-md-4">
-              <img src="LinkedInPhoto.png" className="img-responsive rounded" alt="ARSENIY PHOTO HERE"/>
+            <div className="col-md-4 rounded bio">
+              <img src="LinkedInPhoto.png" className="img-responsive" alt="ARSENIY PHOTO HERE"/>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 bio">
               <img src="helen_tang.png" className="img-responsive rounded" alt="HELEN PHOTO HERE"/>
             </div>
           </div>
