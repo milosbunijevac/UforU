@@ -18,7 +18,7 @@ class ResultListEntry extends React.Component {
                 <p>{college.description}</p>
             </div>
             <div className="image">
-              <img className = "img-circle" src = {college.image_url}/>
+              <img src = {college.image_url}/>
             </div>
           </div>
       </div>

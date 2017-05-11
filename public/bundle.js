@@ -20368,7 +20368,6 @@ var ReactElementValidator = {
 
     return validatedFactory;
   },
-<<<<<<< HEAD
 
   cloneElement: function (element, props, children) {
     var newElement = ReactElement.cloneElement.apply(this, arguments);
@@ -20486,127 +20485,8 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
-=======
-
-  cloneElement: function (element, props, children) {
-    var newElement = ReactElement.cloneElement.apply(this, arguments);
-    for (var i = 2; i < arguments.length; i++) {
-      validateChildKeys(arguments[i], newElement.type);
-    }
-    validatePropTypes(newElement);
-    return newElement;
-  }
-
-};
-
-module.exports = ReactElementValidator;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 87 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
 
 
-
-var ReactPropTypeLocationNames = {};
-
-if (process.env.NODE_ENV !== 'production') {
-  ReactPropTypeLocationNames = {
-    prop: 'prop',
-    context: 'context',
-    childContext: 'child context'
-  };
-}
-
-module.exports = ReactPropTypeLocationNames;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 88 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * 
- */
-
-
-
-/* global Symbol */
-
-var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
-
-/**
- * Returns the iterator method function contained on the iterable object.
- *
- * Be sure to invoke the function with the iterable as context:
- *
- *     var iteratorFn = getIteratorFn(myIterable);
- *     if (iteratorFn) {
- *       var iterator = iteratorFn.call(myIterable);
- *       ...
- *     }
- *
- * @param {?object} maybeIterable
- * @return {?function}
- */
-function getIteratorFn(maybeIterable) {
-  var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-  if (typeof iteratorFn === 'function') {
-    return iteratorFn;
-  }
-}
-
-module.exports = getIteratorFn;
-
-/***/ }),
-/* 89 */
-/***/ (function(module, exports) {
->>>>>>> 40583c47bc83d9c2d9e941df4e43b117aff43490
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-<<<<<<< HEAD
 /***/ }),
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -20619,66 +20499,7 @@ module.exports = __webpack_require__(94);
 
 "use strict";
 
-=======
 
-/***/ }),
-/* 90 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(94);
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
->>>>>>> 40583c47bc83d9c2d9e941df4e43b117aff43490
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-<<<<<<< HEAD
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(14);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ResultListEntry = __webpack_require__(111);
-
-var _ResultListEntry2 = _interopRequireDefault(_ResultListEntry);
-
-var _jquery = __webpack_require__(53);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _lodash = __webpack_require__(135);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Results = function (_React$Component) {
-  _inherits(Results, _React$Component);
-
-  function Results(props) {
-    _classCallCheck(this, Results);
-
-    return _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
-  }
-
-  _createClass(Results, [{
-    key: 'render',
-    value: function render() {
-
-=======
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -20721,7 +20542,6 @@ var Results = function (_React$Component) {
   _createClass(Results, [{
     key: 'render',
     value: function render() {
->>>>>>> 40583c47bc83d9c2d9e941df4e43b117aff43490
       return _react2.default.createElement(
         'div',
         null,
@@ -20865,291 +20685,6 @@ var Survey = function (_React$Component) {
     key: 'handleMajorSelection',
     value: function handleMajorSelection(e) {
       var _this6 = this;
-<<<<<<< HEAD
-=======
-
-      var newSelection = e.target.value;
-      var newSelectionArray = void 0;
-      if (this.state.majors.indexOf(newSelection) > -1) {
-        newSelectionArray = this.state.majors.filter(function (s) {
-          return s !== newSelection;
-        });
-      } else {
-        newSelectionArray = [].concat(_toConsumableArray(this.state.majors), [newSelection]);
-      }
-      this.setState({ majors: newSelectionArray }, function () {
-        return console.log('major selection', _this6.state.majors);
-      });
-    }
-  }, {
-    key: 'handlesize',
-    value: function handlesize(e) {
-      var _this7 = this;
-
-      this.setState({ size: e.target.value.split('-') }, function () {
-        return console.log('size range', _this7.state.size);
-      });
-    }
-  }, {
-    key: 'handlesports_division',
-    value: function handlesports_division(e) {
-      var _this8 = this;
-
-      this.setState({ sports_division: e.target.value }, function () {
-        return console.log('Sports Division', _this8.state.sports_division);
-      });
-    }
-  }, {
-    key: 'handleClearForm',
-    value: function handleClearForm(e) {
-      e.preventDefault();
-      this.setState({
-        tuition: '',
-        average_gpa: '',
-        average_sat_score: '',
-        majors: [],
-        size: [],
-        sports_division: []
-      });
-    }
-  }, {
-    key: 'handleFormSubmit',
-    value: function handleFormSubmit(e) {
-      e.preventDefault();
-
-      var userInfo = {
-        tuition: this.state.tuition,
-        average_gpa: this.state.average_gpa,
-        average_sat_score: this.state.average_sat_score,
-        majors: this.state.majors,
-        size: this.state.size,
-        sports_division: this.state.sports_division
-      };
-
-      console.log('Send this in a POST request:', userInfo);
-
-      this.props.sendSurveyInfo(userInfo);
-
-      this.handleClearForm(e);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'form',
-        { className: 'container', onSubmit: this.handleFormSubmit },
-        _react2.default.createElement(
-          'h5',
-          null,
-          'University Preferences'
-        ),
-        _react2.default.createElement(_Select2.default, {
-          name: 'maxTuition',
-          placeholder: 'Max tuition per year',
-          controlFunc: this.handletuition,
-          options: this.state.maxTuitionOptions,
-          selectedOption: this.state.tuition }),
-        _react2.default.createElement(_SingleInput2.default, {
-          inputType: 'text',
-          title: 'Estimated Average GPA',
-          name: 'average_gpa',
-          controlFunc: this.handleaverage_gpaChange,
-          content: this.state.average_gpa,
-          placeholder: 'Type estimated average GPA here' }),
-        _react2.default.createElement(_SingleInput2.default, {
-          inputType: 'text',
-          title: 'SAT Score',
-          name: 'average_sat_score',
-          controlFunc: this.handleaverage_sat_scoreChange,
-          content: this.state.average_sat_score,
-          placeholder: 'Type your SAT Score here' }),
-        _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
-          title: 'Which majors are you interested in?',
-          setName: 'majors',
-          type: 'checkbox',
-          controlFunc: this.handleMajorSelection,
-          options: this.state.majorOptions,
-          selectedOptions: this.state.majors }),
-        _react2.default.createElement(_Select2.default, {
-          name: 'sizeRange',
-          placeholder: 'Preferred student body size',
-          controlFunc: this.handlesize,
-          options: this.state.sizeRangeOptions,
-          selectedOption: this.state.size }),
-        _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
-          title: 'Which Sports Division are you looking for?',
-          setName: 'sportsDivision',
-          type: 'checkbox',
-          controlFunc: this.handlesports_division,
-          options: this.state.sportsDivisionOptions,
-          selectedOptions: this.state.sports_division }),
-        _react2.default.createElement('input', {
-          type: 'submit',
-          className: 'btn btn-primary float-right',
-          value: 'Submit' }),
-        _react2.default.createElement(
-          'button',
-          {
-            className: 'btn btn-link float-left',
-            onClick: this.handleClearForm },
-          'Clear form'
-        )
-      );
-    }
-  }]);
-
-  return Survey;
-}(_react2.default.Component);
-
-exports.default = Survey;
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(151);
-
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(8);
-var bind = __webpack_require__(58);
-var Axios = __webpack_require__(96);
-var defaults = __webpack_require__(34);
-
-/**
- * Create an instance of Axios
- *
- * @param {Object} defaultConfig The default config for the instance
- * @return {Axios} A new instance of Axios
- */
-function createInstance(defaultConfig) {
-  var context = new Axios(defaultConfig);
-  var instance = bind(Axios.prototype.request, context);
-
-  // Copy axios.prototype to instance
-  utils.extend(instance, Axios.prototype, context);
-
-  // Copy context to instance
-  utils.extend(instance, context);
-
-  return instance;
-}
-
-// Create the default instance to be exported
-var axios = createInstance(defaults);
-
-// Expose Axios class to allow class inheritance
-axios.Axios = Axios;
-
-// Factory for creating new instances
-axios.create = function create(instanceConfig) {
-  return createInstance(utils.merge(defaults, instanceConfig));
-};
-
-// Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(55);
-axios.CancelToken = __webpack_require__(95);
-axios.isCancel = __webpack_require__(56);
-
-// Expose all/spread
-axios.all = function all(promises) {
-  return Promise.all(promises);
-};
-axios.spread = __webpack_require__(110);
-
-module.exports = axios;
-
-// Allow use of default import syntax in TypeScript
-module.exports.default = axios;
-
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var Cancel = __webpack_require__(55);
-
-/**
- * A `CancelToken` is an object that can be used to request cancellation of an operation.
- *
- * @class
- * @param {Function} executor The executor function.
- */
-function CancelToken(executor) {
-  if (typeof executor !== 'function') {
-    throw new TypeError('executor must be a function.');
-  }
-
-  var resolvePromise;
-  this.promise = new Promise(function promiseExecutor(resolve) {
-    resolvePromise = resolve;
-  });
-
-  var token = this;
-  executor(function cancel(message) {
-    if (token.reason) {
-      // Cancellation has already been requested
-      return;
-    }
-
-    token.reason = new Cancel(message);
-    resolvePromise(token.reason);
-  });
-}
-
-/**
- * Throws a `Cancel` if cancellation has been requested.
- */
-CancelToken.prototype.throwIfRequested = function throwIfRequested() {
-  if (this.reason) {
-    throw this.reason;
-  }
-};
-
-/**
- * Returns an object that contains a new `CancelToken` and a function that, when called,
- * cancels the `CancelToken`.
- */
-CancelToken.source = function source() {
-  var cancel;
-  var token = new CancelToken(function executor(c) {
-    cancel = c;
-  });
-  return {
-    token: token,
-    cancel: cancel
-  };
-};
-
-module.exports = CancelToken;
-
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var defaults = __webpack_require__(34);
-var utils = __webpack_require__(8);
-var InterceptorManager = __webpack_require__(97);
-var dispatchRequest = __webpack_require__(98);
-var isAbsoluteURL = __webpack_require__(106);
-var combineURLs = __webpack_require__(104);
->>>>>>> 40583c47bc83d9c2d9e941df4e43b117aff43490
 
       var newSelection = e.target.value;
       var newSelectionArray = void 0;
@@ -22168,7 +21703,6 @@ var ResultListEntry = function (_React$Component) {
   }
 
   _createClass(ResultListEntry, [{
-<<<<<<< HEAD
     key: "render",
     value: function render() {
       var college = this.props.college;
@@ -22182,8 +21716,9 @@ var ResultListEntry = function (_React$Component) {
             "div",
             { className: "college-name" },
             _react2.default.createElement(
-              "h2",
-              null,
+              "a",
+              { href: "http://" + college.website_url },
+              " ",
               college.name
             )
           ),
@@ -22199,28 +21734,9 @@ var ResultListEntry = function (_React$Component) {
           _react2.default.createElement(
             "div",
             { className: "image" },
-            _react2.default.createElement("img", { className: "img-circle", src: college.image_url })
+            _react2.default.createElement("img", { src: college.image_url })
           )
         )
-=======
-    key: 'render',
-    value: function render() {
-      var college = this.props.college;
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'h3',
-          null,
-          college.name
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          college.description
-        ),
-        _react2.default.createElement('img', { src: college.image_url })
->>>>>>> 40583c47bc83d9c2d9e941df4e43b117aff43490
       );
     }
   }]);
@@ -22456,13 +21972,7 @@ var App = function (_React$Component) {
 
     _this.state = {
       colleges: []
-<<<<<<< HEAD
-    };
-
-    _this.sendSurveyInfo = _this.sendSurveyInfo.bind(_this);
-=======
     }, _this.sendSurveyInfo = _this.sendSurveyInfo.bind(_this);
->>>>>>> 40583c47bc83d9c2d9e941df4e43b117aff43490
 
     return _this;
   }
@@ -22481,10 +21991,7 @@ var App = function (_React$Component) {
         _this2.setState({
           colleges: results.data
         });
-<<<<<<< HEAD
         console.log('axios results: ', results);
-=======
->>>>>>> 40583c47bc83d9c2d9e941df4e43b117aff43490
       }).catch(function (error) {
         console.log(error);
       });
@@ -22492,11 +21999,9 @@ var App = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-
       return _react2.default.createElement(
         'div',
-<<<<<<< HEAD
-        { className: 'container' },
+        { className: 'container-fluid' },
         _react2.default.createElement(
           'nav',
           { className: 'navbar navbar-default' },
@@ -22547,48 +22052,48 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'container' },
+          { className: 'container-fluid', id: 'banner' },
           _react2.default.createElement(
             'div',
             { className: 'row' },
             _react2.default.createElement(
               'div',
               { className: 'col-md-12' },
-              _react2.default.createElement('img', { className: 'img-responsive center-block', src: 'uforu_option1.png', alt: 'UFORUHERE' })
+              _react2.default.createElement('img', { className: 'img-responsive center-block', id: 'logo', src: 'uforu_option1.png', alt: 'UFORUHERE' })
             )
           )
         ),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
-          { className: 'container' },
+          { className: 'container-fluid' },
           _react2.default.createElement(_Survey2.default, { sendSurveyInfo: this.sendSurveyInfo })
         ),
         _react2.default.createElement(
           'div',
-          { className: 'container' },
+          { className: 'container-fluid' },
           _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
         ),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
-          { className: 'container' },
+          { className: 'container-fluid' },
           _react2.default.createElement(
             'div',
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
+              { className: 'col-md-3' },
               _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'FARRAH PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
+              { className: 'col-md-3' },
               _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'ARSENIY PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
+              { className: 'col-md-3' },
               _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'HELEN PHOTO HERE' })
             )
           ),
@@ -22597,7 +22102,7 @@ var App = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
+              { className: 'col-md-3' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -22606,7 +22111,7 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
+              { className: 'col-md-3' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -22615,7 +22120,7 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-4' },
+              { className: 'col-md-3' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -22624,11 +22129,6 @@ var App = function (_React$Component) {
             )
           )
         )
-=======
-        null,
-        _react2.default.createElement(_Survey2.default, { sendSurveyInfo: this.sendSurveyInfo }),
-        _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
->>>>>>> 40583c47bc83d9c2d9e941df4e43b117aff43490
       );
     }
   }]);
