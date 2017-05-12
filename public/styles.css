@@ -258,12 +258,6 @@ img {
   width: 30;
 }
 
-.bio {
-  text-align: center;
-  vertical-align: middle;
-  display: block;
-}
-
 footer {
   background-color: #373737;
   font-family: "Oswald-ExtraLight";
@@ -271,4 +265,26 @@ footer {
   font-size: 18px;
   padding: 10px;
   text-align: center;
+}
+
+.cardImages {
+    display: block;
+    width: auto;
+    max-height: 100%;
+}
+
+.bioImages {
+    display: block;
+    width: auto;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.card {
+  width: 1170px;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }

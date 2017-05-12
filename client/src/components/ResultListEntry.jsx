@@ -8,19 +8,18 @@ class ResultListEntry extends React.Component {
   render () {
     const college = this.props.college;
     return (
-
       <div className = "card">
-         <div className="container">
-           <div className="college-name">
-                <a href={"http://" + college.website_url}> {college.name}</a>
-            </div>
-            <div className="description">
-                <p>{college.description}</p>
-            </div>
-            <div className="image">
-              <img src = {college.image_url}/>
-            </div>
+        <div className="row">
+          <div className="col-md-3">
+            <img className="img-responsive cardImages" src = {college.image_url}/>
           </div>
+           <div class="col-md-3">
+             <a className="college-name" href={"http://" + college.website_url}> {college.name}</a>
+          </div>
+          <div class="col-md-3">
+            <p className="description">{college.description}</p>
+          </div>
+        </div>
       </div>
     );
   }

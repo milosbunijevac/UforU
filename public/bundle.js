@@ -21719,30 +21719,30 @@ var ResultListEntry = function (_React$Component) {
         { className: "card" },
         _react2.default.createElement(
           "div",
-          { className: "container" },
+          { className: "row" },
           _react2.default.createElement(
             "div",
-            { className: "college-name" },
+            { className: "col-md-3" },
+            _react2.default.createElement("img", { className: "img-responsive cardImages", src: college.image_url })
+          ),
+          _react2.default.createElement(
+            "div",
+            { "class": "col-md-3" },
             _react2.default.createElement(
               "a",
-              { href: "http://" + college.website_url },
+              { className: "college-name", href: "http://" + college.website_url },
               " ",
               college.name
             )
           ),
           _react2.default.createElement(
             "div",
-            { className: "description" },
+            { "class": "col-md-3" },
             _react2.default.createElement(
               "p",
-              null,
+              { className: "description" },
               college.description
             )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "image" },
-            _react2.default.createElement("img", { src: college.image_url })
           )
         )
       );
@@ -22087,24 +22087,24 @@ var App = function (_React$Component) {
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
-          _defineProperty({ className: 'container-fluid' }, 'className', 'bio'),
+          { className: 'card' },
           _react2.default.createElement(
             'div',
             { className: 'row' },
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive', style: { height: 200, width: 200 }, alt: 'FARRAH PHOTO HERE' })
+              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'FARRAH PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive', style: { height: 200, width: 300 }, alt: 'ARSENIY PHOTO HERE' })
+              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'ARSENIY PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive', style: { height: 200, width: 200 }, alt: 'HELEN PHOTO HERE' })
+              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'HELEN PHOTO HERE' })
             )
           ),
           _react2.default.createElement(
@@ -42407,20 +42407,6 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       return emptyFunction.thatReturnsNull;
     }
 
-    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-      var checker = arrayOfTypeCheckers[i];
-      if (typeof checker !== 'function') {
-        warning(
-          false,
-          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
-          'received %s at index %s.',
-          getPostfixForTypeWarning(checker),
-          i
-        );
-        return emptyFunction.thatReturnsNull;
-      }
-    }
-
     function validate(props, propName, componentName, location, propFullName) {
       for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
         var checker = arrayOfTypeCheckers[i];
@@ -42553,9 +42539,6 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   // This handles more types than `getPropType`. Only used for error messages.
   // See `createPrimitiveTypeChecker`.
   function getPreciseType(propValue) {
-    if (typeof propValue === 'undefined' || propValue === null) {
-      return '' + propValue;
-    }
     var propType = getPropType(propValue);
     if (propType === 'object') {
       if (propValue instanceof Date) {
@@ -42565,23 +42548,6 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
     }
     return propType;
-  }
-
-  // Returns a string that is postfixed to a warning about an invalid type.
-  // For example, "undefined" or "of type array"
-  function getPostfixForTypeWarning(value) {
-    var type = getPreciseType(value);
-    switch (type) {
-      case 'array':
-      case 'object':
-        return 'an ' + type;
-      case 'boolean':
-      case 'date':
-      case 'regexp':
-        return 'a ' + type;
-      default:
-        return type;
-    }
   }
 
   // Returns class name of the object, if any.
