@@ -259,10 +259,6 @@ a:active {
 img { 
   width: 30;
 }
-.bio{
-  justify-content: center;
-}
-
 
 .footer {
 
@@ -272,7 +268,7 @@ img {
   font-size: 18px;
   padding: 10px;
   text-align: center;
-<<<<<<< HEAD
+
 }
 
 .cardImages {
@@ -296,7 +292,3 @@ img {
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
 }
-=======
-  justify-content: center;
-}
->>>>>>> Transparent background photo
