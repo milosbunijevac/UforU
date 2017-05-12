@@ -118,20 +118,20 @@ class Survey extends React.Component {
 					selectedOption={this.state.tuition} />
         <SingleInput
 					inputType={'text'}
-					title={'Estimated Average GPA'}
+					title={'ESTIMATED AVERAGE GPA'}
 					name={'average_gpa'}
 					controlFunc={this.handleaverage_gpaChange}
 					content={this.state.average_gpa}
 					placeholder={'Type estimated average GPA here'} />
         <SingleInput
 					inputType={'text'}
-					title={'SAT Score'}
+					title={'SAT SCORE'}
 					name={'average_sat_score'}
 					controlFunc={this.handleaverage_sat_scoreChange}
 					content={this.state.average_sat_score}
 					placeholder={'Type your SAT Score here'} />
 				<CheckboxOrRadioGroup
-					title={'Which majors are you interested in?'}
+					title={'WHICH MAJORS ARE YOU INTERESTED IN?'}
 					setName={'majors'}
 					type={'checkbox'}
 					controlFunc={this.handleMajorSelection}
@@ -144,7 +144,7 @@ class Survey extends React.Component {
 					options={this.state.sizeRangeOptions}
 					selectedOption={this.state.size} />
 				<CheckboxOrRadioGroup
-					title={'Which Sports Division are you looking for?'}
+					title={'WHICH SPORTS DIVISION ARE YOU LOOKING FOR?'}
 					setName={'sportsDivision'}
 					type={'checkbox'}
 					controlFunc={this.handlesports_division}
@@ -155,7 +155,7 @@ class Survey extends React.Component {
 					className="btn btn-primary float-right"
 					value="Submit"/>
 				<button
-          className="clearForm"
+          className="btn"
 					className="btn btn-link float-left"
 					onClick={this.handleClearForm}>Clear form</button>
     </form>

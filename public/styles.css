@@ -96,9 +96,19 @@ body {
 }
 form {
   border: 5px solid #C0B283;
-  padding: 0 20px 25px 20px;
-
+  padding: 20px 20px 25px 20px;
+  font-size: 20px;
 }
+
+p{
+  font-family: "Oswald-Light";
+  color: #373737;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 input[type=checkbox],
 input[type=radio] {
   margin-right: 8px;
@@ -110,6 +120,7 @@ input[type=radio] {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  font-size: 18px;
 }
 .checkbox-group .form-label {
   width: 50%;
@@ -138,6 +149,7 @@ button, input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 18px;
 }
 
 button:hover, input[type=submit]:hover {
@@ -153,6 +165,7 @@ input[type=text]:visited {
 }
 
 select {
+  font-family: "Oswald-Light";
   background: white;
   color: #373737;
   width: 268px;
@@ -162,6 +175,11 @@ select {
   border: 1px solid #C0B283;
   border-radius: 0;
   height: 34px;
+}
+
+.form-select{
+  font-family: "Oswald-Light";
+  size:18px; 
 }
 
 .survey {
@@ -175,6 +193,8 @@ select {
     color: #373737;
     border-radius: 5px; /* 5px rounded corners */
     transition: 0.3s;
+    padding: 20px;
+    margin: 20px;
 }
 
 .card:hover {
@@ -201,14 +221,19 @@ select {
 
 .college-name {
     font-family: "Oswald-Medium";
-    color: black;
+    color: #373737;
     font-size: 26px;    
     font-weight: 300;
     margin-bottom: 15px;
 }
 
+hr {
+  height: 10px;
+  color:#373737;
+}
+
 a:link {
-  color: black;
+  color: #373737;
   text-decoration: none;
 }
 
@@ -216,7 +241,7 @@ a:link {
 
 a:visited {
     text-decoration: none;
-    color: black;
+    color: #373737;
 }
 
 a:hover {
@@ -226,11 +251,17 @@ a:hover {
 
 a:active {
     text-decoration: none;
-    color: black;
+    color: #373737;
 } 
 
 img { 
-  width: 30%;
+  width: 30;
+}
+
+.bio {
+  text-align: center;
+  vertical-align: middle;
+  display: block;
 }
 
 footer {
@@ -238,6 +269,6 @@ footer {
   font-family: "Oswald-ExtraLight";
   color: lightgrey;
   font-size: 18px;
-  padding: 10px, 10px, 10px, 10px;
+  padding: 10px;
   text-align: center;
 }

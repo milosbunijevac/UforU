@@ -20777,20 +20777,20 @@ var Survey = function (_React$Component) {
           selectedOption: this.state.tuition }),
         _react2.default.createElement(_SingleInput2.default, {
           inputType: 'text',
-          title: 'Estimated Average GPA',
+          title: 'ESTIMATED AVERAGE GPA',
           name: 'average_gpa',
           controlFunc: this.handleaverage_gpaChange,
           content: this.state.average_gpa,
           placeholder: 'Type estimated average GPA here' }),
         _react2.default.createElement(_SingleInput2.default, {
           inputType: 'text',
-          title: 'SAT Score',
+          title: 'SAT SCORE',
           name: 'average_sat_score',
           controlFunc: this.handleaverage_sat_scoreChange,
           content: this.state.average_sat_score,
           placeholder: 'Type your SAT Score here' }),
         _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
-          title: 'Which majors are you interested in?',
+          title: 'WHICH MAJORS ARE YOU INTERESTED IN?',
           setName: 'majors',
           type: 'checkbox',
           controlFunc: this.handleMajorSelection,
@@ -20803,7 +20803,7 @@ var Survey = function (_React$Component) {
           options: this.state.sizeRangeOptions,
           selectedOption: this.state.size }),
         _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
-          title: 'Which Sports Division are you looking for?',
+          title: 'WHICH SPORTS DIVISION ARE YOU LOOKING FOR?',
           setName: 'sportsDivision',
           type: 'checkbox',
           controlFunc: this.handlesports_division,
@@ -20816,7 +20816,7 @@ var Survey = function (_React$Component) {
         _react2.default.createElement(
           'button',
           (_React$createElement = {
-            className: 'clearForm'
+            className: 'btn'
           }, _defineProperty(_React$createElement, 'className', 'btn btn-link float-left'), _defineProperty(_React$createElement, 'onClick', this.handleClearForm), _React$createElement),
           'Clear form'
         )
@@ -22087,24 +22087,24 @@ var App = function (_React$Component) {
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
-          { className: 'container-fluid' },
+          _defineProperty({ className: 'container-fluid' }, 'className', 'bio'),
           _react2.default.createElement(
             'div',
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'FARRAH PHOTO HERE' })
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive', style: { height: 200, width: 200 }, alt: 'FARRAH PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'ARSENIY PHOTO HERE' })
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive', style: { height: 200, width: 300 }, alt: 'ARSENIY PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'HELEN PHOTO HERE' })
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive', style: { height: 200, width: 200 }, alt: 'HELEN PHOTO HERE' })
             )
           ),
           _react2.default.createElement(
@@ -22112,7 +22112,7 @@ var App = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-4' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -22121,7 +22121,7 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-4' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -22130,7 +22130,7 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-4' },
               _react2.default.createElement(
                 'p',
                 null,
