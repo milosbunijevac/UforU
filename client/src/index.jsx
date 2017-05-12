@@ -40,7 +40,7 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
           <nav className="navbar navbar-default">
-            <div className="container-fluid">
+            <div className="container-fluid" className="navigation">
               <div className="navbar-header">
                 <a href="#" className="navbar-brand">UforU</a>
               </div>
@@ -94,6 +94,11 @@ class App extends React.Component {
               <p>Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive</p>
             </div>
           </div>
+        </div>
+        <div>
+          <footer>
+            <p>Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</p>
+          </footer>
         </div>
       </div>
     );

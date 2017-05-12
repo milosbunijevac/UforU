@@ -1,3 +1,68 @@
+/* Begining of @font-face */
+@font-face {
+    font-family:'ostrichRegular';
+    src: url('../fonts/ostrichkit/ostrichregular-webfont.woff2') format('woff2'),
+         url('../fonts/ostrichkit/ostrichregular-webfont.woff') format('woff'),
+         url('../fonts/ostrichsans/ostrichregular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'ostrichSansLight';
+    src: url('../fonts/ostrichkit/ostrichsans-light-webfont.woff2') format('woff2'),
+         url('../fonts/ostrichkit/ostrichsans-light-webfont.woff') format('woff'),
+         url('../fonts/ostrichsans/ostrichsans-light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'ostrichSansBlack';
+    src: url('../fonts/ostrichkit/ostrichsansblack-webfont.woff2') format('woff2'),
+         url('../fonts/ostrichkit/ostrichsansblack-webfont.woff') format('woff'),
+         url('../fonts/ostrichsans/ostrichsansblack.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'ostrichSansMedium';
+    src: url('../fonts/ostrichkit/ostrichsans-medium-webfont.woff2') format('woff2'),
+         url('../fonts/ostrichkit/ostrichsans-medium-webfont.woff') format('woff'),
+         url('../fonts/ostrichsans/ostrichsans-medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Oswald-Light';
+    src: url('../fonts/oswaldkit/oswald-light-webfont.woff2') format('woff2'),
+         url('../fonts/oswaldkit/oswald-light-webfont.woff') format('woff'),
+         url('../fonts/oswald/oswald-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Oswald-Medium';
+    src: url('../fonts/oswaldkit/oswald-medium-webfont.woff2') format('woff2'),
+         url('../fonts/oswaldkit/oswald-medium-webfont.woff') format('woff'),
+         url('../fonts/oswald/oswald-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Oswald-ExtraLight';
+    src: url('../fonts/oswaldkit/oswald-extralight-webfont.woff2') format('woff2'),
+         url('../fonts/oswaldkit/oswald-extralight-webfont.woff') format('woff'),
+         url('../fonts/oswald/oswald-extralight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;    
+}
+
+
 #logo {
   opacity: 1;
   width: 500px;
@@ -12,14 +77,27 @@
   background-attachment: fixed;
 }
 
+.navigation{
+  background-color: #373737;
+  color: #F4F4F4;
+  font-size: 22px;
+}
+
+h5 {
+  color: #373737;
+  font-size: 26px;
+  text-align: center;
+}
+
 body {
-  font-family: Arial;
-  background-color: white;
+  font-family: "Oswald-Light";
+  color: #373737;
+  background-color: #F4F4F4;
 }
 form {
-  border: 3px solid #FFECB3;
+  border: 5px solid #C0B283;
   padding: 0 20px 25px 20px;
-  border-radius: 10px;
+
 }
 input[type=checkbox],
 input[type=radio] {
@@ -46,14 +124,14 @@ input[type=text], select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #C0B283;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 button, input[type=submit] {
   width: 100%;
-  background-color: gray;
+  background-color: #C0B283;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -63,24 +141,28 @@ button, input[type=submit] {
 }
 
 button:hover, input[type=submit]:hover {
-  background-color: gray;
+  background-color: #C0B283;
 }
 
 button:focus, input[type=text]:focus {
-  background-color: lightgray;
+  background-color: #C0B283;
+}
+
+input[type=text]:visited {
+  background-color: #C0B283;
 }
 
 select {
   background: white;
+  color: #373737;
   width: 268px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1;
-  border: 1px solid gray;
+  border: 1px solid #C0B283;
   border-radius: 0;
   height: 34px;
 }
-<<<<<<< HEAD
 
 .survey {
     border-radius: 5px;
@@ -89,13 +171,14 @@ select {
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 #DCD0C0;
+    color: #373737;
     border-radius: 5px; /* 5px rounded corners */
     transition: 0.3s;
 }
 
 .card:hover {
-    box-shadow: 0 8px 20px 0 lightBlue;
+    box-shadow: 0 8px 20px 0 #C0B283;
 }
 
 .container {
@@ -110,16 +193,16 @@ select {
 }
 
 .description {
-  font-family: Arial
-  font-size: 16px;
+  font-family: "Oswald-Light";
+  font-size: 22px;
   padding: 5px;
   margin-bottom: 15px;
 }
 
 .college-name {
-    font-family: Arial
+    font-family: "Oswald-Medium";
     color: black;
-    font-size: 23px;    
+    font-size: 26px;    
     font-weight: 300;
     margin-bottom: 15px;
 }
@@ -146,27 +229,15 @@ a:active {
     color: black;
 } 
 
-/*.form {
-  margin: 0 auto;
-  padding: 100px 30px 0;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-}
-
-.description {
-  font-size: 16px;
-  padding: 5px;
-  margin-bottom: 15px;
-}
-.input-range {
-  margin-bottom: 160px;
-}*/*/
-
 img { 
-  width: 100%;
+  width: 30%;
 }
 
+footer {
+  background-color: #373737;
+  font-family: "Oswald-ExtraLight";
+  color: lightgrey;
+  font-size: 18px;
+  padding: 10px, 10px, 10px, 10px;
+  text-align: center;
+}

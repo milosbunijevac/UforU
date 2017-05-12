@@ -20592,6 +20592,8 @@ var _Select2 = _interopRequireDefault(_Select);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20753,13 +20755,19 @@ var Survey = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _React$createElement;
+
       return _react2.default.createElement(
         'form',
         { className: 'container', onSubmit: this.handleFormSubmit },
         _react2.default.createElement(
           'h5',
           null,
-          'University Preferences'
+          _react2.default.createElement(
+            'b',
+            null,
+            'UNIVERSITY PREFERENCES'
+          )
         ),
         _react2.default.createElement(_Select2.default, {
           name: 'maxTuition',
@@ -20807,9 +20815,9 @@ var Survey = function (_React$Component) {
           value: 'Submit' }),
         _react2.default.createElement(
           'button',
-          {
-            className: 'btn btn-link float-left',
-            onClick: this.handleClearForm },
+          (_React$createElement = {
+            className: 'clearForm'
+          }, _defineProperty(_React$createElement, 'className', 'btn btn-link float-left'), _defineProperty(_React$createElement, 'onClick', this.handleClearForm), _React$createElement),
           'Clear form'
         )
       );
@@ -21956,6 +21964,8 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -22007,7 +22017,7 @@ var App = function (_React$Component) {
           { className: 'navbar navbar-default' },
           _react2.default.createElement(
             'div',
-            { className: 'container-fluid' },
+            _defineProperty({ className: 'container-fluid' }, 'className', 'navigation'),
             _react2.default.createElement(
               'div',
               { className: 'navbar-header' },
@@ -22126,6 +22136,19 @@ var App = function (_React$Component) {
                 null,
                 'Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive'
               )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'footer',
+            null,
+            _react2.default.createElement(
+              'p',
+              null,
+              'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
             )
           )
         )

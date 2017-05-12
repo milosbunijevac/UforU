@@ -109,7 +109,7 @@ class Survey extends React.Component {
   render() {
     return (
     <form className="container" onSubmit={this.handleFormSubmit}>
-				<h5>University Preferences</h5>
+				<h5><b>UNIVERSITY PREFERENCES</b></h5>
 				<Select
 					name={'maxTuition'}
           placeholder={'Max tuition per year'}
@@ -155,6 +155,7 @@ class Survey extends React.Component {
 					className="btn btn-primary float-right"
 					value="Submit"/>
 				<button
+          className="clearForm"
 					className="btn btn-link float-left"
 					onClick={this.handleClearForm}>Clear form</button>
     </form>
