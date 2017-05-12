@@ -40,7 +40,7 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
           <nav className="navbar navbar-default">
-            <div className="container-fluid">
+            <div className="container-fluid" className="navigation">
               <div className="navbar-header">
                 <a href="#" className="navbar-brand">UforU</a>
               </div>
@@ -71,29 +71,36 @@ class App extends React.Component {
           <Results colleges = {this.state.colleges}/>
         </div>
         <hr></hr>
-        <div className="container-fluid">
+        
+        <div className="container-fluid" className="bio">
           <div className="row">
-            <div className="col-md-3">
-              <img src="farrah_bousetta.png" className="img-responsive img-circle" style={{ height: 200, width: 350 }} alt="FARRAH PHOTO HERE"/>
+            <div className="col-md-4">
+              <img src="farrah_bousetta.png" className="img-responsive" style={{ height: 200, width: 200 }} alt="FARRAH PHOTO HERE"/>
             </div>
-            <div className="col-md-3">
-              <img src="LinkedInPhoto.png" className="img-responsive img-circle" style={{ height: 200, width: 350}} alt="ARSENIY PHOTO HERE"/>
+            <div className="col-md-4">
+              <img src="LinkedInPhoto.png" className="img-responsive" style={{ height: 200, width: 300}} alt="ARSENIY PHOTO HERE"/>
             </div>
-            <div className="col-md-3">
-              <img src="helen_tang.png" className="img-responsive img-circle" style={{ height: 200, width: 350 }} alt="HELEN PHOTO HERE"/>
+            <div className="col-md-4">
+              <img src="helen_tang.png" className="img-responsive" style={{ height: 200, width: 200 }} alt="HELEN PHOTO HERE"/>
             </div>
           </div>
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-4">
               <p>Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah</p>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <p>Arseniy Kotov is an all start programmer specializing in full stack developement</p>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <p>Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive</p>
             </div>
           </div>
+        </div>
+        
+        <div>
+          <footer>
+            <p>Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</p>
+          </footer>
         </div>
       </div>
     );

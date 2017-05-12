@@ -20592,6 +20592,8 @@ var _Select2 = _interopRequireDefault(_Select);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20753,13 +20755,19 @@ var Survey = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _React$createElement;
+
       return _react2.default.createElement(
         'form',
         { className: 'container', onSubmit: this.handleFormSubmit },
         _react2.default.createElement(
           'h5',
           null,
-          'University Preferences'
+          _react2.default.createElement(
+            'b',
+            null,
+            'UNIVERSITY PREFERENCES'
+          )
         ),
         _react2.default.createElement(_Select2.default, {
           name: 'maxTuition',
@@ -20769,20 +20777,20 @@ var Survey = function (_React$Component) {
           selectedOption: this.state.tuition }),
         _react2.default.createElement(_SingleInput2.default, {
           inputType: 'text',
-          title: 'Estimated Average GPA',
+          title: 'ESTIMATED AVERAGE GPA',
           name: 'average_gpa',
           controlFunc: this.handleaverage_gpaChange,
           content: this.state.average_gpa,
           placeholder: 'Type estimated average GPA here' }),
         _react2.default.createElement(_SingleInput2.default, {
           inputType: 'text',
-          title: 'SAT Score',
+          title: 'SAT SCORE',
           name: 'average_sat_score',
           controlFunc: this.handleaverage_sat_scoreChange,
           content: this.state.average_sat_score,
           placeholder: 'Type your SAT Score here' }),
         _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
-          title: 'Which majors are you interested in?',
+          title: 'WHICH MAJORS ARE YOU INTERESTED IN?',
           setName: 'majors',
           type: 'checkbox',
           controlFunc: this.handleMajorSelection,
@@ -20795,7 +20803,7 @@ var Survey = function (_React$Component) {
           options: this.state.sizeRangeOptions,
           selectedOption: this.state.size }),
         _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
-          title: 'Which Sports Division are you looking for?',
+          title: 'WHICH SPORTS DIVISION ARE YOU LOOKING FOR?',
           setName: 'sportsDivision',
           type: 'checkbox',
           controlFunc: this.handlesports_division,
@@ -20807,9 +20815,9 @@ var Survey = function (_React$Component) {
           value: 'Submit' }),
         _react2.default.createElement(
           'button',
-          {
-            className: 'btn btn-link float-left',
-            onClick: this.handleClearForm },
+          (_React$createElement = {
+            className: 'btn'
+          }, _defineProperty(_React$createElement, 'className', 'btn btn-link float-left'), _defineProperty(_React$createElement, 'onClick', this.handleClearForm), _React$createElement),
           'Clear form'
         )
       );
@@ -21956,6 +21964,8 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -22007,7 +22017,7 @@ var App = function (_React$Component) {
           { className: 'navbar navbar-default' },
           _react2.default.createElement(
             'div',
-            { className: 'container-fluid' },
+            _defineProperty({ className: 'container-fluid' }, 'className', 'navigation'),
             _react2.default.createElement(
               'div',
               { className: 'navbar-header' },
@@ -22077,24 +22087,24 @@ var App = function (_React$Component) {
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
-          { className: 'container-fluid' },
+          _defineProperty({ className: 'container-fluid' }, 'className', 'bio'),
           _react2.default.createElement(
             'div',
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'FARRAH PHOTO HERE' })
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive', style: { height: 200, width: 200 }, alt: 'FARRAH PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'ARSENIY PHOTO HERE' })
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive', style: { height: 200, width: 300 }, alt: 'ARSENIY PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive img-circle', style: { height: 200, width: 350 }, alt: 'HELEN PHOTO HERE' })
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive', style: { height: 200, width: 200 }, alt: 'HELEN PHOTO HERE' })
             )
           ),
           _react2.default.createElement(
@@ -22102,7 +22112,7 @@ var App = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-4' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -22111,7 +22121,7 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-4' },
               _react2.default.createElement(
                 'p',
                 null,
@@ -22120,12 +22130,25 @@ var App = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-4' },
               _react2.default.createElement(
                 'p',
                 null,
                 'Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive'
               )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'footer',
+            null,
+            _react2.default.createElement(
+              'p',
+              null,
+              'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
             )
           )
         )
@@ -42384,6 +42407,20 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       return emptyFunction.thatReturnsNull;
     }
 
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        warning(
+          false,
+          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
+          'received %s at index %s.',
+          getPostfixForTypeWarning(checker),
+          i
+        );
+        return emptyFunction.thatReturnsNull;
+      }
+    }
+
     function validate(props, propName, componentName, location, propFullName) {
       for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
         var checker = arrayOfTypeCheckers[i];
@@ -42516,6 +42553,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   // This handles more types than `getPropType`. Only used for error messages.
   // See `createPrimitiveTypeChecker`.
   function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
     var propType = getPropType(propValue);
     if (propType === 'object') {
       if (propValue instanceof Date) {
@@ -42525,6 +42565,23 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
     }
     return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
   }
 
   // Returns class name of the object, if any.
