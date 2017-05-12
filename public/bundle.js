@@ -22147,7 +22147,7 @@ var App = function (_React$Component) {
             null,
             _react2.default.createElement(
               'p',
-              null,
+              { className: 'footer' },
               'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
             )
           )

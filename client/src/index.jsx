@@ -71,7 +71,7 @@ class App extends React.Component {
           <Results colleges = {this.state.colleges}/>
         </div>
         <hr></hr>
-        {/*<div className="container-fluid" className="bio">*/}
+
           <div className="card">
             <div className="row">
               <div className="col-md-4">
@@ -96,10 +96,9 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-        {/*</div>*/}
         <div>
           <footer>
-            <p>Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</p>
+            <p className="footer">Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</p>
           </footer>
         </div>
       </div>
