@@ -69,18 +69,83 @@
 
 #banner {
   width: 100%;
-  height: 800px;
-  background-image: url('./backgroundPhotos/students_transparent.png');
+  height:1000px;
+  text-align: center;
+  margin:0;
+  padding:0;
+  background-image: url('./backgroundPhotos/students_transparent80.png');
   background-position: center center;
-  background-size: cover;
+  background-size: content;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
-.navigation{
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.jumbotron{
+    height: 100vh;
+}
+
+.wide img {
+  width:100%;
+}
+
+h1 {
+  font-family:'ostrichSansBlack';
+  font-size: 175px;
+  text-shadow: 3px 0 0 #696969
+, 3px 0 0 #696969
+, 0 3px 0 #696969
+, 0 -3px 0 #696969
+, 3px 3px #696969
+, -3px -3px 0 #696969
+, 3px -3px 0 #696969
+, -3px 3px 0 #696969
+;
+  color: white;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  padding:0;
+}
+
+h4 {
+  font-family:'ostrichSansBlack';
+  font-size: 125px;
+  text-shadow: 3px 0 0 #696969
+, 3px 0 0 #696969
+, 0 3px 0 #696969
+, 0 -3px 0 #696969
+, 3px 3px #696969
+, -3px -3px 0 #696969
+, 3px -3px 0 #696969
+, -3px 3px 0 #696969
+;
+  color: white;
+  margin:0;
+  padding:0;
+}
+
+hr {
+  padding: 0;
+  color:#373737;
+  width: 900px;
+}
+
+.navigation {
   background-color: #373737;
+  top: 0;
+  left: 0;
   color: #F4F4F4;
   font-size: 22px;
+  width: 100%;
+  position: absolute;
 }
 
 h5 {
@@ -88,6 +153,7 @@ h5 {
   font-size: 26px;
   text-align: center;
 }
+
 
 body {
   font-family: "Oswald-Light";
@@ -97,12 +163,13 @@ body {
     padding: 0 auto;
 }
 form {
+  margin-top: 1000px;
   border: 5px solid #C0B283;
   padding: 20px 20px 25px 20px;
   font-size: 20px;
 }
 
-p{
+p {
   font-family: "Oswald-Light";
   color: #373737;
   font-size: 18px;
@@ -229,11 +296,6 @@ select {
     margin-bottom: 15px;
 }
 
-hr {
-  height: 10px;
-  color:#373737;
-}
-
 a:link {
   color: #373737;
   text-decoration: none;
@@ -288,7 +350,7 @@ img {
 
 .card {
   width: 1170px;
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 10px; /* Added */
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
 }

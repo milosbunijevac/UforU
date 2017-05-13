@@ -39,7 +39,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-          <nav className="navbar navbar-default">
+          <nav className="navbar navbar-inverse">
             <div className="container-fluid" className="navigation">
               <div className="navbar-header">
                 <a href="#" className="navbar-brand">UforU</a>
@@ -56,22 +56,23 @@ class App extends React.Component {
               </div>
             </div>
           </nav >
-          <div className="container-fluid" id="banner">
-            <div className="row">
-              <div className="col-md-12">
-                <img className="img-responsive center-block" id="logo" src="uforu_option1.png" alt="UFORUHERE"/>
-              </div>
-            </div>
+            <div className="container" id="banner">
+              <h1>
+                <b>UFORU</b>
+              </h1>
+              <hr></hr>
+              <h4>
+                UNIVERSITY FOR YOU
+              </h4>
+              <hr></hr>
+              {/*<img className="img-responsive center-block" id="logo" src="uforu_option1.png" alt="UFORUHERE"/>*/}
           </div>
-        <hr></hr>
         <div className="container-fluid">
           <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
         </div>
         <div className="container-fluid">
           <Results colleges = {this.state.colleges}/>
         </div>
-        <hr></hr>
-
           <div className="card">
             <div className="row">
               <div className="col-md-4">
@@ -96,11 +97,11 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-        <div>
-          <footer>
-            <p className="footer">Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</p>
-          </footer>
-        </div>
+        <div className="panel-group">  
+          <div className="panel panel-default">
+            <div className="panel-footer">Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</div>
+          </div>
+        </div>  
       </div>
     );
   }

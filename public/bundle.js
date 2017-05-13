@@ -22014,7 +22014,7 @@ var App = function (_React$Component) {
         { className: 'container-fluid' },
         _react2.default.createElement(
           'nav',
-          { className: 'navbar navbar-default' },
+          { className: 'navbar navbar-inverse' },
           _react2.default.createElement(
             'div',
             _defineProperty({ className: 'container-fluid' }, 'className', 'navigation'),
@@ -22062,18 +22062,24 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'container-fluid', id: 'banner' },
+          { className: 'container', id: 'banner' },
           _react2.default.createElement(
-            'div',
-            { className: 'row' },
+            'h1',
+            null,
             _react2.default.createElement(
-              'div',
-              { className: 'col-md-12' },
-              _react2.default.createElement('img', { className: 'img-responsive center-block', id: 'logo', src: 'uforu_option1.png', alt: 'UFORUHERE' })
+              'b',
+              null,
+              'UFORU'
             )
-          )
+          ),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement(
+            'h4',
+            null,
+            'UNIVERSITY FOR YOU'
+          ),
+          _react2.default.createElement('hr', null)
         ),
-        _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
           { className: 'container-fluid' },
@@ -22084,7 +22090,6 @@ var App = function (_React$Component) {
           { className: 'container-fluid' },
           _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
         ),
-        _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
           { className: 'card' },
@@ -22141,13 +22146,13 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          null,
+          { className: 'panel-group' },
           _react2.default.createElement(
-            'footer',
-            null,
+            'div',
+            { className: 'panel panel-default' },
             _react2.default.createElement(
-              'p',
-              { className: 'footer' },
+              'div',
+              { className: 'panel-footer' },
               'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
             )
           )
