@@ -82,9 +82,9 @@ var mySearchFunction = function(prefs, cb) {
       var schoolMax = null;
     }
     
-    arrOfData = _.flatten(arrOfData);
     arrOfData = JSON.parse(JSON.stringify(arrOfData));
-
+    arrOfData = _.flatten(arrOfData);
+    
     if (inputTuition && (schoolMax && schoolMin)) {
 
       inputTuition = inputTuition.replace(/\$/g, '');
@@ -94,19 +94,37 @@ var mySearchFunction = function(prefs, cb) {
         return school.tuition <= inputTuition && (schoolMin <= school.size && school.size <= schoolMax);
       });
 
-      cb(null, results);
+      var uniqResults = {};
+      for (let i = 0; i < results.length; i++) {
+        if (uniqResults[results[i].id] !== undefined) {
+          results.splice(i, 1);
+        } else {
+          uniqResults[results[i].id] = 1;
+        }
+      }
+
+      results = _.sortBy(results, 'average_gpa');
+      cb(null, results.reverse());
 
     } else if (inputTuition && !(schoolMax && schoolMin)) {
-      // console.log(arrOfData);
       inputTuition = inputTuition.replace(/\$/g, '');
       inputTuition = inputTuition.replace(/,/g, '');
 
       var results = _.filter(arrOfData, function (school) {
-        // console.log(school);
         return school.tuition <= inputTuition;
       });
 
-      cb(null, results);
+      var uniqResults = {};
+      for (let i = 0; i < results.length; i++) {
+        if (uniqResults[results[i].id] !== undefined) {
+          results.splice(i, 1);
+        } else {
+          uniqResults[results[i].id] = 1;
+        }
+      }
+
+      results = _.sortBy(results, 'average_gpa');
+      cb(null, results.reverse());
 
     } else if (!inputTuition && (schoolMax && schoolMin)) {
 
@@ -114,11 +132,31 @@ var mySearchFunction = function(prefs, cb) {
         return (schoolMin <= school.size) && (school.size <= schoolMax);
       });
 
-      cb(null, results);
+      var uniqResults = {};
+      for (let i = 0; i < results.length; i++) {
+        if (uniqResults[results[i].id] !== undefined) {
+          results.splice(i, 1);
+        } else {
+          uniqResults[results[i].id] = 1;
+        }
+      }
+
+      results = _.sortBy(results, 'average_gpa').reverse();
+      cb(null, results.reverse());
       
     } else {
-      
-      cb(null, arrOfData);
+
+      var uniqResults = {};
+      for (let i = 0; i < results.length; i++) {
+        if (uniqResults[results[i].id] !== undefined) {
+          results.splice(i, 1);
+        } else {
+          uniqResults[results[i].id] = 1;
+        }
+      }
+
+      var results = _.sortBy(arrOfData, 'average_gpa');
+      cb(null, results.reverse());
 
     }
   });
