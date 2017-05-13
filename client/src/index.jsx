@@ -74,7 +74,7 @@ class App extends React.Component {
           <Results colleges = {this.state.colleges}/>
         </div>
           <div className="card">
-            <div className="row">
+            <div className="row" className="bio">
               <div className="col-md-4">
                 <img src="farrah_bousetta.png" className="img-responsive bioImages" style={{ height: 200, width: 200 }} alt="FARRAH PHOTO HERE"/>
               </div>
@@ -87,7 +87,7 @@ class App extends React.Component {
             </div>
             <div className="row">
               <div className="col-md-4">
-                <p>Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah</p>
+                <p>Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah.</p>
               </div>
               <div className="col-md-4">
                 <p>Arseniy Kotov is an all start programmer specializing in full stack developement</p>

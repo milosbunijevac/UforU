@@ -134,8 +134,10 @@ hr {
 
 h5 {
   color: #373737;
-  font-size: 26px;
+  font-size: 30px;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 
@@ -174,13 +176,14 @@ input[type=radio] {
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: 18px;
+  padding: 20px;
 }
 .checkbox-group .form-label {
   width: 50%;
 }
-input[type=submit],
-.btn-link {
-  margin-top: 20px;
+input[type=submit] {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 input[type=text], select {
@@ -193,7 +196,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-button, input[type=submit] {
+.btn, input[type=submit] {
   width: 100%;
   background-color: #C0B283;
   color: white;
@@ -205,12 +208,14 @@ button, input[type=submit] {
   font-size: 18px;
 }
 
-button:hover, input[type=submit]:hover {
-  background-color: #C0B283;
+.btn:hover, input[type=submit]:hover {
+  background-color: #696969;
+  cursor: pointer;
 }
 
-button:focus, input[type=text]:focus {
-  background-color: #C0B283;
+.btn:focus, input[type=text]:focus {
+  background-color: #696969;
+  cursor: pointer;
 }
 
 input[type=text]:visited {
@@ -244,7 +249,7 @@ select {
 .card {
     box-shadow: 0 4px 8px 0 #DCD0C0;
     color: #373737;
-    border-radius: 5px; /* 5px rounded corners */
+    border-radius: 5px;
     transition: 0.3s;
     padding: 20px;
     margin: 20px;
@@ -256,13 +261,6 @@ select {
 
 .container {
     padding: 2px 16px;
-}
-
-.img-circle {
-  border-radius: 30%;
-  margin-bottom: 15px;
-  box-shadow: 8px 8px 10px #aaa;
-  width: 30%;
 }
 
 .description {
@@ -324,6 +322,10 @@ img {
     max-height: 100%;
 }
 
+.bio {
+  padding: 20px;
+}
+
 .bioImages {
     display: block;
     width: auto;
@@ -331,6 +333,8 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
+    border-radius: 50%;
+    /*border: 5px solid #aaa;*/
 }
 
 .card {

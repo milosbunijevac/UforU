@@ -109,55 +109,77 @@ class Survey extends React.Component {
   render() {
     return (
     <form className="container" onSubmit={this.handleFormSubmit}>
-				<h5><b>UNIVERSITY PREFERENCES</b></h5>
-				<Select
-					name={'maxTuition'}
-          placeholder={'Max tuition per year'}
-					controlFunc={this.handletuition}
-					options={this.state.maxTuitionOptions}
-					selectedOption={this.state.tuition} />
-        <SingleInput
-					inputType={'text'}
-					title={'ESTIMATED AVERAGE GPA'}
-					name={'average_gpa'}
-					controlFunc={this.handleaverage_gpaChange}
-					content={this.state.average_gpa}
-					placeholder={'Type estimated average GPA here'} />
-        <SingleInput
-					inputType={'text'}
-					title={'SAT SCORE'}
-					name={'average_sat_score'}
-					controlFunc={this.handleaverage_sat_scoreChange}
-					content={this.state.average_sat_score}
-					placeholder={'Type your SAT Score here'} />
-				<CheckboxOrRadioGroup
-					title={'WHICH MAJORS ARE YOU INTERESTED IN?'}
-					setName={'majors'}
-					type={'checkbox'}
-					controlFunc={this.handleMajorSelection}
-					options={this.state.majorOptions}
-					selectedOptions={this.state.majors} />
-        <Select
-					name={'sizeRange'}
-					placeholder={'Preferred student body size'}
-					controlFunc={this.handlesize}
-					options={this.state.sizeRangeOptions}
-					selectedOption={this.state.size} />
-				<CheckboxOrRadioGroup
-					title={'WHICH SPORTS DIVISION ARE YOU LOOKING FOR?'}
-					setName={'sportsDivision'}
-					type={'checkbox'}
-					controlFunc={this.handlesports_division}
-					options={this.state.sportsDivisionOptions}
-					selectedOptions={this.state.sports_division} />
-				<input
-					type="submit"
-					className="btn btn-primary float-right"
-					value="Submit"/>
-				<button
-          className="btn"
-					className="btn btn-link float-left"
-					onClick={this.handleClearForm}>Clear form</button>
+				<h5><u><b>UNIVERSITY PREFERENCES</b></u></h5>
+        <div className="container-fluid">
+          <div className="col-md-5">
+            <Select
+              name={'maxTuition'}
+              placeholder={'Max tuition per year'}
+              controlFunc={this.handletuition}
+              options={this.state.maxTuitionOptions}
+              selectedOption={this.state.tuition} />
+          </div>
+          <div className="col-md-5">
+            <Select
+              name={'sizeRange'}
+              placeholder={'Preferred student body size'}
+              controlFunc={this.handlesize}
+              options={this.state.sizeRangeOptions}
+              selectedOption={this.state.size} />
+          </div>
+          <div className="col-md-2">
+            <button
+              className="button"
+              className="btn btn-primary btn-lg pull-right"
+              onClick={this.handleClearForm}>Clear form</button>
+          </div>
+        </div>
+        <div className="container-fluid">  
+          <div className="col-md-6">
+            <SingleInput
+              inputType={'text'}
+              title={'ESTIMATED AVERAGE GPA'}
+              name={'average_gpa'}
+              controlFunc={this.handleaverage_gpaChange}
+              content={this.state.average_gpa}
+              placeholder={'Type estimated average GPA here'} />
+          </div>
+          <div className="col-md-6">
+            <SingleInput
+              inputType={'text'}
+              title={'SAT SCORE'}
+              name={'average_sat_score'}
+              controlFunc={this.handleaverage_sat_scoreChange}
+              content={this.state.average_sat_score}
+              placeholder={'Type your SAT Score here'} />
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="col-md-12">    
+            <CheckboxOrRadioGroup
+              title={'WHICH MAJORS ARE YOU INTERESTED IN?'}
+              setName={'majors'}
+              type={'checkbox'}
+              controlFunc={this.handleMajorSelection}
+              options={this.state.majorOptions}
+              selectedOptions={this.state.majors} />
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="col-md-12"> 
+            <CheckboxOrRadioGroup
+              title={'WHICH SPORTS DIVISION ARE YOU LOOKING FOR?'}
+              setName={'sportsDivision'}
+              type={'checkbox'}
+              controlFunc={this.handlesports_division}
+              options={this.state.sportsDivisionOptions}
+              selectedOptions={this.state.sports_division} />
+          </div>
+          <input
+            type="submit"
+            className="btn btn-primary float-right"
+            value="Submit"/>
+        </div>
     </form>
     );
   }
