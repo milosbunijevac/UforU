@@ -99,7 +99,7 @@
 
 h1 {
   font-family:'ostrichSansBlack';
-  font-size: 175px;
+  font-size: 150px;
   text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
   color: white;
   margin-top: 150px;
@@ -109,7 +109,7 @@ h1 {
 
 h4 {
   font-family:'ostrichSansBlack';
-  font-size: 125px;
+  font-size: 100px;
   text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
   color: white;
   margin:0;
@@ -119,7 +119,7 @@ h4 {
 hr {
   padding: 0;
   color:#373737;
-  width: 900px;
+  width: 700px;
 }
 
 .navigation {
