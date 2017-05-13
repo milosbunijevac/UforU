@@ -13,12 +13,8 @@ class ResultListEntry extends React.Component {
           <div className="col-md-3">
             <img className="img-responsive cardImages" src = {college.image_url}/>
           </div>
-           <div class="col-md-3">
-             <a className="college-name" href={"http://" + college.website_url}> {college.name}</a>
-          </div>
-          <div class="col-md-3">
-            <p className="description">{college.description}</p>
-          </div>
+          <a className="college-name" href={"http://" + college.website_url}> {college.name}</a>
+          <p className="description">{college.description}</p>
         </div>
       </div>
     );

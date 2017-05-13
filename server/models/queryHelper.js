@@ -47,6 +47,14 @@ var querySchoolTable = function(column, value, cb) {
         }
       });
     }
+  } else if (column === 'average_gpa') {
+    connection.query('SELECT * FROM Universities WHERE ' + connection.escapeId(column) + ' < ?', [value], function(err, results, fields) {
+      if (err) {
+        cb(err, null);
+      } else {
+        cb(null, results);
+      }
+    });
   } else {
     connection.query('SELECT * FROM Universities WHERE ' + connection.escapeId(column) + ' = ?', [value], function(err, results, fields) {
       if (err) {
@@ -82,9 +90,9 @@ var mySearchFunction = function(prefs, cb) {
       var schoolMax = null;
     }
     
-    arrOfData = _.flatten(arrOfData);
     arrOfData = JSON.parse(JSON.stringify(arrOfData));
-
+    arrOfData = _.flatten(arrOfData);
+    
     if (inputTuition && (schoolMax && schoolMin)) {
 
       inputTuition = inputTuition.replace(/\$/g, '');
@@ -94,19 +102,40 @@ var mySearchFunction = function(prefs, cb) {
         return school.tuition <= inputTuition && (schoolMin <= school.size && school.size <= schoolMax);
       });
 
-      cb(null, results);
+      var uniqResults = {};
+      var newResults = [];
+      for (let i = 0; i < results.length; i++) {
+        if (uniqResults[results[i].id] !== undefined) {
+          newResults.push(results[i]);
+        } else {
+          uniqResults[results[i].id] = 1;
+        }
+      }
+
+      newResults = _.sortBy(newResults, 'average_gpa');
+      cb(null, newResults.reverse());
 
     } else if (inputTuition && !(schoolMax && schoolMin)) {
-      // console.log(arrOfData);
       inputTuition = inputTuition.replace(/\$/g, '');
       inputTuition = inputTuition.replace(/,/g, '');
 
       var results = _.filter(arrOfData, function (school) {
-        // console.log(school);
         return school.tuition <= inputTuition;
       });
 
-      cb(null, results);
+      var uniqResults = {};
+      var newResults = [];
+      for (let i = 0; i < results.length; i++) {
+        if (uniqResults[results[i].id] !== undefined) {
+          newResults.push(results[i]);
+        } else {
+          uniqResults[results[i].id] = 1;
+        }
+      }
+
+
+      newResults = _.sortBy(newResults, 'average_gpa');
+      cb(null, newResults.reverse());
 
     } else if (!inputTuition && (schoolMax && schoolMin)) {
 
@@ -114,11 +143,36 @@ var mySearchFunction = function(prefs, cb) {
         return (schoolMin <= school.size) && (school.size <= schoolMax);
       });
 
-      cb(null, results);
+      var uniqResults = {};
+      var newResults = [];
+      for (let i = 0; i < results.length; i++) {
+        if (uniqResults[results[i].id] !== undefined) {
+          newResults.push(results[i]);
+        } else {
+          uniqResults[results[i].id] = 1;
+        }
+      }
+
+      newResults = _.sortBy(newResults, 'average_gpa');
+      cb(null, newResults.reverse());
       
     } else {
-      
-      cb(null, arrOfData);
+
+      var results = arrOfData;
+
+      var uniqResults = {};
+      var newResults = [];
+
+      for (let i = 0; i < results.length; i++) {
+        if (uniqResults[results[i].id] !== undefined) {
+          newResults.push(results[i]);
+        } else {
+          uniqResults[results[i].id] = 1;
+        }
+      }
+
+      newResults = _.sortBy(newResults, 'average_gpa');
+      cb(null, newResults.reverse());
 
     }
   });
