@@ -20767,61 +20767,109 @@ var Survey = function (_React$Component) {
           'h5',
           null,
           _react2.default.createElement(
-            'b',
+            'u',
             null,
-            'UNIVERSITY PREFERENCES'
+            _react2.default.createElement(
+              'b',
+              null,
+              'UNIVERSITY PREFERENCES'
+            )
           )
         ),
-        _react2.default.createElement(_Select2.default, {
-          name: 'maxTuition',
-          placeholder: 'Max tuition per year',
-          controlFunc: this.handletuition,
-          options: this.state.maxTuitionOptions,
-          selectedOption: this.state.tuition }),
-        _react2.default.createElement(_SingleInput2.default, {
-          inputType: 'text',
-          title: 'ESTIMATED AVERAGE GPA',
-          name: 'average_gpa',
-          controlFunc: this.handleaverage_gpaChange,
-          content: this.state.average_gpa,
-          placeholder: 'Type estimated average GPA here' }),
-        _react2.default.createElement(_SingleInput2.default, {
-          inputType: 'text',
-          title: 'SAT SCORE',
-          name: 'average_sat_score',
-          controlFunc: this.handleaverage_sat_scoreChange,
-          content: this.state.average_sat_score,
-          placeholder: 'Type your SAT Score here' }),
-        _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
-          title: 'WHICH MAJORS ARE YOU INTERESTED IN?',
-          setName: 'majors',
-          type: 'checkbox',
-          controlFunc: this.handleMajorSelection,
-          options: this.state.majorOptions,
-          selectedOptions: this.state.majors }),
-        _react2.default.createElement(_Select2.default, {
-          name: 'sizeRange',
-          placeholder: 'Preferred student body size',
-          controlFunc: this.handlesize,
-          options: this.state.sizeRangeOptions,
-          selectedOption: this.state.size }),
-        _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
-          title: 'WHICH SPORTS DIVISION ARE YOU LOOKING FOR?',
-          setName: 'sportsDivision',
-          type: 'checkbox',
-          controlFunc: this.handlesports_division,
-          options: this.state.sportsDivisionOptions,
-          selectedOptions: this.state.sports_division }),
-        _react2.default.createElement('input', {
-          type: 'submit',
-          className: 'btn btn-primary float-right',
-          value: 'Submit' }),
         _react2.default.createElement(
-          'button',
-          (_React$createElement = {
-            className: 'btn'
-          }, _defineProperty(_React$createElement, 'className', 'btn btn-link float-left'), _defineProperty(_React$createElement, 'onClick', this.handleClearForm), _React$createElement),
-          'Clear form'
+          'div',
+          { className: 'container-fluid' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-5' },
+            _react2.default.createElement(_Select2.default, {
+              name: 'maxTuition',
+              placeholder: 'Max tuition per year',
+              controlFunc: this.handletuition,
+              options: this.state.maxTuitionOptions,
+              selectedOption: this.state.tuition })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-5' },
+            _react2.default.createElement(_Select2.default, {
+              name: 'sizeRange',
+              placeholder: 'Preferred student body size',
+              controlFunc: this.handlesize,
+              options: this.state.sizeRangeOptions,
+              selectedOption: this.state.size })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-2' },
+            _react2.default.createElement(
+              'button',
+              (_React$createElement = {
+                className: 'button'
+              }, _defineProperty(_React$createElement, 'className', 'btn btn-primary btn-lg pull-right'), _defineProperty(_React$createElement, 'onClick', this.handleClearForm), _React$createElement),
+              'Clear form'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'container-fluid' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-6' },
+            _react2.default.createElement(_SingleInput2.default, {
+              inputType: 'text',
+              title: 'ESTIMATED AVERAGE GPA',
+              name: 'average_gpa',
+              controlFunc: this.handleaverage_gpaChange,
+              content: this.state.average_gpa,
+              placeholder: 'Type estimated average GPA here' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-6' },
+            _react2.default.createElement(_SingleInput2.default, {
+              inputType: 'text',
+              title: 'SAT SCORE',
+              name: 'average_sat_score',
+              controlFunc: this.handleaverage_sat_scoreChange,
+              content: this.state.average_sat_score,
+              placeholder: 'Type your SAT Score here' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'container-fluid' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-12' },
+            _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
+              title: 'WHICH MAJORS ARE YOU INTERESTED IN?',
+              setName: 'majors',
+              type: 'checkbox',
+              controlFunc: this.handleMajorSelection,
+              options: this.state.majorOptions,
+              selectedOptions: this.state.majors })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'container-fluid' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-12' },
+            _react2.default.createElement(_CheckboxOrRadioGroup2.default, {
+              title: 'WHICH SPORTS DIVISION ARE YOU LOOKING FOR?',
+              setName: 'sportsDivision',
+              type: 'checkbox',
+              controlFunc: this.handlesports_division,
+              options: this.state.sportsDivisionOptions,
+              selectedOptions: this.state.sports_division })
+          ),
+          _react2.default.createElement('input', {
+            type: 'submit',
+            className: 'btn btn-primary float-right',
+            value: 'Submit' })
         )
       );
     }
@@ -22090,7 +22138,7 @@ var App = function (_React$Component) {
           { className: 'card' },
           _react2.default.createElement(
             'div',
-            { className: 'row' },
+            _defineProperty({ className: 'row' }, 'className', 'bio'),
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
@@ -22116,7 +22164,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah'
+                'Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah.'
               )
             ),
             _react2.default.createElement(
