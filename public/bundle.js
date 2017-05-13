@@ -22009,7 +22009,7 @@ var App = function (_React$Component) {
         { className: 'container-fluid' },
         _react2.default.createElement(
           'nav',
-          { className: 'navbar navbar-default' },
+          { className: 'navbar navbar-inverse' },
           _react2.default.createElement(
             'div',
             _defineProperty({ className: 'container-fluid' }, 'className', 'navigation'),
@@ -22057,18 +22057,24 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'container-fluid', id: 'banner' },
+          { className: 'container', id: 'banner' },
           _react2.default.createElement(
-            'div',
-            { className: 'row' },
+            'h1',
+            null,
             _react2.default.createElement(
-              'div',
-              { className: 'col-md-12' },
-              _react2.default.createElement('img', { className: 'img-responsive center-block', id: 'logo', src: 'uforu_option1.png', alt: 'UFORUHERE' })
+              'b',
+              null,
+              'UFORU'
             )
-          )
+          ),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement(
+            'h4',
+            null,
+            'UNIVERSITY FOR YOU'
+          ),
+          _react2.default.createElement('hr', null)
         ),
-        _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
           { className: 'container-fluid' },
@@ -22079,7 +22085,6 @@ var App = function (_React$Component) {
           { className: 'container-fluid' },
           _react2.default.createElement(_Results2.default, { colleges: this.state.colleges })
         ),
-        _react2.default.createElement('hr', null),
         _react2.default.createElement(
           'div',
           { className: 'card' },
@@ -22136,13 +22141,13 @@ var App = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          null,
+          { className: 'panel-group' },
           _react2.default.createElement(
-            'footer',
-            null,
+            'div',
+            { className: 'panel panel-default' },
             _react2.default.createElement(
-              'p',
-              null,
+              'div',
+              { className: 'panel-footer' },
               'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
             )
           )
@@ -42402,6 +42407,20 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       return emptyFunction.thatReturnsNull;
     }
 
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        warning(
+          false,
+          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
+          'received %s at index %s.',
+          getPostfixForTypeWarning(checker),
+          i
+        );
+        return emptyFunction.thatReturnsNull;
+      }
+    }
+
     function validate(props, propName, componentName, location, propFullName) {
       for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
         var checker = arrayOfTypeCheckers[i];
@@ -42534,6 +42553,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   // This handles more types than `getPropType`. Only used for error messages.
   // See `createPrimitiveTypeChecker`.
   function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
     var propType = getPropType(propValue);
     if (propType === 'object') {
       if (propValue instanceof Date) {
@@ -42543,6 +42565,23 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
     }
     return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
   }
 
   // Returns class name of the object, if any.
