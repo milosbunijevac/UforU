@@ -20536,7 +20536,10 @@ var Results = function (_React$Component) {
   function Results(props) {
     _classCallCheck(this, Results);
 
-    return _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
+
+    console.log(_this.props.colleges);
+    return _this;
   }
 
   _createClass(Results, [{
@@ -21726,23 +21729,15 @@ var ResultListEntry = function (_React$Component) {
             _react2.default.createElement("img", { className: "img-responsive cardImages", src: college.image_url })
           ),
           _react2.default.createElement(
-            "div",
-            { "class": "col-md-3" },
-            _react2.default.createElement(
-              "a",
-              { className: "college-name", href: "http://" + college.website_url },
-              " ",
-              college.name
-            )
+            "a",
+            { className: "college-name", href: "http://" + college.website_url },
+            " ",
+            college.name
           ),
           _react2.default.createElement(
-            "div",
-            { "class": "col-md-3" },
-            _react2.default.createElement(
-              "p",
-              { className: "description" },
-              college.description
-            )
+            "p",
+            { className: "description" },
+            college.description
           )
         )
       );

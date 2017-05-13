@@ -7,6 +7,7 @@ import _ from 'lodash';
 class Results extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props.colleges);
   }
 
   render() {
