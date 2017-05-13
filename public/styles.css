@@ -100,15 +100,7 @@
 h1 {
   font-family:'ostrichSansBlack';
   font-size: 175px;
-  text-shadow: 3px 0 0 #696969
-, 3px 0 0 #696969
-, 0 3px 0 #696969
-, 0 -3px 0 #696969
-, 3px 3px #696969
-, -3px -3px 0 #696969
-, 3px -3px 0 #696969
-, -3px 3px 0 #696969
-;
+  text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
   color: white;
   margin-top: 150px;
   margin-bottom: 0px;
@@ -118,15 +110,7 @@ h1 {
 h4 {
   font-family:'ostrichSansBlack';
   font-size: 125px;
-  text-shadow: 3px 0 0 #696969
-, 3px 0 0 #696969
-, 0 3px 0 #696969
-, 0 -3px 0 #696969
-, 3px 3px #696969
-, -3px -3px 0 #696969
-, 3px -3px 0 #696969
-, -3px 3px 0 #696969
-;
+  text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
   color: white;
   margin:0;
   padding:0;
@@ -322,15 +306,16 @@ img {
   width: 30;
 }
 
-.footer {
-
+.panel-footer {
+  bottom: 0;
   background-color: #373737;
   font-family: "Oswald-ExtraLight";
   color: lightgrey;
   font-size: 18px;
   padding: 10px;
   text-align: center;
-
+  margin: 0;
+  left:0;
 }
 
 .cardImages {
