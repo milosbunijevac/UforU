@@ -38,7 +38,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid-fullwidth">
           <nav className="navbar navbar-inverse">
             <div className="container-fluid" className="navigation">
               <div className="navbar-header">
@@ -87,22 +87,20 @@ class App extends React.Component {
             </div>
             <div className="row">
               <div className="col-md-4">
-                <p>Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah.</p>
+                <p>Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickname is Feisty Farrah.</p>
               </div>
               <div className="col-md-4">
-                <p>Arseniy Kotov is an all start programmer specializing in full stack developement</p>
+                <p>Arseniy Kotov is an all star programmer specializing in full stack developement</p>
               </div>
               <div className="col-md-4">
-                <p>Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive</p>
+                <p>Helen Tang is an all around rockstar. She specializes in making the front end of the application look absolutely amazing along with making her componenets incredibly responsive</p>
               </div>
             </div>
           </div>
-        <div className="panel-group">  
-          <div className="panel panel-default">
-            <div className="panel-footer">Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</div>
-          </div>
-        </div>  
-      </div>
+        <div className = "container-fluid-fullwidth">
+          <div className="navbar-default navbar-fixed-bottom">Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</div>
+        </div>
+      </div> 
     );
   }
 }

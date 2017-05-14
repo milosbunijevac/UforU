@@ -22052,7 +22052,7 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container-fluid' },
+        { className: 'container-fluid-fullwidth' },
         _react2.default.createElement(
           'nav',
           { className: 'navbar navbar-inverse' },
@@ -22162,7 +22162,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah.'
+                'Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickname is Feisty Farrah.'
               )
             ),
             _react2.default.createElement(
@@ -22171,7 +22171,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Arseniy Kotov is an all start programmer specializing in full stack developement'
+                'Arseniy Kotov is an all star programmer specializing in full stack developement'
               )
             ),
             _react2.default.createElement(
@@ -22180,22 +22180,18 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive'
+                'Helen Tang is an all around rockstar. She specializes in making the front end of the application look absolutely amazing along with making her componenets incredibly responsive'
               )
             )
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'panel-group' },
+          { className: 'container-fluid-fullwidth' },
           _react2.default.createElement(
             'div',
-            { className: 'panel panel-default' },
-            _react2.default.createElement(
-              'div',
-              { className: 'panel-footer' },
-              'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
-            )
+            { className: 'navbar-default navbar-fixed-bottom' },
+            'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
           )
         )
       );

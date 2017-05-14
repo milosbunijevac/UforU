@@ -145,9 +145,10 @@ body {
   font-family: "Oswald-Light";
   color: #373737;
   background-color: #F4F4F4;
-   margin: 0 auto;
-    padding: 0 auto;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
+
 form {
   margin-top: 1000px;
   border: 5px solid #C0B283;
@@ -241,26 +242,26 @@ select {
 }
 
 .survey {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 #DCD0C0;
-    color: #373737;
-    border-radius: 5px;
-    transition: 0.3s;
-    padding: 20px;
-    margin: 20px;
+  box-shadow: 0 4px 8px 0 #DCD0C0;
+  color: #373737;
+  border-radius: 5px;
+  transition: 0.3s;
+  padding: 20px;
+  margin: 20px;
 }
 
 .card:hover {
-    box-shadow: 0 8px 20px 0 #C0B283;
+  box-shadow: 0 8px 20px 0 #C0B283;
 }
 
 .container {
-    padding: 2px 16px;
+  padding: 2px 16px;
 }
 
 .description {
@@ -271,11 +272,11 @@ select {
 }
 
 .college-name {
-    font-family: "Oswald-Medium";
-    color: #373737;
-    font-size: 26px;    
-    font-weight: 300;
-    margin-bottom: 15px;
+  font-family: "Oswald-Medium";
+  color: #373737;
+  font-size: 26px;    
+  font-weight: 300;
+  margin-bottom: 15px;
 }
 
 a:link {
@@ -286,40 +287,38 @@ a:link {
 
 
 a:visited {
-    text-decoration: none;
-    color: #373737;
+  text-decoration: none;
+  color: #373737;
 }
 
 a:hover {
-    text-decoration: none;
-    color: gray;
+  text-decoration: none;
+  color: gray;
 }
 
 a:active {
-    text-decoration: none;
-    color: #373737;
+  text-decoration: none;
+  color: #373737;
 } 
 
 img { 
   width: 30;
 }
 
-.panel-footer {
-  bottom: 0;
+.navbar-default {
   background-color: #373737;
   font-family: "Oswald-ExtraLight";
   color: lightgrey;
   font-size: 18px;
+  margin-top: 10px;
   padding: 10px;
   text-align: center;
-  margin: 0;
-  left:0;
 }
 
 .cardImages {
-    display: block;
-    width: auto;
-    max-height: 100%;
+  display: block;
+  width: auto;
+  max-height: 100%;
 }
 
 .bio {
@@ -327,14 +326,13 @@ img {
 }
 
 .bioImages {
-    display: block;
-    width: auto;
-    max-height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    border-radius: 50%;
-    /*border: 5px solid #aaa;*/
+  display: block;
+  width: auto;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border-radius: 50%;
 }
 
 .card {
