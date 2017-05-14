@@ -20752,8 +20752,6 @@ var Survey = function (_React$Component) {
       console.log('Send this in a POST request:', userInfo);
 
       this.props.sendSurveyInfo(userInfo);
-
-      this.handleClearForm(e);
     }
   }, {
     key: 'render',
@@ -22054,7 +22052,7 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container-fluid' },
+        { className: 'container-fluid-fullwidth' },
         _react2.default.createElement(
           'nav',
           { className: 'navbar navbar-inverse' },
@@ -22164,7 +22162,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickame is Feisty Farrah.'
+                'Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickname is Feisty Farrah.'
               )
             ),
             _react2.default.createElement(
@@ -22173,7 +22171,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Arseniy Kotov is an all start programmer specializing in full stack developement'
+                'Arseniy Kotov is an all star programmer specializing in full stack developement'
               )
             ),
             _react2.default.createElement(
@@ -22182,22 +22180,18 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Helen is an all around rockstar. She specializes in making the front end of the application look apsolutely amazing along with making her componenets incredibly responsive'
+                'Helen Tang is an all around rockstar. She specializes in making the front end of the application look absolutely amazing along with making her componenets incredibly responsive'
               )
             )
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'panel-group' },
+          { className: 'container-fluid-fullwidth' },
           _react2.default.createElement(
             'div',
-            { className: 'panel panel-default' },
-            _react2.default.createElement(
-              'div',
-              { className: 'panel-footer' },
-              'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
-            )
+            { className: 'navbar-default navbar-fixed-bottom' },
+            'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
           )
         )
       );
@@ -42455,6 +42449,20 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       return emptyFunction.thatReturnsNull;
     }
 
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        warning(
+          false,
+          'Invalid argument supplid to oneOfType. Expected an array of check functions, but ' +
+          'received %s at index %s.',
+          getPostfixForTypeWarning(checker),
+          i
+        );
+        return emptyFunction.thatReturnsNull;
+      }
+    }
+
     function validate(props, propName, componentName, location, propFullName) {
       for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
         var checker = arrayOfTypeCheckers[i];
@@ -42587,6 +42595,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   // This handles more types than `getPropType`. Only used for error messages.
   // See `createPrimitiveTypeChecker`.
   function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
     var propType = getPropType(propValue);
     if (propType === 'object') {
       if (propValue instanceof Date) {
@@ -42596,6 +42607,23 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
       }
     }
     return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
   }
 
   // Returns class name of the object, if any.
