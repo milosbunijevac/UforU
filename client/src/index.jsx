@@ -90,15 +90,15 @@ class App extends React.Component {
                 <p>Farrah Bousetta is an upcoming professional software engineer with previous experience at Facebook, Google and other prestegious tech companies. She gets stuff done. Her nickname is Feisty Farrah.</p>
               </div>
               <div className="col-md-4">
-                <p>Arseniy Kotov is an all star programmer specializing in full stack developement</p>
+                <p>Arseniy Kotov is an all star programmer specializing in full stack developement.</p>
               </div>
               <div className="col-md-4">
-                <p>Helen Tang is an all around rockstar. She specializes in making the front end of the application look absolutely amazing along with making her componenets incredibly responsive</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
             </div>
           </div>
         <div className = "container-fluid-fullwidth">
-          <div className="navbar-default navbar-fixed-bottom">Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</div>
+          <div className="navbar-default navbar-fixed-bottom">Made by Farrah Bousetta, Arseniy Kotov, and Helen Tang</div>
         </div>
       </div> 
     );

@@ -22171,7 +22171,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Arseniy Kotov is an all star programmer specializing in full stack developement'
+                'Arseniy Kotov is an all star programmer specializing in full stack developement.'
               )
             ),
             _react2.default.createElement(
@@ -22180,7 +22180,7 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Helen Tang is an all around rockstar. She specializes in making the front end of the application look absolutely amazing along with making her componenets incredibly responsive'
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
               )
             )
           )
@@ -22191,7 +22191,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'navbar-default navbar-fixed-bottom' },
-            'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
+            'Made by Farrah Bousetta, Arseniy Kotov, and Helen Tang'
           )
         )
       );
