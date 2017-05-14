@@ -98,7 +98,7 @@ class App extends React.Component {
             </div>
           </div>
         <div className = "container-fluid-fullwidth">
-          <div className="navbar-default navbar-fixed-bottom">Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang</div>
+          <div className="navbar-default navbar-fixed-bottom">Made by Farrah Bousetta, Arseniy Kotov, and Helen Tang</div>
         </div>
       </div> 
     );

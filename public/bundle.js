@@ -22191,7 +22191,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'navbar-default navbar-fixed-bottom' },
-            'Made by Arseniy Kotov, Farrah Bousetta, and Helen Tang'
+            'Made by Farrah Bousetta, Arseniy Kotov, and Helen Tang'
           )
         )
       );
