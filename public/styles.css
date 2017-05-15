@@ -104,7 +104,7 @@ form {
   font-size: 20px;
 }
 
-/* Title within survey box */
+/* Title within survey box*/
 h5 {
   color: #373737;
   font-size: 30px;
@@ -223,8 +223,8 @@ a:hover {
   width: 1170px;
   margin: auto;
   float: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 /* Image hover */
@@ -264,6 +264,14 @@ p {
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: 18px;
+}
+
+h6 {
+  color: #373737;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 /* Bio images */

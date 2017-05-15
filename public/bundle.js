@@ -22138,6 +22138,19 @@ var App = function (_React$Component) {
             'div',
             _defineProperty({ className: 'row' }, 'className', 'bio'),
             _react2.default.createElement(
+              'h6',
+              null,
+              _react2.default.createElement(
+                'b',
+                null,
+                _react2.default.createElement(
+                  'u',
+                  null,
+                  'ABOUT THE CREATORS'
+                )
+              )
+            ),
+            _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
               _react2.default.createElement('img', { src: 'images/farrah_bousetta.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'FARRAH PHOTO HERE' })

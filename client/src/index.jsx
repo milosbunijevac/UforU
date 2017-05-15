@@ -74,6 +74,7 @@ class App extends React.Component {
         </div>
           <div className="card">
             <div className="row" className="bio">
+              <h6><b><u>ABOUT THE CREATORS</u></b></h6>
               <div className="col-md-4">
                 <img src="images/farrah_bousetta.png" className="img-responsive bioImages" style={{ height: 200, width: 200 }} alt="FARRAH PHOTO HERE"/>
               </div>
