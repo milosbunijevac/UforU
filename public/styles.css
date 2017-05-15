@@ -1,35 +1,8 @@
 @font-face {
-    font-family:'ostrichRegular';
-    src: url('../fonts/ostrichkit/ostrichregular-webfont.woff2') format('woff2'),
-         url('../fonts/ostrichkit/ostrichregular-webfont.woff') format('woff'),
-         url('../fonts/ostrichsans/ostrichregular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family:'ostrichSansLight';
-    src: url('../fonts/ostrichkit/ostrichsans-light-webfont.woff2') format('woff2'),
-         url('../fonts/ostrichkit/ostrichsans-light-webfont.woff') format('woff'),
-         url('../fonts/ostrichsans/ostrichsans-light.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family:'ostrichSansBlack';
     src: url('../fonts/ostrichkit/ostrichsansblack-webfont.woff2') format('woff2'),
          url('../fonts/ostrichkit/ostrichsansblack-webfont.woff') format('woff'),
          url('../fonts/ostrichsans/ostrichsansblack.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family:'ostrichSansMedium';
-    src: url('../fonts/ostrichkit/ostrichsans-medium-webfont.woff2') format('woff2'),
-         url('../fonts/ostrichkit/ostrichsans-medium-webfont.woff') format('woff'),
-         url('../fonts/ostrichsans/ostrichsans-medium.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -89,15 +62,12 @@
   padding-right: 0;
 }
 
-.jumbotron{
-    height: 100vh;
-}
 
 .wide img {
   width:100%;
 }
 
-h1 {
+h1, h4 {
   font-family:'ostrichSansBlack';
   font-size: 150px;
   text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
@@ -108,17 +78,11 @@ h1 {
 }
 
 h4 {
-  font-family:'ostrichSansBlack';
   font-size: 100px;
-  text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
-  color: white;
   margin:0;
-  padding:0;
 }
 
 hr {
-  padding: 0;
-  color:#373737;
   width: 700px;
 }
 
@@ -283,8 +247,6 @@ a:link {
   color: #373737;
   text-decoration: none;
 }
-
-
 
 a:visited {
   text-decoration: none;
