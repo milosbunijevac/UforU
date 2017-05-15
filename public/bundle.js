@@ -21772,7 +21772,7 @@ var ResultListEntry = function (_React$Component) {
           _react2.default.createElement(
             "div",
             { className: "col-md-3" },
-            _react2.default.createElement("img", { className: "img-responsive cardImages", src: college.image_url })
+            _react2.default.createElement("img", { className: "img-responsive cardImages style_prevu_kit", src: college.image_url })
           ),
           _react2.default.createElement(
             "a",
@@ -22138,19 +22138,32 @@ var App = function (_React$Component) {
             'div',
             _defineProperty({ className: 'row' }, 'className', 'bio'),
             _react2.default.createElement(
-              'div',
-              { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'farrah_bousetta.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'FARRAH PHOTO HERE' })
+              'h6',
+              null,
+              _react2.default.createElement(
+                'b',
+                null,
+                _react2.default.createElement(
+                  'u',
+                  null,
+                  'ABOUT THE CREATORS'
+                )
+              )
             ),
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'LinkedInPhoto.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'ARSENIY PHOTO HERE' })
+              _react2.default.createElement('img', { src: 'images/farrah_bousetta.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'FARRAH PHOTO HERE' })
             ),
             _react2.default.createElement(
               'div',
               { className: 'col-md-4' },
-              _react2.default.createElement('img', { src: 'helen_tang.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'HELEN PHOTO HERE' })
+              _react2.default.createElement('img', { src: 'images/arseniy_kotov.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'ARSENIY PHOTO HERE' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-4' },
+              _react2.default.createElement('img', { src: 'images/helen_tang.png', className: 'img-responsive bioImages', style: { height: 200, width: 200 }, alt: 'HELEN PHOTO HERE' })
             )
           ),
           _react2.default.createElement(
