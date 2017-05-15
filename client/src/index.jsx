@@ -65,7 +65,6 @@ class App extends React.Component {
                 UNIVERSITY FOR YOU
               </h4>
               <hr></hr>
-              {/*<img className="img-responsive center-block" id="logo" src="uforu_option1.png" alt="UFORUHERE"/>*/}
           </div>
         <div className="container-fluid">
           <Survey sendSurveyInfo = {this.sendSurveyInfo}/>
@@ -76,13 +75,13 @@ class App extends React.Component {
           <div className="card">
             <div className="row" className="bio">
               <div className="col-md-4">
-                <img src="farrah_bousetta.png" className="img-responsive bioImages" style={{ height: 200, width: 200 }} alt="FARRAH PHOTO HERE"/>
+                <img src="images/farrah_bousetta.png" className="img-responsive bioImages" style={{ height: 200, width: 200 }} alt="FARRAH PHOTO HERE"/>
               </div>
               <div className="col-md-4">
-                <img src="LinkedInPhoto.png" className="img-responsive bioImages" style={{ height: 200, width: 200}} alt="ARSENIY PHOTO HERE"/>
+                <img src="images/arseniy_kotov.png" className="img-responsive bioImages" style={{ height: 200, width: 200}} alt="ARSENIY PHOTO HERE"/>
               </div>
               <div className="col-md-4">
-                <img src="helen_tang.png" className="img-responsive bioImages" style={{ height: 200, width: 200 }} alt="HELEN PHOTO HERE"/>
+                <img src="images/helen_tang.png" className="img-responsive bioImages" style={{ height: 200, width: 200 }} alt="HELEN PHOTO HERE"/>
               </div>
             </div>
             <div className="row">

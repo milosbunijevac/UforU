@@ -1,91 +1,68 @@
+/* Importing fonts */
 @font-face {
-    font-family:'ostrichSansBlack';
-    src: url('../fonts/ostrichkit/ostrichsansblack-webfont.woff2') format('woff2'),
-         url('../fonts/ostrichkit/ostrichsansblack-webfont.woff') format('woff'),
-         url('../fonts/ostrichsans/ostrichsansblack.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family:'Oswald-Light';
-    src: url('../fonts/oswaldkit/oswald-light-webfont.woff2') format('woff2'),
-         url('../fonts/oswaldkit/oswald-light-webfont.woff') format('woff'),
-         url('../fonts/oswald/oswald-light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family:'ostrichSansBlack';
+  src: url('../fonts/ostrichkit/ostrichsansblack-webfont.woff2') format('woff2'),
+       url('../fonts/ostrichkit/ostrichsansblack-webfont.woff') format('woff'),
+       url('../fonts/ostrichsans/ostrichsansblack.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family:'Oswald-Medium';
-    src: url('../fonts/oswaldkit/oswald-medium-webfont.woff2') format('woff2'),
-         url('../fonts/oswaldkit/oswald-medium-webfont.woff') format('woff'),
-         url('../fonts/oswald/oswald-medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family:'Oswald-Light';
+  src: url('../fonts/oswaldkit/oswald-light-webfont.woff2') format('woff2'),
+       url('../fonts/oswaldkit/oswald-light-webfont.woff') format('woff'),
+       url('../fonts/oswald/oswald-light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family:'Oswald-ExtraLight';
-    src: url('../fonts/oswaldkit/oswald-extralight-webfont.woff2') format('woff2'),
-         url('../fonts/oswaldkit/oswald-extralight-webfont.woff') format('woff'),
-         url('../fonts/oswald/oswald-extralight.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;    
+  font-family:'Oswald-Medium';
+  src: url('../fonts/oswaldkit/oswald-medium-webfont.woff2') format('woff2'),
+       url('../fonts/oswaldkit/oswald-medium-webfont.woff') format('woff'),
+       url('../fonts/oswald/oswald-medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-#logo {
-  opacity: 1;
-  width: 500px;
+@font-face {
+  font-family:'Oswald-ExtraLight';
+  src: url('../fonts/oswaldkit/oswald-extralight-webfont.woff2') format('woff2'),
+       url('../fonts/oswaldkit/oswald-extralight-webfont.woff') format('woff'),
+       url('../fonts/oswald/oswald-extralight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;    
 }
 
+/* General themes covering anything that isn't changed via its own css */
+body {
+  font-family: "Oswald-Light";
+  color: #373737;
+  background-color: #F4F4F4;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* Transparent background image "homepage" */
 #banner {
-  width: 100%;
-  height:1000px;
-  text-align: center;
-  margin:0;
-  padding:0;
   background-image: url('./backgroundPhotos/students_transparent80.png');
   background-position: center center;
   background-size: content;
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: absolute;
+  width: 100%;
+  height:1000px;
+  text-align: center;
+  margin:0;
+  padding:0;
   top: 0;
   left: 0;
   z-index: -1;
 }
 
-.no-padding {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-
-.wide img {
-  width:100%;
-}
-
-h1, h4 {
-  font-family:'ostrichSansBlack';
-  font-size: 150px;
-  text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
-  color: white;
-  margin-top: 150px;
-  margin-bottom: 0px;
-  padding:0;
-}
-
-h4 {
-  font-size: 100px;
-  margin:0;
-}
-
-hr {
-  width: 700px;
-}
-
+/* Nav bar up top */
 .navigation {
   background-color: #373737;
   top: 0;
@@ -96,6 +73,38 @@ hr {
   position: absolute;
 }
 
+/* Title in the middle of the spanning background photo */
+h1, h4 {
+  font-family:'ostrichSansBlack';
+  font-size: 150px;
+  /* Hacky way to make letters look outlined */
+  text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
+  color: white;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  padding:0;
+}
+
+/* Title in the middle of the spanning background photo */
+h4 {
+  font-size: 100px;
+  margin:0;
+}
+
+/* Horizontal rule around h4 */
+hr {
+  width: 700px;
+}
+
+/* Survey box */
+form {
+  margin-top: 1000px;
+  border: 5px solid #C0B283;
+  padding: 20px 20px 25px 20px;
+  font-size: 20px;
+}
+
+/* Title within survey box */
 h5 {
   color: #373737;
   font-size: 30px;
@@ -104,89 +113,7 @@ h5 {
   padding-bottom: 20px;
 }
 
-
-body {
-  font-family: "Oswald-Light";
-  color: #373737;
-  background-color: #F4F4F4;
-  margin: 0 auto;
-  padding-bottom: 50px;
-}
-
-form {
-  margin-top: 1000px;
-  border: 5px solid #C0B283;
-  padding: 20px 20px 25px 20px;
-  font-size: 20px;
-}
-
-p {
-  font-family: "Oswald-Light";
-  color: #373737;
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-input[type=checkbox],
-input[type=radio] {
-  margin-right: 8px;
-}
-.form-label.capitalize {
-  text-transform: capitalize;
-}
-.checkbox-group {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-size: 18px;
-  padding: 20px;
-}
-.checkbox-group .form-label {
-  width: 50%;
-}
-input[type=submit] {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #C0B283;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.btn, input[type=submit] {
-  width: 100%;
-  background-color: #C0B283;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.btn:hover, input[type=submit]:hover {
-  background-color: #696969;
-  cursor: pointer;
-}
-
-.btn:focus, input[type=text]:focus {
-  background-color: #696969;
-  cursor: pointer;
-}
-
-input[type=text]:visited {
-  background-color: #C0B283;
-}
-
+/* Preferred student body size/Max tuition boxes */
 select {
   font-family: "Oswald-Light";
   background: white;
@@ -200,17 +127,54 @@ select {
   height: 34px;
 }
 
-.form-select{
-  font-family: "Oswald-Light";
-  size:18px; 
+/* Boxes for SAT and GPA */
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #C0B283;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.survey {
-  border-radius: 5px;
-  background-color: #f2f2f2;
+/* Spacing inbetween checkbox/radio button and association name */
+input[type=checkbox],
+input[type=radio] {
+  margin-right: 8px;
+}
+
+/* Majors group styling */
+.checkbox-group {
+  font-size: 20px;
   padding: 20px;
 }
 
+/* Splits majors/sports into two columns */
+.checkbox-group .form-label {
+  width: 50%;
+}
+
+/* ClearForm and Submit buttons default */
+.btn, input[type=submit] {
+  width: 100%;
+  background-color: #C0B283;
+  color: white;
+  padding: 12px 18px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+/* ClearForm and Submit buttons on hover */
+.btn:hover, input[type=submit]:hover {
+  background-color: #696969;
+  cursor: pointer;
+}
+
+/* styling bootstrap cards (bios and schools) */
 .card {
   box-shadow: 0 4px 8px 0 #DCD0C0;
   color: #373737;
@@ -220,14 +184,12 @@ select {
   margin: 20px;
 }
 
+/* styling bootstrap cards (bios and schools) */
 .card:hover {
   box-shadow: 0 8px 20px 0 #C0B283;
 }
 
-.container {
-  padding: 2px 16px;
-}
-
+/* styling bootstrap cards (bios and schools) */
 .description {
   font-family: "Oswald-Light";
   font-size: 22px;
@@ -235,6 +197,7 @@ select {
   margin-bottom: 15px;
 }
 
+/* styling bootstrap cards (bios and schools) */
 .college-name {
   font-family: "Oswald-Medium";
   color: #373737;
@@ -243,50 +206,67 @@ select {
   margin-bottom: 15px;
 }
 
+/* School name links to school homepage */
 a:link {
   color: #373737;
   text-decoration: none;
 }
 
-a:visited {
-  text-decoration: none;
-  color: #373737;
-}
-
+/* School name links to school homepage */
 a:hover {
   text-decoration: none;
   color: gray;
 }
 
-a:active {
-  text-decoration: none;
+/* School and bio cards */
+.card {
+  width: 1170px;
+  margin: auto;
+  float: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Image hover */
+.style_prevu_kit {
+  display:inline-block;
+  border:0;
+  position: relative;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1); 
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1); 
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);   
+}
+
+/* Image hover */
+.style_prevu_kit:hover {
+  box-shadow: 0px 0px 150px #000000;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);   
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(2.0);
+}
+
+/* Univerity card/Bio text */
+p {
+  font-family: "Oswald-Light";
   color: #373737;
-} 
-
-img { 
-  width: 30;
-}
-
-.navbar-default {
-  background-color: #373737;
-  font-family: "Oswald-ExtraLight";
-  color: lightgrey;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   font-size: 18px;
-  margin-top: 10px;
-  padding: 10px;
-  text-align: center;
 }
 
-.cardImages {
-  display: block;
-  width: auto;
-  max-height: 100%;
-}
-
-.bio {
-  padding: 20px;
-}
-
+/* Bio images */
 .bioImages {
   display: block;
   width: auto;
@@ -297,39 +277,13 @@ img {
   border-radius: 50%;
 }
 
-.card {
-  width: 1170px;
-  margin: 0 auto;
-  float: none;
-  margin-bottom: 10px;
-}
-
-
-.style_prevu_kit {
-    display:inline-block;
-    border:0;
-    /*width:196px;
-    height:210px;*/
-    position: relative;
-    -webkit-transition: all 200ms ease-in;
-    -webkit-transform: scale(1); 
-    -ms-transition: all 200ms ease-in;
-    -ms-transform: scale(1); 
-    -moz-transition: all 200ms ease-in;
-    -moz-transform: scale(1);
-    transition: all 200ms ease-in;
-    transform: scale(1);   
-
-}
-.style_prevu_kit:hover {
-    box-shadow: 0px 0px 150px #000000;
-    z-index: 2;
-    -webkit-transition: all 200ms ease-in;
-    -webkit-transform: scale(1.5);
-    -ms-transition: all 200ms ease-in;
-    -ms-transform: scale(1.5);   
-    -moz-transition: all 200ms ease-in;
-    -moz-transform: scale(1.5);
-    transition: all 200ms ease-in;
-    transform: scale(2.0);
+/* bottom footer */
+.navbar-default {
+  background-color: #373737;
+  font-family: "Oswald-ExtraLight";
+  color: lightgrey;
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
 }
