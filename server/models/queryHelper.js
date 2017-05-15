@@ -102,16 +102,6 @@ var mySearchFunction = function(prefs, cb) {
         return school.tuition <= inputTuition && (schoolMin <= school.size && school.size <= schoolMax);
       });
 
-      // var uniqResults = {};
-      // var newResults = [];
-      // for (let i = 0; i < results.length; i++) {
-      //   if (uniqResults[results[i].id] !== undefined) {
-      //     newResults.push(results[i]);
-      //   } else {
-      //     uniqResults[results[i].id] = 1;
-      //   }
-      // }
-
       results = _.uniq(results, 'id');
 
       results = _.sortBy(results, 'average_gpa');
@@ -125,16 +115,6 @@ var mySearchFunction = function(prefs, cb) {
         return school.tuition <= inputTuition;
       });
 
-      // var uniqResults = {};
-      // var newResults = [];
-      // for (let i = 0; i < results.length; i++) {
-      //   if (uniqResults[results[i].id] !== undefined) {
-      //     newResults.push(results[i]);
-      //   } else {
-      //     uniqResults[results[i].id] = 1;
-      //   }
-      // }
-
       results = _.uniq(results, 'id');
       results = _.sortBy(results, 'average_gpa');
       cb(null, results.reverse());
@@ -145,32 +125,13 @@ var mySearchFunction = function(prefs, cb) {
         return (schoolMin <= school.size) && (school.size <= schoolMax);
       });
 
-      // var uniqResults = {};
-      // var newResults = [];
-      // for (let i = 0; i < results.length; i++) {
-      //   if (uniqResults[results[i].id] !== undefined) {
-      //     newResults.push(results[i]);
-      //   } else {
-      //     uniqResults[results[i].id] = 1;
-      //   }
-      // }
-
       results = _.uniq(results, 'id');
       results = _.sortBy(results, 'average_gpa');
       cb(null, results.reverse());
       
     } else {
+      
       var results = arrOfData;
-
-      // var uniqResults = {};
-      // var newResults = [];
-      // for (let i = 0; i < results.length; i++) {
-      //   if (uniqResults[results[i].id] !== undefined) {
-      //     newResults.push(results[i]);
-      //   } else {
-      //     uniqResults[results[i].id] = 1;
-      //   }
-      // }
 
       results = _.uniq(results, 'id');
       results = _.sortBy(results, 'average_gpa');
