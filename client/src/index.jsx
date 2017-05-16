@@ -20,6 +20,7 @@ class App extends React.Component {
 
   sendSurveyInfo(userData) {
     console.log('axios data:', userData);
+    userData.size = userData.size.split("-");
     axios({
       url: '/api/colleges/suggestions',
       method: 'POST',
