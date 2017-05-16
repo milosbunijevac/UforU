@@ -3,6 +3,18 @@
   "scripts": {
   },
   "env": {
+     "DB_HOST": {
+      "required":true
+    },
+    "DB_USER": {
+      "required":true
+    },
+    "DB_PASS": {
+      "required":true
+    },
+    "DB_DATABASE": {
+      "required":true
+    }
   },
   "formation": {
   },
