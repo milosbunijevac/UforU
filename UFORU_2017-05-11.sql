@@ -19,16 +19,40 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+CREATE DATABASE UFORU;
+
+USE UFORU;
+
+# table Users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Users`;
+
+CREATE TABLE `Users` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`username` varchar(25),
+	`password` varchar(255),
+	PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+# table FavoriteUs
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `FavoriteUs`;
+
+CREATE TABLE `FavoriteUs` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`user_id` int(11) NOT NULL,
+	`university_id` int(11) NOT NULL,
+	PRIMARY KEY (`id`),
+	FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`),
+	FOREIGN KEY (`university_id`) REFERENCES `Universities` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 # Dump of table Majors
 # ------------------------------------------------------------
-CREATE DATABASE UFORU;
-
-USE UFORU;
-
-CREATE DATABASE UFORU;
-
-USE UFORU;
 
 DROP TABLE IF EXISTS `Majors`;
 
