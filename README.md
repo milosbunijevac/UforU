@@ -1,6 +1,6 @@
 # UforU
 
-> Yo ... sup??
+> Find universities that fit you!
 
 ## Team
 
