@@ -71,7 +71,7 @@ class Survey extends React.Component {
     this.setState({ majors: newSelectionArray }, () => console.log('major selection', this.state.majors));
   }
   handlesize(e) {
-    this.setState({ size: e.target.value.split('-') }, () => console.log('size range', this.state.size));
+    this.setState({ size: e.target.value }, () => console.log('size range', this.state.size));
   }
   handlesports_division(e) {
     this.setState({ sports_division: e.target.value }, () => console.log('Sports Division', this.state.sports_division));

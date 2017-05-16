@@ -20709,7 +20709,7 @@ var Survey = function (_React$Component) {
     value: function handlesize(e) {
       var _this7 = this;
 
-      this.setState({ size: e.target.value.split('-') }, function () {
+      this.setState({ size: e.target.value }, function () {
         return console.log('size range', _this7.state.size);
       });
     }
@@ -22034,6 +22034,7 @@ var App = function (_React$Component) {
       var _this2 = this;
 
       console.log('axios data:', userData);
+      userData.size = userData.size.split("-");
       (0, _axios2.default)({
         url: '/api/colleges/suggestions',
         method: 'POST',
