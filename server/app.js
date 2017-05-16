@@ -15,9 +15,15 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(router);
 
+app.get('*', function(request, response) {
+  response.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 app.listen(PORT, function () {
   console.log('listening right now on port', PORT);
 });
+
+
 console.log('listening on', IP, PORT);
 
 //adding comment to test review apps 

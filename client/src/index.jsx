@@ -4,6 +4,8 @@ import $ from 'jquery';
 import Survey from './components/Survey.jsx';
 import Results from './components/Results.jsx';
 import axios from 'axios';
+import Login from './components/Login.jsx';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +22,7 @@ class App extends React.Component {
 
   sendSurveyInfo(userData) {
     console.log('axios data:', userData);
-    userData.size = userData.size.split("-");
+    userData.size = userData.size.split('-');
     axios({
       url: '/api/colleges/suggestions',
       method: 'POST',
@@ -108,4 +110,10 @@ class App extends React.Component {
 
 
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render( 
+  <Router> 
+    <div>
+      <Route path="/home" component={App} />
+      <Route path="/login" component={Login} />
+    </div>
+  </Router>, document.getElementById('app'));
