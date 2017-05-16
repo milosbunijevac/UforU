@@ -5,6 +5,7 @@ import Survey from './components/Survey.jsx';
 import Results from './components/Results.jsx';
 import axios from 'axios';
 import Login from './components/Login.jsx';
+import Signup from './components/Signup.jsx';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 class App extends React.Component {
@@ -115,5 +116,6 @@ ReactDOM.render(
     <div>
       <Route path="/home" component={App} />
       <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
     </div>
   </Router>, document.getElementById('app'));
