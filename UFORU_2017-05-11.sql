@@ -23,6 +23,10 @@
 # Dump of table Majors
 # ------------------------------------------------------------
 
+CREATE DATABASE UFORU;
+
+USE UFORU;
+
 DROP TABLE IF EXISTS `Majors`;
 
 CREATE TABLE `Majors` (
