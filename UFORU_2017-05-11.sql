@@ -22,13 +22,6 @@
 
 # Dump of table Majors
 # ------------------------------------------------------------
-CREATE DATABASE UFORU;
-
-USE UFORU;
-
-CREATE DATABASE UFORU;
-
-USE UFORU;
 
 CREATE DATABASE UFORU;
 
