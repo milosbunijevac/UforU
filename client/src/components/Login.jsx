@@ -31,12 +31,11 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3 className = "loginText"> Please Login below </h3>
-        <h3 className = "loginText"> Logging in will allow you to save and customize various preferences including colleges, tuition and more! </h3>
-        <div className = "col-md-6 col-md-offset-3">
-          <input className = "inputText" type = "text" name = "username" defaultValue = "Enter Username" onChange={this.updateVal.bind(this, 'username')}></input>
-          <input className = "inputText" type = "text" name = "password" defaultValue = "Enter Password" onChange={this.updateVal.bind(this, 'password')}></input>
+      <div className = "signupContain">
+        <p className = "loginText"> Please Login below </p>
+        <div className = "col-md-2 col-md-offset-5">
+          <input className = "inputText" type = "text" name = "username" placeholder = "Enter Username" onChange={this.updateVal.bind(this, 'username')}></input>
+          <input className = "inputText" type = "text" name = "password" placeholder = "Enter Password" onChange={this.updateVal.bind(this, 'password')}></input>
         </div>
         <div className = "loginButton">
           <button className = "loginButton" type = "submit" onClick = {this.onLoginSubmit.bind(this)}>Login</button>

@@ -11,27 +11,27 @@ class Signup extends React.Component {
     };
   }
 
-usernameHandler(e) {
-  this.setState({
-    username: e.target.value
-  });
-}
+  usernameHandler(e) {
+    this.setState({
+      username: e.target.value
+    });
+  }
 
-passwordHandler(e) {
-  this.setState({
-    password: e.target.value
-  });
-}
+  passwordHandler(e) {
+    this.setState({
+      password: e.target.value
+    });
+  }
 
 
-submitHandler() {
-  console.log('sending ', this.state.username, this.state.password);
-  var userData = {
-    username: this.state.username,
-    password: this.state.password
-  };
+  submitHandler() {
+    console.log('sending ', this.state.username, this.state.password);
+    var userData = {
+      username: this.state.username,
+      password: this.state.password
+    };
 
-  axios({
+    axios({
       url: '/signup',
       method: 'POST',
       data: userData,
@@ -45,21 +45,45 @@ submitHandler() {
           showError: true
         });
       });
-}
+  }
+
+  updateVal(name, event) {
+    var updater = {};
+    updater[name] = event.target.value;
+    this.setState(updater);
+  }
+
+  onSignupSubmit () {
+    let userInfo = {username: this.state.username, password: this.state.password};
+    axios({
+      url: '/signup',
+      method: 'POST',
+      data: userInfo,
+
+    })
+      .then (
+        //We'll get a response from this post, and that response is going to either be good we made a user or the user already exists.
+        //We need to handle this occurance.
+        console.log('Signup submission posted')
+      )
+      .catch ((error) => {
+        console.log('An error occurred inside of the onSignupSubmit method' + error);
+      });
+  }
 
   render() {
     return (
-      <div>
-        <h2> Hello from signup </h2>
-        
-  <input type="text" name="username" onChange = {this.usernameHandler.bind(this)} />
-  <input type="text" name="password" onChange = {this.passwordHandler.bind(this)}/>
-  <input type="submit" onClick = {this.submitHandler.bind(this)}/>
-  <div>
-    {this.state.showError ? 'This user already exists': ''}
-  </div>
-
-
+      <div className = "signupContain">
+        <p className = "loginText"> Create an account </p>
+        <div className = "col-md-2 col-md-offset-5">
+          <div className = "form-group">
+            <input className = "form-control" type = "text" name = "username" placeholder = "Enter Username" onChange={this.updateVal.bind(this, 'username')}></input>
+            <input className = "inputText" type = "text" name = "password" placeholder = "Enter Password" onChange={this.updateVal.bind(this, 'password')}></input>
+          </div>
+        </div>
+        <div className = "loginButton">
+          <button className = "loginButton" type = "submit" onClick = {this.onSignupSubmit.bind(this)}>Signup</button>
+        </div>
       </div>
     );
   }
