@@ -9,11 +9,14 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <h2> Hello from login </h2>
-        {/*<form method = "POST">
+        <div className = "inputLogin col-md-12">
           <input type = "text" name = "username" defaultValue = "Enter Username"></input>
           <input type = "text" name = "password" defaultValue = "Enter Password"></input>
-        </form>*/}
+        </div>
+        <div className = "loginButton">
+          <button type = "submit">Login</button>
+        </div>
+          
       </div>
     );
   }
