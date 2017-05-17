@@ -23,5 +23,28 @@ module.exports = {
         }
       });
     }
+  },
+
+  signup: {
+    get: function(username, password, cb) {
+      console.log('beginning of model function for signup');
+      connection.query('SELECT * from Users Where username = ?', username, function(err, results, fields) {
+        if (err) {
+          cb(err, null);
+        } else {
+          if (results.length !== 0) {
+            cb(err, null);
+          } else {
+            connection.query('Insert into Users (username, password) Values ("' + username + '","' + password + '")', function(err, results, fields) {
+              if (err) {
+                cb(err, null);
+              } else {
+                cb(null, 'User successfully created');
+              }
+            });
+          }
+        }
+      });
+    }
   }
 };

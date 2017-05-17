@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -7,7 +8,8 @@ class Signup extends React.Component {
     this.state = {
       username: '',
       password: '',
-      showError: false
+      showError: false,
+      redirect: false
     };
   }
 
@@ -37,8 +39,8 @@ submitHandler() {
       data: userData,
     })
       .then ((results) => {
-
-        console.log('User successfully signed up');
+        console.log('User successfully signed up', results);
+        this.setState({redirect: true});
       })
       .catch ((error) => {
         this.setState({
@@ -48,18 +50,21 @@ submitHandler() {
 }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to='/home' />;
+    }
+
     return (
+
       <div>
         <h2> Hello from signup </h2>
-        
+
   <input type="text" name="username" onChange = {this.usernameHandler.bind(this)} />
   <input type="text" name="password" onChange = {this.passwordHandler.bind(this)}/>
   <input type="submit" onClick = {this.submitHandler.bind(this)}/>
   <div>
     {this.state.showError ? 'This user already exists': ''}
   </div>
-
-
       </div>
     );
   }
