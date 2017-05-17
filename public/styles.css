@@ -312,6 +312,11 @@ h6 {
   margin: 0px auto;
   height: 50px;
   width: 100px;
+  
+}
+
+.form-control {
+  height: 46px;
 }
 
 .loginText {
