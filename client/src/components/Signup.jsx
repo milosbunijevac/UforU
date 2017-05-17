@@ -73,11 +73,10 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3 className = "loginText"> Please Signup below </h3>
-        <h3 className = "loginText"> Signup will allow you to customize your preferences! </h3>
-        <div className = "col-md-6 col-md-offset-3">
-          <div className = "form-group has-error">
+      <div className = "signupContain">
+        <p className = "loginText"> Create an account </p>
+        <div className = "col-md-2 col-md-offset-5">
+          <div className = "form-group">
             <input className = "form-control" type = "text" name = "username" placeholder = "Enter Username" onChange={this.updateVal.bind(this, 'username')}></input>
             <input className = "inputText" type = "text" name = "password" placeholder = "Enter Password" onChange={this.updateVal.bind(this, 'password')}></input>
           </div>
@@ -85,7 +84,6 @@ class Signup extends React.Component {
         <div className = "loginButton">
           <button className = "loginButton" type = "submit" onClick = {this.onSignupSubmit.bind(this)}>Signup</button>
         </div>
-      
       </div>
     );
   }
