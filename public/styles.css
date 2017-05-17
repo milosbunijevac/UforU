@@ -314,3 +314,7 @@ h6 {
   height: 50px;
   width: 100px;
 }
+
+.loginText {
+  text-align: center;
+}
