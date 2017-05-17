@@ -303,7 +303,6 @@ h6 {
   margin: 10px auto;
   border: 1px solid #C0B283;
   border-radius: 4px;
-  box-sizing: border-box;
   display: grid;
 }
 
