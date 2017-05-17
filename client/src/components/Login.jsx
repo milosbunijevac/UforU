@@ -23,14 +23,11 @@ class Login extends React.Component {
       });
   }
 
-  handleClickUser (event) {
-    this.setState({username: event.target.value});
+  updateVal(name, event) {
+    var updater = {};
+    updater[name] = event.target.value;
+    this.setState(updater);
   }
-
-  handleClickPass (event) {
-    this.setState({password: event.target.value});
-  }
-
 
   render() {
     return (
@@ -38,8 +35,8 @@ class Login extends React.Component {
         <h3 className = "loginText"> Please Login below </h3>
         <h3 className = "loginText"> Logging in will allow you to save and customize various preferences including colleges, tuition and more! </h3>
         <div className = "col-md-6 col-md-offset-3">
-          <input className = "inputText" type = "text" name = "username" defaultValue = "Enter Username" onChange={this.handleClickUser.bind(this)}></input>
-          <input className = "inputText" type = "text" name = "password" defaultValue = "Enter Password" onChange={this.handleClickPass.bind(this)}></input>
+          <input className = "inputText" type = "text" name = "username" defaultValue = "Enter Username" onChange={this.updateVal.bind(this, 'username')}></input>
+          <input className = "inputText" type = "text" name = "password" defaultValue = "Enter Password" onChange={this.updateVal.bind(this, 'password')}></input>
         </div>
         <div className = "loginButton">
           <button className = "loginButton" type = "submit" onClick = {this.onLoginSubmit.bind(this)}>Login</button>
