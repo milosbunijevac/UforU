@@ -110,16 +110,37 @@ class App extends React.Component {
 }
 
 var requireLogin = function() {
-  console.log('this gets to requirelogin');
+  console.log('yay');
+  axios({
+    url: '/api/authenticate',
+    method: 'GET',
+  })
+      .then ((results) => {
+
+        console.log('User successfully signed up');
+        // window.location = '/login';
+      })
+      .catch ((error) => {
+        this.setState({
+          showError: true
+        });
+      });
+
+//  var request = new XMLHttpRequest();
+// request.open('GET', 'authenticate', false);  // `false` makes the request synchronous
+// request.send(null);
+
+
+//   console.log(request.responseText);
+
+
 };
 
 ReactDOM.render(
   <Router>
     <div>
       <Route path='/' render={() => {
-        return <App onEnter={
-              requireLogin()
-            }/>;
+        return <App onEnter={requireLogin()}/>;
       }} />
       <Route path="/home" component={App} />
       <Route path="/login" component={Login} />
