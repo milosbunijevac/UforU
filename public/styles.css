@@ -295,3 +295,29 @@ h6 {
   padding: 10px;
   text-align: center;
 }
+
+.inputLogin {
+  float: none;
+  width: 50%;
+  padding: 8px 20px;
+  margin: 10px auto;
+  border: 1px solid #C0B283;
+  border-radius: 4px;
+  display: grid;
+}
+
+.loginButton {
+  float: none;
+  display: block;
+  margin: 0px auto;
+  height: 50px;
+  width: 100px;
+}
+
+.loginText {
+  text-align: center;
+  font-family: 'ostrichSansBlack';
+  text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
+  color: white;
+  padding: 0px;
+}
