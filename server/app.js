@@ -13,12 +13,21 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
+app.use(sessions(process.env.REDISCLOUD_URL, process.env.COOKIE_SECRET));
 
+app.get('/', function(request, response) {
+  if (request.session.test === 'it works') {
+    response.redirect('/home');
+  } else {
+    response.redirect('/login');
+  }
+});
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(router);
-app.use(sessions(process.env.REDISCLOUD_URL, process.env.COOKIE_SECRET));
 app.get('*', function(request, response) {
   response.sendFile(path.join(__dirname, '../public/index.html'));
+  console.log(request.session);
+  request.session.test = 'it works';
 });
 
 app.listen(PORT, function () {
