@@ -109,11 +109,18 @@ class App extends React.Component {
   }
 }
 
+var requireLogin = function() {
+  console.log('this gets to requirelogin');
+};
 
-
-ReactDOM.render( 
-  <Router> 
+ReactDOM.render(
+  <Router>
     <div>
+      <Route path='/' render={() => {
+        return <App onEnter={
+              requireLogin()
+            }/>;
+      }} />
       <Route path="/home" component={App} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
