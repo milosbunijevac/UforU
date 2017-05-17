@@ -43,8 +43,9 @@ class Login extends React.Component {
         </div>
         <div className = "loginButton">
           <button className = "loginButton" type = "submit" onClick = {this.onLoginSubmit.bind(this)}>Login</button>
+          <h6>Don't have an account? <a href='/signup'>Sign Up!</a> </h6>
         </div>
-          
+      
       </div>
     );
   }
