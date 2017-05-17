@@ -317,4 +317,8 @@ h6 {
 
 .loginText {
   text-align: center;
+  font-family: 'ostrichSansBlack';
+  text-shadow: 3px 0 0 #696969, 3px 0 0 #696969, 0 3px 0 #696969, 0 -3px 0 #696969, 3px 3px #696969, -3px -3px 0 #696969, 3px -3px 0 #696969, -3px 3px 0 #696969;
+  color: white;
+  padding: 0px;
 }
