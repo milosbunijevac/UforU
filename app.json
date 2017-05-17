@@ -3,16 +3,13 @@
   "scripts": {
   },
   "env": {
-     "DB_HOST": {
+     "CLEARDB_DATABASE_URL": {
       "required":true
     },
-    "DB_USER": {
+    "REDISCLOUD_URL": {
       "required":true
     },
-    "DB_PASS": {
-      "required":true
-    },
-    "DB_DATABASE": {
+    "COOKIE_SECRET": {
       "required":true
     }
   },
