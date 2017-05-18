@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -7,7 +8,8 @@ class Signup extends React.Component {
     this.state = {
       username: '',
       password: '',
-      showError: false
+      showError: false,
+      redirect: false
     };
   }
 
@@ -37,8 +39,8 @@ class Signup extends React.Component {
       data: userData,
     })
       .then ((results) => {
-
-        console.log('User successfully signed up');
+        console.log('User successfully signed up', results);
+        this.setState({redirect: true});
       })
       .catch ((error) => {
         this.setState({
@@ -47,43 +49,23 @@ class Signup extends React.Component {
       });
   }
 
-  updateVal(name, event) {
-    var updater = {};
-    updater[name] = event.target.value;
-    this.setState(updater);
-  }
-
-  onSignupSubmit () {
-    let userInfo = {username: this.state.username, password: this.state.password};
-    axios({
-      url: '/signup',
-      method: 'POST',
-      data: userInfo,
-
-    })
-      .then (
-        //We'll get a response from this post, and that response is going to either be good we made a user or the user already exists.
-        //We need to handle this occurance.
-        console.log('Signup submission posted')
-      )
-      .catch ((error) => {
-        console.log('An error occurred inside of the onSignupSubmit method' + error);
-      });
-  }
-
   render() {
+     if (this.state.redirect) {
+      return <Redirect to='/home' />;
+    }
     return (
       <div className = "signupContain">
         <p className = "loginText"> Create an account </p>
         <div className = "col-md-2 col-md-offset-5">
           <div className = "form-group">
-            <input className = "form-control" type = "text" name = "username" placeholder = "Enter Username" onChange={this.updateVal.bind(this, 'username')}></input>
-            <input className = "inputText" type = "text" name = "password" placeholder = "Enter Password" onChange={this.updateVal.bind(this, 'password')}></input>
+            <input className = "form-control" type = "text" name = "username" placeholder = "Enter Username" onChange={this.usernameHandler.bind(this)}></input>
+            <input className = "inputText" type = "text" name = "password" placeholder = "Enter Password" onChange={this.passwordHandler.bind(this)}></input>
           </div>
         </div>
         <div className = "loginButton">
-          <button className = "loginButton" type = "submit" onClick = {this.onSignupSubmit.bind(this)}>Signup</button>
+          <button className = "loginButton" type = "submit" onClick = {this.submitHandler.bind(this)}>Signup</button>
         </div>
+
       </div>
     );
   }

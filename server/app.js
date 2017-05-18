@@ -5,6 +5,8 @@ var cors = require('cors');
 var path = require('path');
 var router = require('./router/router.js');
 var sessions = require('./sessions.js');
+var models = require('./models/models.js');
+
 
 var app = express();
 var IP = process.env.IP || 'localhost';
@@ -15,13 +17,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(sessions(process.env.REDISCLOUD_URL, process.env.COOKIE_SECRET));
 
-app.get('/', function(request, response) {
-  if (request.session.test === 'it works') {
-    response.redirect('/home');
-  } else {
-    response.redirect('/login');
-  }
+app.get('/', function(req, res) {
+
+  res.redirect('/home');
+
 });
+
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(router);
 app.get('*', function(request, response) {
@@ -37,6 +38,6 @@ app.listen(PORT, function () {
 
 console.log('listening on', IP, PORT);
 
-//adding comment to test review apps 
+//adding comment to test review apps
 
 module.exports.app = app;

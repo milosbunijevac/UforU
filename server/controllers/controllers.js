@@ -43,5 +43,24 @@ module.exports = {
         }
       });
     }
+  },
+
+  signup: {
+    get: function(req, res) {
+      var username = req.body.username;
+      var password = req.body.password;
+      console.log('got to signup controller');
+      models.signup.get(username, password, function(err, results) {
+        if (err) {
+          console.log('Controller for signup error');
+          res.status(404).send();
+        } else {
+          console.log('Controller redirect');
+          req.session.user = username;
+          res.send('User Created');
+        }
+      });
+    }
   }
+
 };
