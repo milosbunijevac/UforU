@@ -64,5 +64,21 @@ module.exports = {
         }
       });
     }
+  },
+
+  favorites: {
+    post: function(username, collegeID, callback) {
+      connection.query('select id from users where username = ?', username, function(error, rows, fields){
+        var id = JSON.parse(JSON.stringify(rows))[0].id;
+        console.log('userID is ',id);
+        var dbArray = [id, collegeID];
+        connection.query('insert into favoriteus set user_id = ?, university_id = ?', dbArray, function(error, rows, fields){
+          if(!error) {
+            console.log('favorite added');
+            callback(null, 'Favorite added by the model');
+          }
+        });
+      });
+    }
   }
 };
