@@ -17,12 +17,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(sessions(process.env.REDISCLOUD_URL, process.env.COOKIE_SECRET));
 
-// app.get('/', function(req, res) {
-
-//   res.redirect('/home');
-
-// });
-
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(router);
 app.get('*', function(request, response) {
