@@ -124,7 +124,7 @@ var requireLogin = function() {
 ReactDOM.render(
   <Router>
     <div>
-      <Route path="/" component={Container} />
+      <Route exact path="/" component={Container} />
       <Route path="/home" component={App} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
