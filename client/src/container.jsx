@@ -7,37 +7,41 @@ class Container extends React.Component {
     super(props);
 
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false,
+      isLoading: true
     };
   }
 
-  render() {
-
-    // Make axios call to check if logged in
+  componentWillMount() {
     axios({
       url: '/auth',
       method: 'POST'
     })
       .then((results) => {
-        if (results.data && this.state.isLoggedIn === false) {
-          this.setState({isLoggedIn: true});
-        }
-
-        if (this.state.isLoggedIn) {
-          return <Redirect to='/home' />;
+        if (results.data) {
+          this.setState({isLoggedIn: true, isLoading: false});
         } else {
-          return <Redirect to='/login' />;
+          this.setState({isLoggedIn: false, isLoading: false});
         }
         console.log('Container.jsx results.data', results.data);
-
       })
       .catch((error) => {
         console.log('Container.jsx error', error);
       });
 
+  }
+
+  render() {
+      if (this.state.isLoading) {
+        return null;
+      } else {
+        if (this.state.isLoggedIn) {
+          return <Redirect to='/home' />;
+        } else {
+          return <Redirect to='/login' />;
+        }
+      }
     console.log('Login state', this.state.isLoggedIn);
-
-
   }
 }
 
