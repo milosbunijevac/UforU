@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Nav extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Nav extends React.Component {
          </div>
          <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav">
-              <li><a href="#">Favorites</a></li>
+              <li><Link to="/favorites">Favorites</Link></li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
                 <li className="dropdown">

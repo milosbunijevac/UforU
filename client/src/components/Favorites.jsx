@@ -22,7 +22,8 @@ class Favorites extends React.Component {
           state: 'CA',
           tuition: 9634,
           website_url: 'pmi.edu'}
-      ]
+      ],
+      userId: ''
     };
   }
 
