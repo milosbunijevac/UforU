@@ -25,7 +25,6 @@ class Signup extends React.Component {
     });
   }
 
-
   submitHandler() {
     console.log('sending ', this.state.username, this.state.password);
     var userData = {
@@ -64,7 +63,6 @@ class Signup extends React.Component {
         <div className = "loginButton">
           <button className = "loginButton" type = "submit" onClick = {this.submitHandler.bind(this)}>Signup</button>
         </div>
-
       </div>
     );
   }
