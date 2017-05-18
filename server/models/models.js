@@ -6,7 +6,7 @@ var querySchoolTable = require('./queryHelper.js').querySchoolTable;
 module.exports = {
   colleges: {
     get: function(cb) {
-      connection.query('SELECT name, address, state, description, admission_rate, tuition, size, average_gpa, average_sat_score, sports_division, website_url, image_url FROM Universities', function(err, results, fields) {
+      connection.query('SELECT * FROM Universities', function(err, results, fields) {
         if (err) {
           cb (err, null);
         } else {
@@ -36,7 +36,8 @@ module.exports = {
             console.log('USER EXISTS', results);
             cb('User already exists', null);
           } else {
-            connection.query('Insert into Users (username, password) Values ("' + username + '","' + password + '")', function(err, results, fields) {
+            // con
+            connection.query('Insert into Users (username, password) Values (?, ?)', [username, password], function(err, results, fields) {
               if (err) {
                 cb(err, null);
               } else {
@@ -68,17 +69,26 @@ module.exports = {
 
   favorites: {
     post: function(username, collegeID, callback) {
-      connection.query('select id from users where username = ?', username, function(error, rows, fields){
+      connection.query('select id from users where username = ?', username, function(error, rows, fields) {
         var id = JSON.parse(JSON.stringify(rows))[0].id;
-        console.log('userID is ',id);
+        console.log('userID is ', id);
         var dbArray = [id, collegeID];
-        connection.query('insert into favoriteus set user_id = ?, university_id = ?', dbArray, function(error, rows, fields){
-          if(!error) {
+        connection.query('insert into favoriteus set user_id = ?, university_id = ?', dbArray, function(error, rows, fields) {
+          if (!error) {
             console.log('favorite added');
             callback(null, 'Favorite added by the model');
           }
         });
       });
-    }
+    },
+    get: function(username, cb) {
+      connection.query('SELECT * FROM universities JOIN  favoriteus ON universities.id = favoriteus.university_id JOIN users ON users.id = favoriteus.user_id WHERE users.username = ?', username, function(err, results, fields) {
+        if (err) {
+          cb (err, null);
+        } else {
+          cb(null, results);
+        }
+      });
+    }    
   }
 };
