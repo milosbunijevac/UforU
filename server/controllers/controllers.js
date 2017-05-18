@@ -94,6 +94,17 @@ module.exports = {
         }
       });
     }
+  },
+
+  auth: {
+    post: function(req, res) {
+      var session = req.session;
+      if (session.user) {
+        res.send(session.user);
+      } else {
+        res.send(null);
+      }
+    }
   }
 
 };
