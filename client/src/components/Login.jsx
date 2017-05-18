@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -56,12 +57,12 @@ class Login extends React.Component {
         </div>
         <div className="row">
           <div className="text-center">
-            <h6>Don't have an account? <a href='/signup'>Sign Up!</a> </h6>
+            <h6>Don't have an account? <Link to='/signup'>Sign Up!</Link></h6>
           </div>
         </div>
         <div className="row">
           {
-            this.state.showError ? <div className="text-center">Username or Password is incorrect</div> : <div></div>
+            this.state.showError ? <h6 className="text-center"><small>Username or password is incorrect.</small></h6> : <div></div>
           }
         </div>
       </div>
