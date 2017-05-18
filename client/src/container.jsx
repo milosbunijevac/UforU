@@ -22,6 +22,12 @@ class Container extends React.Component {
         if (results.data && this.state.isLoggedIn === false) {
           this.setState({isLoggedIn: true});
         }
+
+        if (this.state.isLoggedIn) {
+          return <Redirect to='/home' />;
+        } else {
+          return <Redirect to='/login' />;
+        }
         console.log('Container.jsx results.data', results.data);
 
       })
@@ -31,11 +37,7 @@ class Container extends React.Component {
 
     console.log('Login state', this.state.isLoggedIn);
 
-     if (this.state.isLoggedIn) {
-      return <Redirect to='/home' />;
-    } else {
-      return <Redirect to='/login' />;
-    }
+
   }
 }
 
