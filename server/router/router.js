@@ -13,4 +13,6 @@ router.post('/favorites', controllers.favorites.post);
 
 router.post('/api/colleges/suggestions', controllers.colleges.getSuggestions);
 
+router.get('/api/favorites', controllers.favorites.get);
+
 module.exports = router;

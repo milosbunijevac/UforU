@@ -79,10 +79,21 @@ module.exports = {
       var username = req.session.user;
       var collegeID = req.body.collegeId;
       console.log('username and collegeID ', username, collegeID);
-      models.favorites.post(username, collegeID, function(error, results){
-        if(!error) {
+      models.favorites.post(username, collegeID, function(error, results) {
+        if (!error) {
           res.status(200)
           .send('College added successfully to favorites');
+        }
+      });
+    },
+    get: function(req, res) {
+      var username = req.session.user;
+      models.favorites.get(username, function(error, results) {
+        if (error) {
+          console.log('controller favorites get error', error);
+          res.send(error);
+        } else {
+          res.send(results);
         }
       });
     }
