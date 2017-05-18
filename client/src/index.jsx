@@ -9,6 +9,7 @@ import Signup from './components/Signup.jsx';
 import Favorites from './components/Favorites.jsx';
 import Nav from './components/Nav.jsx';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
+import Container from './container.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -123,10 +124,7 @@ var requireLogin = function() {
 ReactDOM.render(
   <Router>
     <div>
-      {/*<Route path='/' render={() => {
-        return <App onEnter={requireLogin()}/>;
-      }} />*/}
-      <Route exact path="/" component={App} />
+      <Route path="/" component={Container} />
       <Route path="/home" component={App} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
