@@ -17,18 +17,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(sessions(process.env.REDISCLOUD_URL, process.env.COOKIE_SECRET));
 
-app.get('/', function(req, res) {
+// app.get('/', function(req, res) {
 
-  res.redirect('/home');
+//   res.redirect('/home');
 
-});
+// });
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(router);
 app.get('*', function(request, response) {
   response.sendFile(path.join(__dirname, '../public/index.html'));
-  console.log(request.session);
-  request.session.test = 'it works';
 });
 
 app.listen(PORT, function () {

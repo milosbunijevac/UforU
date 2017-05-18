@@ -33,7 +33,8 @@ module.exports = {
           cb(err, null);
         } else {
           if (results.length !== 0) {
-            cb(err, null);
+            console.log('USER EXISTS', results);
+            cb('User already exists', null);
           } else {
             connection.query('Insert into Users (username, password) Values ("' + username + '","' + password + '")', function(err, results, fields) {
               if (err) {
