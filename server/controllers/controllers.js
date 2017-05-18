@@ -80,6 +80,20 @@ module.exports = {
         }
       });
     }
+  },
+
+  favorites: {
+    post: function(req, res) {
+      var username = req.session.user;
+      var collegeID = req.body.collegeId;
+      console.log('username and collegeID ', username, collegeID);
+      models.favorites.post(username, collegeID, function(error, results){
+        if(!error) {
+          res.status(200)
+          .send('College added successfully to favorites');
+        }
+      });
+    }
   }
 
 };

@@ -140,7 +140,7 @@ ReactDOM.render(
       {/*<Route path='/' render={() => {
         return <App onEnter={requireLogin()}/>;
       }} />*/}
-      <Route path="/" component={App} />
+      <Route exact path="/" component={App} />
       <Route path="/home" component={App} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
