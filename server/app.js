@@ -19,9 +19,12 @@ app.use(sessions(process.env.REDISCLOUD_URL, process.env.COOKIE_SECRET));
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(router);
+
 app.get('*', function(request, response) {
   response.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
+
 
 app.listen(PORT, function () {
   console.log('listening right now on port', PORT);

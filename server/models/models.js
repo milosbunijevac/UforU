@@ -26,7 +26,7 @@ module.exports = {
   },
 
   signup: {
-    get: function(username, password, cb) {
+    post: function(username, password, cb) {
       console.log('beginning of model function for signup');
       connection.query('SELECT * from Users Where username = ?', username, function(err, results, fields) {
         if (err) {
@@ -43,6 +43,23 @@ module.exports = {
                 cb(null, 'User successfully created');
               }
             });
+          }
+        }
+      });
+    }
+  },
+
+  login: {
+    post: function(username, password, cb) {
+      connection.query('Select * from Users where username = ? and password = ?', [username, password], function(err, results, fields) {
+        if (err) {
+          cb(err, null);
+        } else {
+          if (results.length === 0) {
+            cb('Wrong login or password', null);
+          } else {
+            console.log('RESULT from model', results);
+            cb(null, 'User successfully logged in Models');
           }
         }
       });
