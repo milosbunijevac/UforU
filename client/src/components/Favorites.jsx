@@ -1,5 +1,6 @@
 import React from 'react';
 import ResultListEntry from './ResultListEntry.jsx';
+import Nav from './Nav.jsx';
 import axios from 'axios';
 
 
@@ -33,23 +34,7 @@ class Favorites extends React.Component {
   render() {
     return (
       <div className="container-fluid-fullwidth">
-          <nav className="navbar navbar-inverse">
-            <div className="container-fluid" className="navigation">
-              <div className="navbar-header">
-                <a href="#" className="navbar-brand">UforU</a>
-              </div>
-              <div className="collapse navbar-collapse">
-                <ul className="nav navbar-nav">
-                  <li><a href="#">Schools</a></li>
-                </ul>
-                <ul className="nav navbar-nav navbar-right">
-                  <li className="dropdown">
-                    <a href="#" className="dropdown-toggle" role="button">Settings <span className="caret"></span></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav >
+        <Nav />
           <div>
             <h5><u><b>YOUR FAVORITE UNIVERSITIES</b></u></h5>
             {this.state.colleges.map((college, i) => (<ResultListEntry key={i} college={college} />))}
