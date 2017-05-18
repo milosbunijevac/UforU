@@ -22,7 +22,16 @@ module.exports = {
           cb(null, data);
         }
       });
-    }
+    },
+    getFavorites: function(userId, cb) {
+      connection.query('SELECT * FROM universities JOIN  favoriteus ON universities.id = favoriteus.university_id WHERE favorites.user_id = ?', userId, function(err, results, fields) {
+        if (err) {
+          cb (err, null);
+        } else {
+          cb(null, results);
+        }
+      });
+    }    
   },
 
   signup: {
