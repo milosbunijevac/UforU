@@ -47,5 +47,19 @@ module.exports = {
         }
       });
     }
+  },
+
+  login: {
+    post: function(username, password, cb) {
+      connection.query('Select * from Users where username = ? and password = ?', [username, password], function(err, results, fields) {
+        if (err) {
+          cb(err, null);
+        } else {
+          if (results.length === 0) {
+            cb
+          }
+        }
+      })
+    }
   }
 };

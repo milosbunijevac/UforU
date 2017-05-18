@@ -46,11 +46,11 @@ module.exports = {
   },
 
   signup: {
-    get: function(req, res) {
+    post: function(req, res) {
       var username = req.body.username;
       var password = req.body.password;
       console.log('got to signup controller');
-      models.signup.get(username, password, function(err, results) {
+      models.signup.post(username, password, function(err, results) {
         if (err) {
           console.log('Controller for signup error');
           res.status(404).send();
@@ -60,6 +60,18 @@ module.exports = {
           res.send('User Created');
         }
       });
+    }
+  },
+
+  login: {
+    post: function(req, res) {
+      var username = req.body.username;
+      var password = req.body.password;
+
+      models.login.post(username, password, function(err, results) {
+
+      });
+
     }
   }
 

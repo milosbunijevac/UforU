@@ -3,11 +3,9 @@ var controllers = require('../controllers/controllers.js');
 
 router.get('/api/colleges', controllers.colleges.get);
 
-router.post('/signup', controllers.signup.get);
+router.post('/signup', controllers.signup.post);
 
-router.post('/login', function(request, response) {
-  console.log('login', request.session);
-});
+router.post('/login', controllers.login.post);
 
 router.post('/api/colleges/suggestions', controllers.colleges.getSuggestions);
 
