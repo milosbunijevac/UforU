@@ -25,7 +25,6 @@ class Signup extends React.Component {
     });
   }
 
-
   submitHandler() {
     console.log('sending ', this.state.username, this.state.password);
     var userData = {
@@ -55,16 +54,24 @@ class Signup extends React.Component {
     return (
       <div className = "signupContain">
         <p className = "loginText"> Create an account </p>
-        <div className = "col-md-2 col-md-offset-5">
-          <div className = "form-group">
-            <input className = "form-control" type = "text" name = "username" placeholder = "Enter Username" onChange={this.usernameHandler.bind(this)}></input>
-            <input className = "inputText" type = "text" name = "password" placeholder = "Enter Password" onChange={this.passwordHandler.bind(this)}></input>
+        <div className="row">
+          <div className = "col-md-2 col-md-offset-5">
+            <div className = "form-group">
+              <input className = "form-control" type = "text" name = "username" placeholder = "Enter Username" onChange={this.usernameHandler.bind(this)}></input>
+              <input className = "inputText" type = "text" name = "password" placeholder = "Enter Password" onChange={this.passwordHandler.bind(this)}></input>
+            </div>
           </div>
         </div>
-        <div className = "loginButton">
-          <button className = "loginButton" type = "submit" onClick = {this.submitHandler.bind(this)}>Signup</button>
+        <div className="row">
+          <div className = "loginButton center-block">
+            <button className = "loginButton" type = "submit" onClick = {this.submitHandler.bind(this)}>Signup</button>
+          </div>
         </div>
-
+        <div className="row">
+          {
+            this.state.showError ? <h6 className="text-center"><small>Username is already taken.</small></h6> : <div></div>
+          }
+        </div>
       </div>
     );
   }
