@@ -56,10 +56,13 @@ module.exports = {
           cb(err, null);
         } else {
           if (results.length === 0) {
-            cb
+            cb('Wrong login or password', null);
+          } else {
+            console.log('RESULT from model', results);
+            cb(null, 'User successfully logged in Models');
           }
         }
-      })
+      });
     }
   }
 };

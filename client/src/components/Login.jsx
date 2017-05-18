@@ -1,11 +1,14 @@
 import React from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {username: '', password: ''};
+    this.state = {username: '',
+                  password: '',
+                  isLoggedIn: false
+    };
   }
 
   onLoginSubmit () {
@@ -15,10 +18,11 @@ class Login extends React.Component {
       method: 'POST',
       data: userInfo
     })
-      .then (
-        console.log('Login submission posted')
-      )
+      .then ((results) => {
+        this.setState({isLoggedIn: true});
+      })
       .catch ((error) => {
+        // if status = 404 should display error
         console.log('An error occurred inside of the onLoginSubmit method' + error);
       });
   }
@@ -30,6 +34,12 @@ class Login extends React.Component {
   }
 
   render() {
+    if (this.state.isLoggedIn) {
+      return (
+        <Redirect to='/home' />
+      );
+    }
+
     return (
       <div className = "signupContain">
         <p className = "loginText"> Please Login below </p>

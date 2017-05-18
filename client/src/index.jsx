@@ -17,8 +17,6 @@ class App extends React.Component {
     },
 
     this.sendSurveyInfo = this.sendSurveyInfo.bind(this);
-    
-    
   }
 
   sendSurveyInfo(userData) {
@@ -104,7 +102,7 @@ class App extends React.Component {
         <div className = "container-fluid-fullwidth">
           <div className="navbar-default navbar-fixed-bottom">Made by Farrah Bousetta, Arseniy Kotov, and Helen Tang</div>
         </div>
-      </div> 
+      </div>
     );
   }
 }
@@ -142,6 +140,7 @@ ReactDOM.render(
       {/*<Route path='/' render={() => {
         return <App onEnter={requireLogin()}/>;
       }} />*/}
+      <Route path="/" component={App} />
       <Route path="/home" component={App} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />

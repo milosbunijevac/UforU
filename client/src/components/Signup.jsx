@@ -9,7 +9,7 @@ class Signup extends React.Component {
       username: '',
       password: '',
       showError: false,
-      redirect: false
+      isLoggedIn: false
     };
   }
 
@@ -39,8 +39,7 @@ class Signup extends React.Component {
       data: userData,
     })
       .then ((results) => {
-        console.log('User successfully signed up', results);
-        this.setState({redirect: true});
+        this.setState({isLoggedIn: true});
       })
       .catch ((error) => {
         this.setState({
@@ -50,7 +49,7 @@ class Signup extends React.Component {
   }
 
   render() {
-     if (this.state.redirect) {
+     if (this.state.isLoggedIn) {
       return <Redirect to='/home' />;
     }
     return (

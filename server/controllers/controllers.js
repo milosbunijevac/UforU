@@ -69,9 +69,16 @@ module.exports = {
       var password = req.body.password;
 
       models.login.post(username, password, function(err, results) {
-
+        if (err) {
+          console.log('Error in login', err);
+          res.status(404).send();
+        } else {
+          console.log('CONTROLLERS LOGIN success');
+          req.session.user = username;
+          res.status(200).send('User logged in Controller');
+          console.log(results);
+        }
       });
-
     }
   }
 
