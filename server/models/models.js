@@ -26,7 +26,7 @@ module.exports = {
   },
 
   signup: {
-    get: function(username, password, cb) {
+    post: function(username, password, cb) {
       console.log('beginning of model function for signup');
       connection.query('SELECT * from Users Where username = ?', username, function(err, results, fields) {
         if (err) {

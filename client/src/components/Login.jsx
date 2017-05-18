@@ -13,7 +13,7 @@ class Login extends React.Component {
     axios({
       url: '/login',
       method: 'POST',
-      data: userInfo,
+      data: userInfo
     })
       .then (
         console.log('Login submission posted')
@@ -41,7 +41,7 @@ class Login extends React.Component {
           <button className = "loginButton" type = "submit" onClick = {this.onLoginSubmit.bind(this)}>Login</button>
           <h6>Don't have an account? <a href='/signup'>Sign Up!</a> </h6>
         </div>
-      
+
       </div>
     );
   }
