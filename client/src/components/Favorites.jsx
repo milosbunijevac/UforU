@@ -40,7 +40,7 @@ class Favorites extends React.Component {
             <h5><u><b>YOUR FAVORITE UNIVERSITIES</b></u></h5>
             {this.state.colleges.map((college, i) => (<ResultListEntry key={i} college={college} />))}
           </div>
-        </div>
+      </div>
     );
   }
 }
