@@ -9,7 +9,7 @@ class Signup extends React.Component {
       username: '',
       password: '',
       showError: false,
-      // isLoggedIn: false
+      isLoggedIn: false
     };
   }
 
@@ -48,9 +48,9 @@ class Signup extends React.Component {
   }
 
   render() {
-    //  if (this.state.isLoggedIn) {
-    //   return <Redirect to='/home' />;
-    // }
+    if (this.state.isLoggedIn) {
+      return <Redirect to='/home' />;
+    }
     return (
       <div className = "signupContain">
         <p className = "loginText"> Create an account </p>
