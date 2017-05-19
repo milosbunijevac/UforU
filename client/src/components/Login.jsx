@@ -6,23 +6,11 @@ import { Link } from 'react-router-dom';
 class Login extends React.Component {
   constructor(props) {
     super(props);
-<<<<<<< HEAD
-    this.state = {
-      username: '',
-      password: '',
-      isLoggedIn: false,
-      showError: false
-||||||| merged common ancestors
-    this.state = {username: '',
-                  password: '',
-                  isLoggedIn: false,
-                  showError: false
-=======
+
     this.state = {username: '',
                   password: '',
                   isLoggedIn: this.props.location.state.isLoggedIn,
                   showError: false
->>>>>>> Update components so each component keeps track of isLoggedIn state. isLoggedIn state
     };
   }
 

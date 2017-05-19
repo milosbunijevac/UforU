@@ -37,7 +37,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('Home.jsx LOGIN STATE', this.state.isLoggedIn);
     return (
       <div className="container-fluid-fullwidth">
         <Nav isLoggedIn={this.state.isLoggedIn}/>
