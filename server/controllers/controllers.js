@@ -89,7 +89,6 @@ module.exports = {
     },
     get: function(req, res) {
       var username = req.session.user;
-      console.log('controller favorites get username', req.session);
       models.favorites.get(username, function(error, results) {
         if (error) {
           console.log('controller favorites get error', error);
