@@ -362,3 +362,14 @@ p.loginText {
   left: 10px;
   top: 0;
 }
+
+.deleteFavs {
+  color: #373737;
+  font-family: "Oswald-ExtraLight";
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  float: right;
+  
+}
