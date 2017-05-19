@@ -10,6 +10,7 @@ import Favorites from './components/Favorites.jsx';
 import Nav from './components/Nav.jsx';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Container from './container.jsx';
+import Logout from './components/Logout.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -129,5 +130,6 @@ ReactDOM.render(
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/favorites" component={Favorites} />
+      <Route path="/logout" component={Logout} />
     </div>
   </Router>, document.getElementById('app'));

@@ -21,12 +21,10 @@ class Nav extends React.Component {
           <div className="collapse navbar-collapse">
               <ul className="nav navbar-nav">
                 <li><Link to="/favorites">Favorites</Link></li>
-                </ul>
-                {/*<ul className="nav navbar-nav navbar-right">
-                  <li className="dropdown">
-                    <a href="#" className="dropdown-toggle" role="button">Settings <span className="caret"></span></a>
-                  </li>
-                </ul>*/}
+              </ul>
+              <ul className="nav navbar-nav navbar-right">
+                  <li><Link to="/logout">Logout</Link></li>
+              </ul>
               </div>
           </div>
         </nav>

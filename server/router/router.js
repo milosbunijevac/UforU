@@ -9,6 +9,8 @@ router.post('/signup', controllers.signup.post);
 
 router.post('/login', controllers.login.post);
 
+router.post('/logout', controllers.logout.post);
+
 router.post('/favorites', controllers.favorites.post);
 
 router.post('/api/colleges/suggestions', controllers.colleges.getSuggestions);
