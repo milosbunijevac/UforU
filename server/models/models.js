@@ -36,7 +36,6 @@ module.exports = {
             console.log('USER EXISTS', results);
             cb('User already exists', null);
           } else {
-            // con
             connection.query('Insert into Users (username, password) Values (?, ?)', [username, password], function(err, results, fields) {
               if (err) {
                 cb(err, null);
@@ -102,7 +101,6 @@ module.exports = {
         connection.query('DELETE FROM favoriteus WHERE user_id = ? AND university_id = ?', dbArray, function(error, rows, fields) {
           if (error) {
             console.log('error in deleting user says the model');
-            // callback(null, 'Favorite deleted by the model');
           } else {
             console.log('rows after deleting from DB ', rows);
             connection.query('SELECT * FROM universities JOIN  favoriteus ON universities.id = favoriteus.university_id JOIN users ON users.id = favoriteus.user_id WHERE users.username = ?', username, function(err, results, fields) {

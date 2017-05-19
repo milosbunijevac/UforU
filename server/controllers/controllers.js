@@ -107,7 +107,6 @@ module.exports = {
       console.log('The user ', username, ' will have ', collegeID, ' removed from the DB.');
       models.favoritesRemove.post(username, collegeID, function(error, results) {
         if (!error) {
-          // console.log('results from deleting user ---->', results);
           res.send(JSON.parse(results));
         } else {
           console.log('error for delete favs controller', error);

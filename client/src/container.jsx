@@ -32,15 +32,15 @@ class Container extends React.Component {
   }
 
   render() {
-      if (this.state.isLoading) {
-        return null;
+    if (this.state.isLoading) {
+      return null;
+    } else {
+      if (this.state.isLoggedIn) {
+        return <Redirect to='/home' />;
       } else {
-        if (this.state.isLoggedIn) {
-          return <Redirect to='/home' />;
-        } else {
-          return <Redirect to='/login' />;
-        }
+        return <Redirect to='/login' />;
       }
+    }
     console.log('Login state', this.state.isLoggedIn);
   }
 }

@@ -139,7 +139,6 @@ var mySearchFunction = function(prefs, cb) {
 
     }
   });
-
 };
 
 module.exports.asyncMap = asyncMap;

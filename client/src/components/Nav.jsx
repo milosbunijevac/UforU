@@ -5,7 +5,6 @@ class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
     };
   }
 
@@ -14,9 +13,7 @@ class Nav extends React.Component {
       <nav className="navbar navbar-inverse navbar-fixed-top">
         <div className="container-fluid" className="navigation">
           <div className="navbar-header">
-
             <Link to="/home" className="navbar-brand">UforU</Link>
-
           </div>
           <div className="collapse navbar-collapse">
               <ul className="nav navbar-nav">
