@@ -67,6 +67,7 @@ module.exports = {
         } else {
           console.log('CONTROLLERS LOGIN success');
           req.session.user = username;
+          console.log('controller login req.sessionID', req.sessionID);
           res.status(200).send('User logged in Controller');
           console.log(results);
         }
@@ -88,6 +89,7 @@ module.exports = {
     },
     get: function(req, res) {
       var username = req.session.user;
+      console.log('controller favorites get username', req.session);
       models.favorites.get(username, function(error, results) {
         if (error) {
           console.log('controller favorites get error', error);
