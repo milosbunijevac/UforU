@@ -7,8 +7,7 @@ module.exports = function Sessions(url, secret) {
     secret: secret,
     store: store,
     resave: true,
-    saveUninitialized: true,
-    cookie:{maxAge:5000}
+    saveUninitialized: true
   });
  
   return session;
