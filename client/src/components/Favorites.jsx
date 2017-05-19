@@ -23,13 +23,12 @@ class Favorites extends React.Component {
   }
 
   render() {
-
     var deleteHandler = function(college) {
       console.log('college has been recieved by the Favorites', college);
       var that = this;
       axios({
-        url: '/favoritesRemove',
-        method: 'POST',
+        url: '/api/favorites',
+        method: 'DELETE',
         data: {collegeId: college.university_id}
       })
     .then((results) => {

@@ -88,11 +88,8 @@ module.exports = {
           cb(null, results);
         }
       });
-    }    
-  },
-
-  favoritesRemove: {
-    post: function(username, collegeID, callback) {
+    },
+    delete: function(username, collegeID, callback) {
       connection.query('select id from users where username = ?', username, function(error, rows, fields) {
         var id = JSON.parse(JSON.stringify(rows))[0].id;
         console.log('userID to delete a favorite is ', id);
@@ -114,5 +111,5 @@ module.exports = {
         });
       });
     }
-  }
+  },
 };

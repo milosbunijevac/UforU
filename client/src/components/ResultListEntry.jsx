@@ -12,7 +12,7 @@ class ResultListEntry extends React.Component {
   favoriteHandler(entry) {
     console.log('in controller for favorites');
     axios({
-      url: '/favorites',
+      url: 'api/favorites',
       method: 'POST',
       data: {collegeId: entry.id}
     })
@@ -37,7 +37,7 @@ class ResultListEntry extends React.Component {
           </div>
           <a className="college-name" href={'http://' + college.website_url}> {college.name}</a>
           <div className="heart" onClick={this.favoriteHandler.bind(this, college)}></div>
-          <p>{this.state.showMessage ? 'College added to your favorites!': ''}</p>
+          <p>{this.state.showMessage ? 'College added to your favorites!' : ''}</p>
           <p className="description">{college.description}</p>
         </div>
       </div>
