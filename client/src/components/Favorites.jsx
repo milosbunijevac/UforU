@@ -22,15 +22,48 @@ class Favorites extends React.Component {
       });
   }
 
+  // deleteHandler() {
+  //   axios({
+  //     url: '/favoritesRemove',
+  //     method: 'POST',
+  //     data: {collegeId: entry.id}
+  //   })
+  //   .then((results) => {
+  //     console.log('deleted from favorites - message recieved by client from server');
+  //   })
+  //   .catch((error) => {
+  //     console.log('error deleting a favorite');
+  //   }); 
+  // }
+
 
   render() {
+
+    var deleteHandler = function(college) {
+      console.log('college has been recieved by the Favorites', college);
+      var me = this;
+      axios({
+        url: '/favoritesRemove',
+        method: 'POST',
+        data: {collegeId: college.university_id}
+      })
+    .then((results) => {
+      console.log('client for remove favs received this from server ---> ', results.data);
+      me.setState({
+        colleges: results.data
+      });
+    })
+    .catch((error) => {
+      console.log('error deleting a favorite');
+    }); 
+    };
     if (this.state.colleges.length > 0) {
       return (
         <div className="container-fluid-fullwidth">
           <Nav />
             <div>
               <h5><u><b>YOUR FAVORITE UNIVERSITIES</b></u></h5>
-              {this.state.colleges.map((college, i) => (<FavsListEntry key={i} college={college} />))}
+              {this.state.colleges.map((college, i) => (<FavsListEntry key={i} college={college} deleteHandler={deleteHandler.bind(this)}/>))}
             </div>
         </div>
       );

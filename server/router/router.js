@@ -13,6 +13,8 @@ router.post('/logout', controllers.logout.post);
 
 router.post('/favorites', controllers.favorites.post);
 
+router.post('/favoritesRemove', controllers.favoritesRemove.post);
+
 router.post('/api/colleges/suggestions', controllers.colleges.getSuggestions);
 
 router.get('/api/favorites', controllers.favorites.get);

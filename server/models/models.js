@@ -90,5 +90,31 @@ module.exports = {
         }
       });
     }    
+  },
+
+  favoritesRemove: {
+    post: function(username, collegeID, callback) {
+      connection.query('select id from users where username = ?', username, function(error, rows, fields) {
+        var id = JSON.parse(JSON.stringify(rows))[0].id;
+        console.log('userID to delete a favorite is ', id);
+        var dbArray = [id, collegeID];
+        console.log('DBARRAY --->', dbArray);
+        connection.query('DELETE FROM favoriteus WHERE user_id = ? AND university_id = ?', dbArray, function(error, rows, fields) {
+          if (error) {
+            console.log('error in deleting user says the model');
+            // callback(null, 'Favorite deleted by the model');
+          } else {
+            console.log('rows after deleting from DB ', rows);
+            connection.query('SELECT * FROM universities JOIN  favoriteus ON universities.id = favoriteus.university_id JOIN users ON users.id = favoriteus.user_id WHERE users.username = ?', username, function(err, results, fields) {
+              if (!err) {
+                callback(null, JSON.stringify(results));
+              } else {
+                callback(err, null);
+              }
+            });
+          }
+        });
+      });
+    }
   }
 };
