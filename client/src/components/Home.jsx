@@ -10,7 +10,8 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      colleges: []
+      colleges: [],
+      isLoggedIn: this.props.location.state.isLoggedIn
     },
 
     this.sendSurveyInfo = this.sendSurveyInfo.bind(this);
@@ -36,9 +37,10 @@ class Home extends React.Component {
   }
 
   render() {
+    console.log('Home.jsx LOGIN STATE', this.state.isLoggedIn);
     return (
       <div className="container-fluid-fullwidth">
-        <Nav />
+        <Nav isLoggedIn={this.state.isLoggedIn}/>
         <div className="container" id="banner">
           <h1>
             <b>UFORU</b>

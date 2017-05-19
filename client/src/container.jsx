@@ -23,7 +23,6 @@ class Container extends React.Component {
         } else {
           this.setState({isLoggedIn: false, isLoading: false});
         }
-        console.log('Container.jsx results.data', results.data);
       })
       .catch((error) => {
         console.log('Container.jsx error', error);
@@ -35,13 +34,12 @@ class Container extends React.Component {
     if (this.state.isLoading) {
       return null;
     } else {
-      if (this.state.isLoggedIn) {
-        return <Redirect to='/home' />;
-      } else {
-        return <Redirect to='/login' />;
-      }
+        if (this.state.isLoggedIn) {
+          return <Redirect to={{pathname: '/home', state: {isLoggedIn: this.state.isLoggedIn}}} />;
+        } else {
+          return <Redirect to={{pathname: '/login', state: {isLoggedIn: this.state.isLoggedIn}}} />;
+        }
     }
-    console.log('Login state', this.state.isLoggedIn);
   }
 }
 
