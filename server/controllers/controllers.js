@@ -16,6 +16,7 @@ module.exports = {
       });
     },
     getSuggestions: function(req, res) {
+      console.log('get suggestions controller on the server');
       var body = req.body;
       for (let key in body) {
         if (body[key] === undefined || body[key] === '' || body[key].length === 0) {
