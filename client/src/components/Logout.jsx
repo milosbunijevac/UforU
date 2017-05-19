@@ -8,11 +8,10 @@ class Logout extends React.Component {
     super(props);
     this.state = {
       isLoading: true
-    }
+    };
   }
 
   componentWillMount() {
-    // destroy the session componentWillMount
     axios({
       url: '/logout',
       method: 'POST'
@@ -21,7 +20,7 @@ class Logout extends React.Component {
         this.setState({isLoading: false});
       })
       .catch((error) => {
-        console.log('Logout.jsx', error)
+        console.log('Logout.jsx', error);
       });
   }
 

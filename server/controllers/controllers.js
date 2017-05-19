@@ -97,17 +97,13 @@ module.exports = {
           res.send(results);
         }
       });
-    }
-  },
-
-  favoritesRemove: {
-    post: function(req, res) {
+    },
+    delete: function(req, res) {
       var username = req.session.user;
       var collegeID = req.body.collegeId;
       console.log('The user ', username, ' will have ', collegeID, ' removed from the DB.');
-      models.favoritesRemove.post(username, collegeID, function(error, results) {
+      models.favorites.delete(username, collegeID, function(error, results) {
         if (!error) {
-          // console.log('results from deleting user ---->', results);
           res.send(JSON.parse(results));
         } else {
           console.log('error for delete favs controller', error);

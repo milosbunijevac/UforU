@@ -27,7 +27,7 @@ class App extends React.Component {
     console.log('axios data:', userData);
     userData.size = userData.size.split('-');
     axios({
-      url: '/api/colleges/suggestions',
+      url: '/api/colleges/',
       method: 'POST',
       data: userData,
     })
