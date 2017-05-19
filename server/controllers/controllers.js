@@ -108,6 +108,19 @@ module.exports = {
         res.send(null);
       }
     }
+  },
+
+  logout: {
+    post: function(req, res) {
+      console.log('controllers.js logout post');
+      req.session.destroy(function(err) {
+        if (err) {
+          res.status(404).send();
+        } else {
+          res.send('Logout Successful');
+        }
+      });
+    }
   }
 
 };
