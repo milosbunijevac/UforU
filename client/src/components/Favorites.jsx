@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultListEntry from './ResultListEntry.jsx';
+import FavsListEntry from './FavsListEntry.jsx';
 import Nav from './Nav.jsx';
 import axios from 'axios';
 
@@ -30,7 +30,7 @@ class Favorites extends React.Component {
           <Nav />
             <div>
               <h5><u><b>YOUR FAVORITE UNIVERSITIES</b></u></h5>
-              {this.state.colleges.map((college, i) => (<ResultListEntry key={i} college={college} />))}
+              {this.state.colleges.map((college, i) => (<FavsListEntry key={i} college={college} />))}
             </div>
         </div>
       );
