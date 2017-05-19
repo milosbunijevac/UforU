@@ -16,7 +16,7 @@ class Favorites extends React.Component {
     var that = this;
     axios.get('/api/favorites')
       .then(function(response) {
-        that.setState({colleges: response.data});
+        that.setState({colleges: response.data.reverse()});
       }).catch(function(error) {
         console.log(error);
       });
