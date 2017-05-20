@@ -9,7 +9,7 @@ class Signup extends React.Component {
       username: '',
       password: '',
       showError: false,
-      isLoggedIn: false
+      isLoggedIn: this.props.location.state.isLoggedIn
     };
   }
 
@@ -48,8 +48,9 @@ class Signup extends React.Component {
   }
 
   render() {
+
     if (this.state.isLoggedIn) {
-      return <Redirect to='/home' />;
+      return <Redirect to={{pathname: '/home', state: {isLoggedIn: this.state.isLoggedIn}}} />;
     }
     return (
       <div className = "signupContain">

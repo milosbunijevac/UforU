@@ -8,7 +8,8 @@ class Favorites extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      colleges: []
+      colleges: [],
+      isLoggedIn: this.props.location.state.isLoggedIn
     };
   }
 
@@ -45,7 +46,7 @@ class Favorites extends React.Component {
     if (this.state.colleges.length > 0) {
       return (
         <div className="container-fluid-fullwidth">
-          <Nav />
+          <Nav isLoggedIn={this.state.isLoggedIn}/>
             <div>
               <h5><u><b>YOUR FAVORITE UNIVERSITIES</b></u></h5>
               {this.state.colleges.map((college, i) => (<FavsListEntry key={i} college={college} deleteHandler={deleteHandler.bind(this)}/>))}
@@ -55,7 +56,7 @@ class Favorites extends React.Component {
     } else {
       return (
         <div className="container-fluid-fullwidth">
-        <Nav />
+            <Nav isLoggedIn={this.state.isLoggedIn}/>
           <div>
             <h5><u><b>YOU DO NOT HAVE ANY FAVORITES</b></u></h5>
           </div>

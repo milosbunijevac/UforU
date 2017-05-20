@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import Survey from './components/Survey.jsx';
-import Results from './components/Results.jsx';
-import axios from 'axios';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';
 import Favorites from './components/Favorites.jsx';
-import Nav from './components/Nav.jsx';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Container from './container.jsx';
 import Logout from './components/Logout.jsx';
+import Home from './components/Home.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -111,22 +107,14 @@ var requireLogin = function() {
           showError: true
         });
       });
-
-//  var request = new XMLHttpRequest();
-// request.open('GET', 'authenticate', false);  // `false` makes the request synchronous
-// request.send(null);
-
-
-//   console.log(request.responseText);
-
-
 };
+
 
 ReactDOM.render(
   <Router>
     <div>
       <Route exact path="/" component={Container} />
-      <Route path="/home" component={App} />
+      <Route path="/home" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/favorites" component={Favorites} />
