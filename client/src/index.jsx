@@ -19,7 +19,7 @@ class App extends React.Component {
     this.state = {
       colleges: []
     },
-
+    //Comment
     this.sendSurveyInfo = this.sendSurveyInfo.bind(this);
   }
 
