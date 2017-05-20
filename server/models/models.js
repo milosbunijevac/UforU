@@ -24,7 +24,6 @@ module.exports = {
       });
     }
   },
-
   signup: {
     post: function(username, password, cb) {
       console.log('beginning of model function for signup');

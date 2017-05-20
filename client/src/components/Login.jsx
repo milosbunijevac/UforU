@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      password: '',
-      isLoggedIn: false,
-      showError: false
+
+    this.state = {username: '',
+                  password: '',
+                  isLoggedIn: this.props.location.state.isLoggedIn,
+                  showError: false
     };
   }
 
@@ -38,7 +38,7 @@ class Login extends React.Component {
   render() {
     if (this.state.isLoggedIn) {
       return (
-        <Redirect to='/home' />
+        <Redirect to={{pathname: '/home', state: {isLoggedIn: this.state.isLoggedIn}}} />
       );
     }
 
@@ -58,7 +58,7 @@ class Login extends React.Component {
         </div>
         <div className="row">
           <div className="text-center">
-            <h6>Don't have an account? <Link to='/signup'>Sign Up!</Link></h6>
+            <h6>Don't have an account? <Link to={{pathname: '/signup', state: {isLoggedIn: this.state.isLoggedIn}}}>Sign Up!</Link></h6>
           </div>
         </div>
         <div className="row">
